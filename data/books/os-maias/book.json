@@ -1,0 +1,20 @@
+{
+  "id": 3,
+  "slug": "os-maias",
+  "title": "Os Maias",
+  "author": "Eça de Queirós",
+  "year": "1888",
+  "authorBio": "Mestre do realismo português que expõe a decadência da alta sociedade lisboeta.",
+  "description": "Romance sobre a família Maia, a nostalgia de um tempo perdido e o peso da herança social.",
+  "tags": [
+    "realismo",
+    "Lisboa",
+    "sociedade"
+  ],
+  "language": "pt",
+  "authorId": "eca-de-queiros",
+  "chapterOrder": [
+    "capitulo-i",
+    "capitulo-ii"
+  ]
+}

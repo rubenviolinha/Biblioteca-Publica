@@ -1,0 +1,17 @@
+{
+  "id": 2,
+  "slug": "mensagem",
+  "title": "Mensagem",
+  "author": "Fernando Pessoa",
+  "year": "1934",
+  "authorBio": "Poeta moderno e metafísico.",
+  "description": "Única obra publicada em vida por Pessoa.",
+  "tags": [
+    "modernismo"
+  ],
+  "language": "pt",
+  "authorId": "fernando-pessoa",
+  "chapterOrder": [
+    "o-infante"
+  ]
+}

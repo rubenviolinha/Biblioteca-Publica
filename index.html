@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Publica | Biblioteca Digital Minimalista</title>
+    <script type="text/javascript" nonce="372d391b96254d4f97ba5bd6697"
+        src="//local.adguard.org?ts=1771153779104&amp;type=content-script&amp;dmn=file.notion.so&amp;url=https%3A%2F%2Ffile.notion.so%2Ff%2Ff%2Fade888d6-b468-4bb3-93f4-f6900c67664f%2F3fb95c66-b7f2-4d6b-8400-582316cec908%2Flivros_portugal_1.html%3Ftable%3Dblock%26id%3D3028cff9-921f-8091-af4f-f9aef5cf6e1f%26spaceId%3Dade888d6-b468-4bb3-93f4-f6900c67664f%26expirationTimestamp%3D1771200000000%26signature%3DulfWiYYVFiM2eqHuMA6vozGE9dkbEI9M3BCE4NHdt-c%26download%3Dtrue%26downloadName%3Dlivros_portugal_1.html&amp;app=com.apple.Safari&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script>
+    <script type="text/javascript" nonce="372d391b96254d4f97ba5bd6697"
+        src="//local.adguard.org?ts=1771153779104&amp;name=AdGuard%20Extra&amp;type=user-script"></script>
+
+    <!-- Google AdSense Script (Replace ca-pub-XXXXXXXXXXXXXXXX with your ID) -->
+    <!-- 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script> 
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfcf9;
+            --text-color: #1a1a1a;
+            --accent-color: #7d7d7d;
+            --highlight-color: #e8e8e3;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease;
+        }
+
+        .serif {
+            font-family: 'Libre+Baskerville', serif;
+        }
+
+        .book-card {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .reading-mode {
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 2px;
+            cursor: pointer;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--text-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Active Chapter Style */
+        .chapter-btn.active {
+            background-color: var(--text-color);
+            color: #fff;
+            border-color: var(--text-color);
+        }
+
+        /* Insight Styles */
+        .insight-highlight {
+            border-bottom: 1px dashed #999;
+            cursor: help;
+            transition: background-color 0.2s;
+        }
+
+        .insight-highlight:hover {
+            background-color: var(--highlight-color);
+            border-bottom-style: solid;
+        }
+
+        .context-box {
+            background-color: #f4f4f1;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            border-left: 3px solid #ccc;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #555;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .insight-modal {
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Minimal Audio Player */
+        .audio-player-container {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .progress-track {
+            height: 2px;
+            background-color: #e5e5e5;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--text-color);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .progress-track:hover {
+            height: 4px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInScale 0.4s ease-out forwards;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+
+        /* AdSense Container Style */
+        .ad-container {
+            width: 100%;
+            max-width: 970px;
+            /* Supports large leaderboards */
+            margin: 3rem auto;
+            text-align: center;
+            min-height: 90px;
+            /* Standard leaderboard height */
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #e5e5e5;
+            color: #ccc;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+
+        .book-cover-fallback {
+            background:
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 34%, transparent 35%),
+                linear-gradient(135deg, #f0ede7, #d8d0c4);
+        }
+    </style>
+</head>
+
+<body class="antialiased relative">
+
+    <!-- Insight Modal (Floating) -->
+    <div id="insight-modal" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 hidden max-w-md w-[90%] md:w-auto">
+        <div class="insight-modal bg-black text-white p-6 shadow-2xl rounded-lg relative">
+            <button onclick="closeInsight()" class="absolute top-2 right-3 text-gray-500 hover:text-white">×</button>
+            <h4 id="insight-term" class="text-xs uppercase tracking-widest text-gray-400 mb-2 font-bold"></h4>
+            <p id="insight-text" class="text-sm leading-relaxed font-light"></p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="py-12 px-6 md:px-12 grid grid-cols-[1fr_auto_1fr] items-center gap-4 border-b border-gray-100">
+        <div class="cursor-pointer" onclick="showHome()">
+            <h1 class="serif text-2xl font-bold tracking-tight">Biblioteca Publica</h1>
+            <p class="text-xs uppercase tracking-[0.2em] text-gray-400 mt-1">Portugal • Domínio Público</p>
+        </div>
+        <div
+            class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-dashed border-gray-200 text-gray-400 justify-self-center">
+            <span>Publicidade</span>
+        </div>
+        <div class="flex items-center gap-6 justify-self-end">
+            <nav class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
+                <a onclick="showHome()" id="nav-collection" class="nav-link active">COLECÇÃO</a>
+                <a onclick="showAuthors()" id="nav-authors" class="nav-link">AUTORES</a>
+            </nav>
+            <button onclick="openAdminPanel()"
+                class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition-all">
+                ADMIN
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="app-content" class="min-h-screen px-6 md:px-12 py-16">
+        <!-- Home View (default) -->
+        <div id="home-view">
+            <div class="max-w-6xl mx-auto">
+                <header class="mb-16">
+                    <h2 class="serif text-4xl md:text-5xl mb-4">A essência da literatura lusófona, <br>disponível para
+                        todos.</h2>
+                    <p class="text-gray-500 max-w-lg">Obras clássicas que moldaram a nossa língua e cultura, preservadas
+                        num formato digital puro e essencial.</p>
+                </header>
+
+                <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                    <div class="w-full md:max-w-xl">
+                        <label for="catalog-search" class="block text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-3">
+                            Procurar no catálogo
+                        </label>
+                        <div class="flex items-center gap-3 rounded-full border border-gray-200 bg-white px-4 py-3 shadow-sm focus-within:border-black transition-colors">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-gray-400 flex-shrink-0">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21-4.35-4.35m1.85-5.4a7.25 7.25 0 1 1-14.5 0 7.25 7.25 0 0 1 14.5 0Z"></path>
+                            </svg>
+                            <input id="catalog-search" type="search"
+                                class="w-full bg-transparent text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none"
+                                placeholder="Título, autor, tema ou ano" oninput="handleCatalogSearch(this.value)">
+                            <button type="button" id="catalog-search-clear"
+                                class="hidden text-[10px] uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-colors"
+                                onclick="clearCatalogSearch()">
+                                Limpar
+                            </button>
+                        </div>
+                    </div>
+                    <p id="catalog-search-summary" class="text-xs uppercase tracking-[0.3em] text-gray-400"></p>
+                </div>
+
+                <!-- AdSense Space - Top of Feed -->
+                <div class="ad-container">
+                    <!-- Paste your Google AdSense code here -->
+                    <span>Publicidade</span>
+                </div>
+
+                <div id="book-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+                    <!-- Books will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Authors View -->
+        <div id="authors-view" class="hidden">
+            <div class="max-w-4xl mx-auto">
+                <header class="mb-16 border-b border-gray-100 pb-8">
+                    <h2 class="serif text-4xl mb-4">Os Autores</h2>
+                    <p class="text-gray-500">As vozes imortais por trás das obras.</p>
+                </header>
+                <div id="authors-grid" class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Authors injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Reader View (hidden by default) -->
+        <div id="reader-view" class="hidden">
+            <div class="max-w-3xl mx-auto relative">
+
+                <!-- Reader Top Bar -->
+                <div class="flex justify-between items-center mb-12">
+                    <button onclick="showHome()"
+                        class="flex items-center gap-2 text-sm text-gray-400 hover:text-black transition-colors">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        VOLTAR À COLECÇÃO
+                    </button>
+
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-2">
+                            <button onclick="decreaseReaderFontSize()" id="font-size-decrease" aria-label="Diminuir tamanho do texto"
+                                title="Diminuir tamanho do texto"
+                                class="px-3 py-2 rounded-full border border-gray-200 text-xs uppercase tracking-wider text-gray-500 hover:border-black hover:text-black transition-all disabled:opacity-40 disabled:cursor-not-allowed">
+                                A-
+                            </button>
+                            <button onclick="increaseReaderFontSize()" id="font-size-increase" aria-label="Aumentar tamanho do texto"
+                                title="Aumentar tamanho do texto"
+                                class="px-3 py-2 rounded-full border border-gray-200 text-xs uppercase tracking-wider text-gray-500 hover:border-black hover:text-black transition-all disabled:opacity-40 disabled:cursor-not-allowed">
+                                A+
+                            </button>
+                        </div>
+
+                        <a id="pdf-download-link"
+                            class="hidden px-4 py-2 rounded-full border border-gray-200 text-xs uppercase tracking-wider text-gray-500 hover:border-black hover:text-black transition-all"
+                            href="#" download="compiled.pdf">
+                            Descarregar PDF
+                        </a>
+
+                        <!-- Insights Toggle -->
+                        <button onclick="toggleInsights()" id="insights-toggle"
+                            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-xs uppercase tracking-wider text-gray-500 hover:border-black hover:text-black transition-all">
+                            <span id="insights-status">Activar Notas</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="book-header" class="mb-16 text-center">
+                    <h2 id="reader-title" class="serif text-4xl md:text-5xl mb-4"></h2>
+                    <p id="reader-author"
+                        class="text-gray-400 uppercase tracking-widest text-sm cursor-pointer hover:text-gray-600 transition-colors"
+                        onclick="showAuthors()"></p>
+                </div>
+
+                <div id="chapter-nav" class="mb-12 flex justify-center gap-3 flex-wrap">
+                    <!-- Chapter buttons -->
+                </div>
+
+                <!-- Reading Container -->
+                <div id="reading-container">
+                    <div id="context-container"></div>
+                    <article id="reader-content" class="serif reading-mode text-gray-800 pb-16">
+                        <!-- Text content -->
+                    </article>
+                </div>
+
+                <!-- AdSense Space - Bottom of Reader -->
+                <div class="ad-container" style="max-width: 728px; margin-top: 3rem;">
+                    <!-- Paste your Google AdSense code here -->
+                    <span>Publicidade</span>
+                </div>
+
+                <!-- Footer Navigation -->
+                <div id="chapter-footer"
+                    class="max-w-2xl mx-auto flex justify-between items-center py-16 border-t border-gray-100 mt-8">
+                    <!-- Nav buttons injected here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Hidden Audio Element -->
+    <audio id="main-audio"></audio>
+
+    <!-- AdSense Space - Global Footer -->
+    <div class="ad-container">
+        <!-- Paste your Google AdSense code here -->
+        <span>Publicidade</span>
+    </div>
+
+    <footer class="py-12 border-t border-gray-100 text-center text-xs text-gray-400 tracking-widest uppercase">
+        Preservando o Património Literário © 2024
+    </footer>
+
+    <div id="admin-panel" class="hidden fixed inset-0 z-50 flex items-start justify-center px-4 py-10">
+        <div class="absolute inset-0 bg-black/60" onclick="closeAdminPanel()"></div>
+        <div class="relative w-full max-w-5xl h-full" style="max-height: calc(100vh - 3rem);">
+            <div
+                class="absolute inset-0 bg-white rounded-[32px] border border-white/60 shadow-2xl overflow-hidden flex flex-col">
+                <div class="flex justify-between items-start p-6 border-b border-gray-100">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Administração</p>
+                        <h3 class="serif text-2xl mt-2">Adicionar / exportar livros públicos</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <button type="button" onclick="resetAdminBook()"
+                            class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition">Limpar</button>
+                        <button type="button" onclick="closeAdminPanel()"
+                            class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 border border-gray-200 rounded-full text-gray-500 hover:border-black hover:text-black transition">Fechar</button>
+                    </div>
+                </div>
+                <div class="px-6 py-4 overflow-y-auto" style="max-height: calc(100vh - 5rem);">
+
+                    <!-- Import Section -->
+                    <div class="mb-8 border-b border-gray-100 pb-8">
+                        <div class="flex justify-between items-end mb-3">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Carregar da Biblioteca</p>
+                                <p class="text-xs text-gray-500 mt-1">Escolha um livro já existente e carregue os seus dados
+                                    directamente da pasta do livro.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mb-4">
+                            <select id="admin-book-select"
+                                class="flex-grow rounded-2xl border border-gray-200 px-4 py-3 text-xs bg-white focus:border-black transition-colors">
+                                <option value="">Selecione um livro...</option>
+                            </select>
+                            <button onclick="loadAdminBookFromLibrary(this)"
+                                class="flex-shrink-0 text-[10px] uppercase tracking-[0.4em] px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition flex items-center">
+                                Carregar
+                            </button>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Admin API URL</label>
+                            <input id="admin-api-url" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-xs font-mono"
+                                value="http://127.0.0.1:8765"
+                                placeholder="http://127.0.0.1:8765">
+                            <p class="text-xs text-gray-500">Use com <code>python3 scripts/admin_api.py</code> a correr.</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 max-w-3xl mb-6">Preencha os campos abaixo para gerar o pacote no novo
+                        formato por livro: <code class="bg-gray-100 px-1 py-px rounded text-[11px]">book.json</code>,
+                        <code class="bg-gray-100 px-1 py-px rounded text-[11px]">chapters/*.json</code> e
+                        <code class="bg-gray-100 px-1 py-px rounded text-[11px]">compiled.json</code>. Para a lista pública,
+                        use o botão de dataset completo e actualize <code class="bg-gray-100 px-1 py-px rounded text-[11px]">/data/books.json</code>.</p>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <div class="space-y-1 md:col-span-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">ID (opcional)</label>
+                            <input id="admin-id" type="number"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('id', this)">
+                        </div>
+                        <div class="space-y-1 md:col-span-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Slug (opcional)</label>
+                            <input id="admin-slug" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('slug', this)" placeholder="ex: os-lusiadas">
+                        </div>
+                        <div class="space-y-1 md:col-span-2">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Título</label>
+                            <input id="admin-title" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('title', this)" placeholder="Nome completo da obra">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Autor</label>
+                            <input id="admin-author" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('author', this)">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Capa URL (opcional)</label>
+                            <input id="admin-coverImage" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                placeholder="ex: ./data/books/os-lusiadas/cover.jpg"
+                                oninput="adminUpdateMeta('coverImage', this)">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">ID do Autor
+                                (opcional)</label>
+                            <input id="admin-authorId" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                placeholder="ex: fernando-pessoa" oninput="adminUpdateMeta('authorId', this)">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Ano</label>
+                            <input id="admin-year" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('year', this)">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Idioma</label>
+                            <input id="admin-language" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm" value="pt"
+                                oninput="adminUpdateMeta('language', this)">
+                        </div>
+                        <div class="space-y-1 md:col-span-2">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Tags (vírgulas)</label>
+                            <input id="admin-tags" type="text"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('tags', this)"
+                                placeholder="ex: modernismo, poesia, simbolismo">
+                        </div>
+                        <div class="space-y-1 md:col-span-2">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Descrição</label>
+                            <textarea id="admin-description" rows="2"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('description', this)"
+                                placeholder="Breve resumo da obra"></textarea>
+                        </div>
+                        <div class="space-y-1 md:col-span-2">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Biografia do
+                                autor</label>
+                            <textarea id="admin-authorBio" rows="2"
+                                class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm"
+                                oninput="adminUpdateMeta('authorBio', this)"
+                                placeholder="Texto curto sobre o autor"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t border-gray-100 pt-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Capítulos</p>
+                                <p class="text-xs text-gray-500">Adicione tantos capítulos quantos precise (título,
+                                    contexto, conteúdo, áudio, anotações).</p>
+                            </div>
+                            <button type="button" onclick="addAdminChapter()"
+                                class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition">+
+                                Capítulo</button>
+                        </div>
+                        <div id="admin-chapters-list" class="space-y-4 text-sm text-gray-500">
+                            <!-- Chapters rendered here -->
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t border-gray-100 pt-6 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Preview JSON (Novo Formato)</p>
+                                <p class="text-xs text-gray-500">Este preview inclui <code>book</code>, <code>chapters</code> e <code>compiled</code>.</p>
+                            </div>
+                            <div class="flex gap-2 flex-wrap">
+                                <button type="button" onclick="updateAdminPreview()"
+                                    class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition">Atualizar
+                                    JSON</button>
+                                <button type="button" onclick="saveAdminFiles(this)"
+                                    class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-black bg-black text-white hover:bg-gray-800 transition">Guardar
+                                    Ficheiros</button>
+                                <button type="button" onclick="compileAllBooks(this)"
+                                    class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition">Compilar
+                                    Tudo</button>
+                                <button type="button" onclick="copyAdminJson()"
+                                    class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition">Copiar</button>
+                                <button type="button" onclick="copyMergedJson()"
+                                    class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition">Copiar
+                                    Dataset Completo</button>
+                            </div>
+                        </div>
+                        <textarea id="admin-json-output"
+                            class="w-full min-h-[200px] rounded-2xl border border-gray-200 bg-gray-50 p-4 font-mono text-xs text-gray-700"
+                            readonly></textarea>
+                        <p id="admin-copy-feedback" class="text-xs text-green-600"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Books metadata now lives in data/books.json
+        const booksUrl = "./data/books.json";
+        let books = [];
+        let catalogSearchQuery = "";
+        let currentBook = null;
+        let currentBookSlug = "";
+        let currentBookPdfUrl = "";
+        let currentBookPdfCheckToken = 0;
+        let currentChapterIndex = 0;
+        let showInsights = false;
+        const readerFontStorageKey = 'readerFontSizeRem';
+        const defaultReaderFontRem = 1.15;
+        const minReaderFontRem = 0.95;
+        const maxReaderFontRem = 1.6;
+        const readerFontStepRem = 0.1;
+        let readerFontSizeRem = defaultReaderFontRem;
+        let isPlaying = false;
+        let audio = document.getElementById('main-audio');
+
+        function updateUrlState({ bookSlug = "", chapterIndex = 0, view = "" } = {}) {
+            const url = new URL(window.location.href);
+            url.search = '';
+
+            if (bookSlug) {
+                const safeChapterIndex = Math.max(0, Number(chapterIndex) || 0);
+                url.searchParams.set('livro', bookSlug);
+                url.searchParams.set('capitulo', String(safeChapterIndex + 1));
+            } else if (view === 'authors') {
+                url.searchParams.set('view', 'authors');
+            }
+
+            history.replaceState({}, '', url);
+        }
+
+        function findBookMetaBySlug(slug) {
+            if (!slug) return null;
+            return books.find(book => book.slug === slug) || null;
+        }
+
+        function clampChapterIndex(index, total) {
+            if (!Number.isFinite(index)) return 0;
+            const max = Math.max(0, total - 1);
+            return Math.min(Math.max(0, Math.floor(index)), max);
+        }
+
+        function normalizeSearchValue(value) {
+            return String(value || "")
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .trim();
+        }
+
+        function getBookCoverUrl(book) {
+            if (!book) return "";
+            if (book.coverImage) return book.coverImage;
+            return "";
+        }
+
+        function getFilteredBooks() {
+            const query = normalizeSearchValue(catalogSearchQuery);
+            if (!query) return Array.isArray(books) ? books : [];
+
+            return (Array.isArray(books) ? books : []).filter(book => {
+                const haystack = [
+                    book.title,
+                    book.author,
+                    book.authorBio,
+                    book.description,
+                    book.year,
+                    book.language,
+                    Array.isArray(book.tags) ? book.tags.join(' ') : book.tags,
+                    book.slug
+                ].map(normalizeSearchValue).join(' ');
+
+                return haystack.includes(query);
+            });
+        }
+
+        function updateCatalogSearchSummary(total, visible) {
+            const summary = document.getElementById('catalog-search-summary');
+            const clearButton = document.getElementById('catalog-search-clear');
+            if (clearButton) {
+                clearButton.classList.toggle('hidden', !catalogSearchQuery);
+            }
+            if (!summary) return;
+
+            if (!total) {
+                summary.innerText = '';
+                return;
+            }
+
+            if (!catalogSearchQuery) {
+                summary.innerText = `${total} livro${total === 1 ? '' : 's'} na colecção`;
+                return;
+            }
+
+            summary.innerText = `${visible} de ${total} livro${total === 1 ? '' : 's'} encontrados`;
+        }
+
+        function handleCatalogSearch(value) {
+            catalogSearchQuery = value || "";
+            renderGrid();
+        }
+
+        function clearCatalogSearch() {
+            catalogSearchQuery = "";
+            const input = document.getElementById('catalog-search');
+            if (input) input.value = "";
+            renderGrid();
+        }
+
+        async function resourceExists(url) {
+            try {
+                let response = await fetch(url, { method: 'HEAD', cache: 'no-cache' });
+                if (response.ok) return true;
+                if (response.status !== 405 && response.status !== 501) return false;
+            } catch (error) {
+                // Fall through to a GET probe for servers that do not support HEAD.
+            }
+
+            try {
+                const response = await fetch(url, { method: 'GET', cache: 'no-cache' });
+                return response.ok;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        async function updatePdfDownloadLink(bookSlug) {
+            const link = document.getElementById('pdf-download-link');
+            if (!link) return;
+
+            const token = ++currentBookPdfCheckToken;
+            const pdfUrl = `./data/books/${bookSlug}/compiled.pdf`;
+            currentBookPdfUrl = pdfUrl;
+            link.href = pdfUrl;
+            link.classList.add('hidden');
+            link.removeAttribute('href');
+
+            const exists = await resourceExists(pdfUrl);
+            if (token !== currentBookPdfCheckToken || currentBookSlug !== bookSlug || !currentBook) {
+                return;
+            }
+
+            if (exists) {
+                currentBookPdfUrl = pdfUrl;
+                link.href = pdfUrl;
+                link.classList.remove('hidden');
+            }
+        }
+
+        function clearPdfDownloadLink() {
+            currentBookPdfCheckToken += 1;
+            currentBookPdfUrl = "";
+            const link = document.getElementById('pdf-download-link');
+            if (!link) return;
+            link.classList.add('hidden');
+            link.removeAttribute('href');
+        }
+
+        function clampReaderFontSize(size) {
+            if (!Number.isFinite(size)) return defaultReaderFontRem;
+            return Math.min(Math.max(size, minReaderFontRem), maxReaderFontRem);
+        }
+
+        function saveReaderFontSize() {
+            localStorage.setItem(readerFontStorageKey, readerFontSizeRem.toFixed(2));
+        }
+
+        function updateFontSizeButtonsState() {
+            const decreaseBtn = document.getElementById('font-size-decrease');
+            const increaseBtn = document.getElementById('font-size-increase');
+            if (!decreaseBtn || !increaseBtn) return;
+            decreaseBtn.disabled = readerFontSizeRem <= minReaderFontRem;
+            increaseBtn.disabled = readerFontSizeRem >= maxReaderFontRem;
+        }
+
+        function loadReaderFontSize() {
+            const saved = Number.parseFloat(localStorage.getItem(readerFontStorageKey));
+            readerFontSizeRem = clampReaderFontSize(saved);
+            updateFontSizeButtonsState();
+        }
+
+        function applyReaderFontSize({ rerender = false } = {}) {
+            const contentText = document.getElementById('reader-content-text');
+            if (contentText) {
+                contentText.style.fontSize = `${readerFontSizeRem}rem`;
+            }
+            updateFontSizeButtonsState();
+            if (rerender && currentBook) {
+                showChapter(currentChapterIndex);
+            }
+        }
+
+        function increaseReaderFontSize() {
+            const next = Number((readerFontSizeRem + readerFontStepRem).toFixed(2));
+            readerFontSizeRem = clampReaderFontSize(next);
+            saveReaderFontSize();
+            applyReaderFontSize({ rerender: true });
+        }
+
+        function decreaseReaderFontSize() {
+            const next = Number((readerFontSizeRem - readerFontStepRem).toFixed(2));
+            readerFontSizeRem = clampReaderFontSize(next);
+            saveReaderFontSize();
+            applyReaderFontSize({ rerender: true });
+        }
+
+        async function loadBooks() {
+            const grid = document.getElementById('book-grid');
+            if (grid) {
+                grid.innerHTML = '<p class="text-sm text-gray-400">A carregar livros...</p>';
+            }
+
+            try {
+                const response = await fetch(booksUrl, { cache: 'no-cache' });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                books = await response.json();
+            } catch (error) {
+                console.error('Não foi possível carregar os livros:', error);
+                if (grid) {
+                    grid.innerHTML = '<p class="text-sm text-red-500">Falha ao carregar a colecção.</p>';
+                }
+                books = [];
+            }
+
+            renderGrid();
+            renderAuthors();
+            renderAdminBookOptions();
+        }
+
+        async function init() {
+            await loadBooks();
+            loadReaderFontSize();
+            applyReaderFontSize();
+
+            // Audio events
+            audio.addEventListener('timeupdate', updateProgress);
+            audio.addEventListener('ended', () => {
+                isPlaying = false;
+                updatePlayButton();
+            });
+
+            await restoreViewFromUrl();
+        }
+
+        async function restoreViewFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            // Preferred params: livro/capitulo
+            // Legacy fallback: book/chapter
+            const bookSlug = params.get('livro') || params.get('book');
+            const chapterRaw = Number.parseInt(params.get('capitulo') || params.get('chapter') || '1', 10);
+            const chapterNumber = Number.isNaN(chapterRaw) ? 1 : Math.max(1, chapterRaw);
+            const chapterIndex = chapterNumber - 1;
+            const view = params.get('view');
+
+            if (bookSlug) {
+                await openBookBySlug(bookSlug, { chapterIndex, scroll: false, updateUrl: false });
+                return;
+            }
+
+            if (view === 'authors') {
+                showAuthors({ scroll: false, updateUrl: false });
+            }
+        }
+
+        function toggleInsights() {
+            showInsights = !showInsights;
+            const status = document.getElementById('insights-status');
+            const toggleBtn = document.getElementById('insights-toggle');
+
+            if (showInsights) {
+                status.innerText = "Desactivar Notas";
+                toggleBtn.classList.add('bg-black', 'text-white', 'border-black');
+                toggleBtn.classList.remove('text-gray-500', 'hover:border-black');
+            } else {
+                status.innerText = "Activar Notas";
+                toggleBtn.classList.remove('bg-black', 'text-white', 'border-black');
+                toggleBtn.classList.add('text-gray-500', 'hover:border-black');
+                closeInsight();
+            }
+
+            if (currentBook) {
+                showChapter(currentChapterIndex);
+            }
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('book-grid');
+            if (!books.length) {
+                grid.innerHTML = '<p class="text-sm text-gray-500">Nenhum livro disponível de momento.</p>';
+                updateCatalogSearchSummary(0, 0);
+                return;
+            }
+
+            const filteredBooks = getFilteredBooks();
+            updateCatalogSearchSummary(books.length, filteredBooks.length);
+
+            if (!filteredBooks.length) {
+                grid.innerHTML = `
+                    <div class="col-span-full rounded-[28px] border border-dashed border-gray-200 bg-white px-6 py-12 text-center">
+                        <p class="serif text-2xl mb-3">Sem resultados</p>
+                        <p class="text-sm text-gray-500">Tente outro título, autor, tema ou ano.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filteredBooks.map(book => {
+                const coverUrl = getBookCoverUrl(book);
+                const coverAlt = `Capa de ${book.title || 'livro'}`;
+
+                return `
+                    <div class="book-card group" onclick="openBook(${book.id})">
+                        <div class="aspect-[3/4] relative overflow-hidden border border-gray-100 bg-white shadow-sm mb-6 transition-all group-hover:shadow-md group-hover:border-gray-200">
+                            <div class="absolute inset-0 ${coverUrl ? 'bg-white' : 'book-cover-fallback'}"></div>
+                            ${coverUrl ? `
+                                <img src="${coverUrl}" alt="${escapeHtml(coverAlt)}"
+                                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+                            ` : ''}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>
+                            <div class="absolute inset-0 p-8 flex flex-col justify-between">
+                                <div>
+                                    <p class="text-[10px] tracking-[0.3em] text-white/70 uppercase mb-4">${book.year || ''}</p>
+                                    <h3 class="serif text-2xl text-white drop-shadow-sm">${book.title}</h3>
+                                </div>
+                                <p class="text-xs tracking-widest text-white/80 uppercase drop-shadow-sm">${book.author}</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            ${book.description || ''}
+                        </p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderAuthors() {
+            const grid = document.getElementById('authors-grid');
+            if (!books.length) {
+                grid.innerHTML = '<p class="text-sm text-gray-500">Sem autores para mostrar.</p>';
+                return;
+            }
+            const byAuthor = new Map();
+            books.forEach(book => {
+                const key = book.authorId || slugify(book.author || '');
+                if (!key) return;
+                if (!byAuthor.has(key)) {
+                    byAuthor.set(key, { ...book, works: [] });
+                }
+                byAuthor.get(key).works.push(book.title);
+            });
+            const uniqueAuthors = Array.from(byAuthor.values());
+
+            grid.innerHTML = uniqueAuthors.map(book => `
+                <div class="bg-white p-8 border border-gray-100">
+                    <h3 class="serif text-xl mb-2">${book.author}</h3>
+                    <div class="w-12 h-1 bg-gray-100 mb-6"></div>
+                    <p class="text-gray-600 text-sm leading-relaxed">${book.authorBio || 'Biografia não disponível.'}</p>
+                    <div class="mt-6 pt-4 border-t border-gray-50 flex gap-2">
+                        <span class="text-[10px] uppercase tracking-widest text-gray-400">Obras na colecção:</span>
+                        <span class="text-[10px] uppercase tracking-widest text-black font-medium">
+                            ${book.works.join(', ')}
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function openBook(id, options = {}) {
+            const meta = books.find(b => b.id === id);
+            if (!meta) return;
+            return openBookBySlug(meta.slug, options);
+        }
+
+        async function openBookBySlug(slug, options = {}) {
+            const meta = findBookMetaBySlug(slug);
+            if (!meta) {
+                showHome({ updateUrl: true });
+                return;
+            }
+
+            const chapterIndex = Number.isFinite(options.chapterIndex) ? options.chapterIndex : 0;
+            const shouldScroll = options.scroll !== false;
+            const shouldUpdateUrl = options.updateUrl !== false;
+
+            // Switch views immediately
+            document.getElementById('home-view').classList.add('hidden');
+            document.getElementById('authors-view').classList.add('hidden');
+            document.getElementById('reader-view').classList.remove('hidden');
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
+            // Show temporary loading state
+            document.getElementById('reader-title').innerText = meta.title;
+            document.getElementById('reader-author').innerText = meta.author;
+            document.getElementById('chapter-nav').innerHTML = '';
+            document.getElementById('reader-content').innerHTML = '<div class="text-center py-20 text-gray-400 animate-pulse">A carregar conteúdo...</div>';
+            document.getElementById('context-container').innerHTML = '';
+            document.getElementById('chapter-footer').innerHTML = '';
+            clearPdfDownloadLink();
+
+            try {
+                // Fetch the detailed book content
+                const response = await fetch(`./data/books/${meta.slug}/compiled.json`);
+                if (!response.ok) throw new Error('Book not found');
+
+                currentBook = await response.json();
+                currentBookSlug = meta.slug || "";
+
+                // Now render the full content
+                renderChapterNav();
+                updatePdfDownloadLink(currentBookSlug);
+                showChapter(chapterIndex, { updateUrl: shouldUpdateUrl });
+                if (shouldScroll) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            } catch (error) {
+                console.error("Error loading book:", error);
+                clearPdfDownloadLink();
+                document.getElementById('reader-content').innerHTML =
+                    `<div class="text-center py-20 text-red-400">
+                        <p>Não foi possível carregar o conteúdo deste livro.</p>
+                        <button onclick="showHome()" class="mt-4 text-xs uppercase tracking-widest border-b border-red-400">Voltar</button>
+                    </div>`;
+            }
+        }
+
+        function renderChapterNav() {
+            const nav = document.getElementById('chapter-nav');
+            nav.innerHTML = currentBook.chapters.map((ch, index) => `
+                <button onclick="showChapter(${index})" 
+                        id="nav-btn-${index}"
+                        class="chapter-btn px-4 py-2 text-xs border border-gray-200 rounded-full hover:border-gray-400 transition-all ${index === currentChapterIndex ? 'active' : ''}">
+                    ${ch.title.toUpperCase()}
+                </button>
+            `).join('');
+        }
+
+        function showChapter(index, options = {}) {
+            // Reset audio if changing
+            if (index !== currentChapterIndex) {
+                audio.pause();
+                isPlaying = false;
+                audio.currentTime = 0;
+            }
+
+            const safeIndex = clampChapterIndex(index, currentBook.chapters.length);
+            currentChapterIndex = safeIndex;
+            const contentDiv = document.getElementById('reader-content');
+            const contextDiv = document.getElementById('context-container');
+            const chapter = currentBook.chapters[safeIndex];
+
+            // Update top nav styling
+            document.querySelectorAll('.chapter-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`nav-btn-${safeIndex}`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Handle Audio Player Initial State (Dynamic Button)
+            let audioHtml = '';
+            if (chapter.audioUrl) {
+                audio.src = chapter.audioUrl;
+                audioHtml = `
+                    <div id="audio-wrapper" class="flex justify-center mb-10 transition-all duration-500 ease-in-out">
+                        <button onclick="revealAndPlayAudio()" class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-200 rounded-full hover:border-black hover:bg-black hover:text-white transition-all group shadow-sm">
+                            <svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-medium">Ouvir</span>
+                        </button>
+                    </div>
+                `;
+            }
+
+            // Handle Context Box
+            if (showInsights && chapter.context) {
+                contextDiv.innerHTML = `
+                    <div class="context-box">
+                        <strong class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Contexto do Capítulo</strong>
+                        ${chapter.context}
+                    </div>
+                `;
+            } else {
+                contextDiv.innerHTML = '';
+            }
+
+            // Process Text for Highlights
+            let processedContent = chapter.content;
+
+            if (showInsights && chapter.annotations && chapter.annotations.length > 0) {
+                chapter.annotations.forEach(note => {
+                    const regex = new RegExp(`(${note.target})`, 'g');
+                    processedContent = processedContent.replace(regex, `<span class="insight-highlight" onclick="showInsight('${note.target}', '${note.text.replace(/'/g, "\\'")}')">$1</span>`);
+                });
+            }
+
+            contentDiv.innerHTML = `
+                <h3 class="text-center text-sm tracking-[0.3em] uppercase mb-8 text-gray-300">— ${chapter.title} —</h3>
+                ${audioHtml}
+                <div id="reader-content-text" class="whitespace-pre-line leading-relaxed" style="font-size: ${readerFontSizeRem}rem;">${processedContent}</div>
+            `;
+            applyReaderFontSize();
+
+            renderFooterNav();
+
+            if (options.updateUrl !== false) {
+                updateUrlState({
+                    bookSlug: currentBookSlug,
+                    chapterIndex: currentChapterIndex
+                });
+            }
+        }
+
+        // Audio Functions
+        function revealAndPlayAudio() {
+            const wrapper = document.getElementById('audio-wrapper');
+            const chapter = currentBook.chapters[currentChapterIndex];
+
+            wrapper.innerHTML = `
+                <div class="audio-player-container w-full max-w-[500px] flex items-center gap-4 bg-white border border-gray-200 rounded-full px-4 py-3 shadow-md animate-fade-in">
+                    <button onclick="toggleAudio()" id="play-btn" class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition-transform">
+                         <svg id="play-icon" width="12" height="12" fill="currentColor" viewBox="0 0 24 24" class="ml-0.5 hidden"><path d="M8 5v14l11-7z"/></svg>
+                         <svg id="pause-icon" width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <div class="flex-grow">
+                        <div class="progress-track w-full rounded-full h-1 bg-gray-100" onclick="seekAudio(event)">
+                            <div id="audio-progress" class="progress-fill rounded-full h-full bg-black w-0"></div>
+                        </div>
+                    </div>
+                    <div class="text-[10px] tracking-widest text-gray-400 font-medium font-mono min-w-[60px] text-right">
+                        <span id="current-time">00:00</span> / ${chapter.audioDuration || '??:??'}
+                    </div>
+                </div>
+            `;
+
+            if (!isPlaying) {
+                toggleAudio();
+            }
+        }
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+            } else {
+                audio.play();
+                isPlaying = true;
+            }
+            updatePlayButton();
+        }
+
+        function updatePlayButton() {
+            // Safely check if elements exist (in case player isn't revealed yet)
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+
+            if (!playIcon || !pauseIcon) return;
+
+            if (isPlaying) {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        }
+
+        function updateProgress() {
+            if (!audio.duration) return;
+            const percentage = (audio.currentTime / audio.duration) * 100;
+
+            const progressBar = document.getElementById('audio-progress');
+            const timeDisplay = document.getElementById('current-time');
+
+            if (progressBar) progressBar.style.width = percentage + '%';
+
+            if (timeDisplay) {
+                const mins = Math.floor(audio.currentTime / 60);
+                const secs = Math.floor(audio.currentTime % 60);
+                timeDisplay.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+        }
+
+        function seekAudio(event) {
+            const track = event.currentTarget;
+            const clickPosition = (event.clientX - track.getBoundingClientRect().left) / track.offsetWidth;
+            audio.currentTime = clickPosition * audio.duration;
+        }
+
+        function showInsight(term, text) {
+            const modal = document.getElementById('insight-modal');
+            document.getElementById('insight-term').innerText = term;
+            document.getElementById('insight-text').innerText = text;
+            modal.classList.remove('hidden');
+        }
+
+        function closeInsight() {
+            document.getElementById('insight-modal').classList.add('hidden');
+        }
+
+        function renderFooterNav() {
+            const footer = document.getElementById('chapter-footer');
+            const hasPrev = currentChapterIndex > 0;
+            const hasNext = currentChapterIndex < currentBook.chapters.length - 1;
+
+            let html = '';
+
+            if (hasPrev) {
+                html += `
+                    <button onclick="showChapter(${currentChapterIndex - 1}); window.scrollTo({top: 250, behavior: 'smooth'})" class="group text-left">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-1 group-hover:text-gray-600">← Anterior</span>
+                        <span class="serif text-lg border-b border-transparent group-hover:border-gray-300 transition-colors">
+                            ${currentBook.chapters[currentChapterIndex - 1].title}
+                        </span>
+                    </button>
+                `;
+            } else {
+                html += `<div class="w-1/3"></div>`;
+            }
+
+            if (hasNext) {
+                html += `
+                    <button onclick="showChapter(${currentChapterIndex + 1}); window.scrollTo({top: 250, behavior: 'smooth'})" class="group text-right">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-1 group-hover:text-gray-600">Próximo →</span>
+                        <span class="serif text-lg border-b border-transparent group-hover:border-gray-300 transition-colors">
+                            ${currentBook.chapters[currentChapterIndex + 1].title}
+                        </span>
+                    </button>
+                `;
+            } else {
+                html += `
+                    <button onclick="showHome()" class="group text-right">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-1">Fim</span>
+                        <span class="serif text-lg border-b border-transparent group-hover:border-gray-300 transition-colors">
+                            Voltar à Colecção
+                        </span>
+                    </button>
+                `;
+            }
+
+            footer.innerHTML = html;
+        }
+
+        function showHome(options = {}) {
+            // Stop audio if playing
+            audio.pause();
+            isPlaying = false;
+            clearPdfDownloadLink();
+
+            document.getElementById('home-view').classList.remove('hidden');
+            document.getElementById('authors-view').classList.add('hidden');
+            document.getElementById('reader-view').classList.add('hidden');
+            document.getElementById('nav-collection').classList.add('active');
+            document.getElementById('nav-authors').classList.remove('active');
+            closeInsight();
+            if (options.updateUrl !== false) {
+                updateUrlState();
+            }
+            if (options.scroll !== false) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function showAuthors(options = {}) {
+            document.getElementById('home-view').classList.add('hidden');
+            document.getElementById('reader-view').classList.add('hidden');
+            document.getElementById('authors-view').classList.remove('hidden');
+            document.getElementById('nav-collection').classList.remove('active');
+            document.getElementById('nav-authors').classList.add('active');
+            if (options.updateUrl !== false) {
+                updateUrlState({ view: 'authors' });
+            }
+            if (options.scroll !== false) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        const adminTemplate = {
+            id: "",
+            slug: "",
+            title: "",
+            author: "",
+            coverImage: "",
+            year: "",
+            authorId: "",
+            authorBio: "",
+            description: "",
+            tags: "",
+            language: "pt",
+            chapterOrder: [],
+            chapters: []
+        };
+        let adminBook = cloneAdminTemplate();
+
+        function cloneAdminTemplate() {
+            return JSON.parse(JSON.stringify(adminTemplate));
+        }
+
+        function normalizeAdminChapter(chapter) {
+            const annotations = Array.isArray(chapter.annotations)
+                ? chapter.annotations.map(annotation => ({
+                    target: annotation && annotation.target ? annotation.target : "",
+                    text: annotation && annotation.text ? annotation.text : ""
+                }))
+                : [];
+            return {
+                slug: chapter.slug || "",
+                title: chapter.title || "",
+                context: chapter.context || "",
+                content: chapter.content || "",
+                audioUrl: chapter.audioUrl || "",
+                audioDuration: chapter.audioDuration || "",
+                annotations
+            };
+        }
+
+        function normalizedChapterSlug(chapter) {
+            return chapter.slug || slugify(chapter.title || "");
+        }
+
+        function syncAdminChapterOrder() {
+            const orderedSlugs = adminBook.chapters
+                .map(chapter => normalizedChapterSlug(chapter))
+                .filter(Boolean);
+            adminBook.chapterOrder = [...new Set(orderedSlugs)];
+        }
+
+        function openAdminPanel() {
+            const panel = document.getElementById('admin-panel');
+            if (!panel) return;
+            panel.classList.remove('hidden');
+            renderAdminBookOptions();
+            renderAdminForm();
+        }
+
+        function closeAdminPanel() {
+            const panel = document.getElementById('admin-panel');
+            if (!panel) return;
+            panel.classList.add('hidden');
+        }
+
+        function resetAdminBook() {
+            adminBook = cloneAdminTemplate();
+            renderAdminForm();
+        }
+
+        function adminUpdateMeta(field, element) {
+            adminBook[field] = element.value;
+            updateAdminPreview();
+        }
+
+        function adminUpdateChapterField(index, field, element) {
+            if (!adminBook.chapters[index]) return;
+            adminBook.chapters[index][field] = element.value;
+            syncAdminChapterOrder();
+            updateAdminPreview();
+        }
+
+        function adminUpdateAnnotation(chapterIndex, annotationIndex, field, element) {
+            const chapter = adminBook.chapters[chapterIndex];
+            if (!chapter || !chapter.annotations[annotationIndex]) return;
+            chapter.annotations[annotationIndex][field] = element.value;
+            updateAdminPreview();
+        }
+
+        function addAdminChapter() {
+            adminBook.chapters.push(normalizeAdminChapter({}));
+            syncAdminChapterOrder();
+            renderAdminChapters();
+            updateAdminPreview();
+        }
+
+        function removeAdminChapter(index) {
+            adminBook.chapters.splice(index, 1);
+            syncAdminChapterOrder();
+            renderAdminChapters();
+            updateAdminPreview();
+        }
+
+        function moveAdminChapter(index, direction) {
+            const target = index + direction;
+            if (target < 0 || target >= adminBook.chapters.length) return;
+            const current = adminBook.chapters[index];
+            adminBook.chapters[index] = adminBook.chapters[target];
+            adminBook.chapters[target] = current;
+            syncAdminChapterOrder();
+            renderAdminChapters();
+            updateAdminPreview();
+        }
+
+        function addAdminAnnotation(index) {
+            if (!adminBook.chapters[index]) return;
+            adminBook.chapters[index].annotations.push({ target: "", text: "" });
+            renderAdminChapters();
+            updateAdminPreview();
+        }
+
+        function removeAdminAnnotation(chapterIndex, annotationIndex) {
+            const chapter = adminBook.chapters[chapterIndex];
+            if (!chapter) return;
+            chapter.annotations.splice(annotationIndex, 1);
+            renderAdminChapters();
+            updateAdminPreview();
+        }
+
+        function adminApplyAnnotationsJson(chapterIndex) {
+            const chapter = adminBook.chapters[chapterIndex];
+            if (!chapter) return;
+
+            const textarea = document.getElementById(`admin-annotations-json-${chapterIndex}`);
+            if (!textarea) return;
+
+            try {
+                const raw = JSON.parse(textarea.value || '[]');
+                const parsed = Array.isArray(raw)
+                    ? raw
+                    : (raw && Array.isArray(raw.annotations) ? raw.annotations : null);
+
+                if (!parsed) {
+                    throw new Error('Use um array JSON ou um objecto com a chave "annotations".');
+                }
+
+                chapter.annotations = parsed
+                    .map(item => ({
+                        target: item && item.target ? String(item.target) : "",
+                        text: item && item.text ? String(item.text) : ""
+                    }))
+                    .filter(item => item.target && item.text);
+
+                renderAdminChapters();
+                updateAdminPreview();
+            } catch (error) {
+                alert("JSON de anotações inválido: " + error.message);
+                console.error(error);
+            }
+        }
+
+        function renderAdminBookOptions() {
+            const select = document.getElementById('admin-book-select');
+            if (!select) return;
+
+            if (!Array.isArray(books) || !books.length) {
+                select.innerHTML = '<option value="">Sem livros disponíveis</option>';
+                return;
+            }
+
+            select.innerHTML = `
+                <option value="">Selecione um livro...</option>
+                ${books.map(book => `
+                    <option value="${escapeHtml(book.slug || '')}">
+                        ${escapeHtml(book.title || 'Sem título')} — ${escapeHtml(book.author || 'Sem autor')}
+                    </option>
+                `).join('')}
+            `;
+        }
+
+        function applyAdminData(data) {
+            if (!data) throw new Error("Dados inválidos");
+            if (Array.isArray(data) && data.length > 0) data = data[0];
+
+            // Reset to template
+            adminBook = cloneAdminTemplate();
+
+            const splitShape = data.book && (data.chapters || data.chapterFiles);
+            const source = splitShape ? data.book : data;
+
+            // Merge simple fields
+            Object.keys(adminBook).forEach(key => {
+                if (source[key] !== undefined && key !== 'chapters' && key !== 'tags' && key !== 'chapterOrder') {
+                    adminBook[key] = source[key];
+                }
+            });
+
+            // Handle Tags (Array -> String)
+            if (Array.isArray(source.tags)) {
+                adminBook.tags = source.tags.join(', ');
+            } else if (typeof source.tags === 'string') {
+                adminBook.tags = source.tags;
+            }
+
+            const chapterOrder = Array.isArray(source.chapterOrder) ? source.chapterOrder.filter(Boolean) : [];
+
+            if (splitShape) {
+                const rawChapters = data.chapters || data.chapterFiles || {};
+                const chapterMap = Array.isArray(rawChapters)
+                    ? Object.fromEntries(rawChapters.map(ch => [ch.slug, ch]).filter(entry => entry[0]))
+                    : rawChapters;
+
+                const ordered = chapterOrder
+                    .map(slug => chapterMap[slug] ? normalizeAdminChapter({ ...chapterMap[slug], slug }) : null)
+                    .filter(Boolean);
+
+                const leftovers = Object.entries(chapterMap)
+                    .filter(([slug]) => !chapterOrder.includes(slug))
+                    .map(([slug, chapter]) => normalizeAdminChapter({ ...chapter, slug }));
+
+                adminBook.chapters = [...ordered, ...leftovers];
+            } else if (Array.isArray(data.chapters)) {
+                adminBook.chapters = data.chapters.map(ch => normalizeAdminChapter(ch));
+            }
+
+            syncAdminChapterOrder();
+            renderAdminForm();
+        }
+
+        async function loadAdminBookFromLibrary(button) {
+            const select = document.getElementById('admin-book-select');
+            const selectedSlug = select ? select.value : "";
+            if (!selectedSlug) return;
+
+            const originalText = button ? button.innerText : "";
+            if (button) button.innerText = "A carregar...";
+
+            try {
+                const bookResponse = await fetch(`./data/books/${selectedSlug}/book.json`, { cache: 'no-cache' });
+                if (!bookResponse.ok) {
+                    throw new Error(`Livro não encontrado (book.json): HTTP ${bookResponse.status}`);
+                }
+
+                const book = await bookResponse.json();
+                const chapterOrder = Array.isArray(book.chapterOrder) ? book.chapterOrder : [];
+                const chapterEntries = await Promise.all(chapterOrder.map(async (chapterSlug) => {
+                    const chapterResponse = await fetch(`./data/books/${selectedSlug}/chapters/${chapterSlug}.json`, { cache: 'no-cache' });
+                    if (!chapterResponse.ok) {
+                        throw new Error(`Capítulo '${chapterSlug}' não encontrado: HTTP ${chapterResponse.status}`);
+                    }
+                    const chapter = await chapterResponse.json();
+                    return [chapterSlug, chapter];
+                }));
+
+                applyAdminData({
+                    book,
+                    chapters: Object.fromEntries(chapterEntries)
+                });
+
+                if (button) {
+                    button.innerText = "Feito!";
+                    setTimeout(() => {
+                        button.innerText = originalText || "Carregar";
+                    }, 2000);
+                }
+            } catch (error) {
+                alert("Erro ao carregar livro da pasta: " + error.message);
+                console.error(error);
+                if (button) button.innerText = originalText || "Carregar";
+            }
+        }
+
+        function renderAdminForm() {
+            syncAdminChapterOrder();
+            const toFill = [
+                { id: 'admin-id', value: adminBook.id },
+                { id: 'admin-slug', value: adminBook.slug },
+                { id: 'admin-title', value: adminBook.title },
+                { id: 'admin-author', value: adminBook.author },
+                { id: 'admin-coverImage', value: adminBook.coverImage },
+                { id: 'admin-authorId', value: adminBook.authorId },
+                { id: 'admin-year', value: adminBook.year },
+                { id: 'admin-language', value: adminBook.language },
+                { id: 'admin-tags', value: adminBook.tags },
+                { id: 'admin-description', value: adminBook.description },
+                { id: 'admin-authorBio', value: adminBook.authorBio }
+            ];
+            toFill.forEach(field => {
+                const input = document.getElementById(field.id);
+                if (input) input.value = field.value || "";
+            });
+            renderAdminChapters();
+            updateAdminPreview();
+        }
+
+        function renderAdminChapters() {
+            const container = document.getElementById('admin-chapters-list');
+            if (!container) return;
+            if (!adminBook.chapters.length) {
+                container.innerHTML = '<p class="text-sm text-gray-500">Ainda não há capítulos. Use "+ Capítulo" para começar.</p>';
+                return;
+            }
+
+            container.innerHTML = adminBook.chapters.map((chapter, chapterIndex) => `
+                <div class="bg-white border border-gray-100 rounded-2xl p-5 space-y-4 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Capítulo ${chapterIndex + 1}</p>
+                        <div class="flex items-center gap-3">
+                            <button type="button" onclick="moveAdminChapter(${chapterIndex}, -1)" class="text-[10px] uppercase tracking-[0.4em] text-gray-500 disabled:text-gray-300" ${chapterIndex === 0 ? 'disabled' : ''}>Subir</button>
+                            <button type="button" onclick="moveAdminChapter(${chapterIndex}, 1)" class="text-[10px] uppercase tracking-[0.4em] text-gray-500 disabled:text-gray-300" ${chapterIndex === adminBook.chapters.length - 1 ? 'disabled' : ''}>Descer</button>
+                            <button type="button" onclick="removeAdminChapter(${chapterIndex})" class="text-[10px] uppercase tracking-[0.4em] text-red-500">Remover</button>
+                        </div>
+                    </div>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Título</label>
+                            <input type="text" value="${escapeHtml(chapter.title)}" class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm" placeholder="Título do capítulo" oninput="adminUpdateChapterField(${chapterIndex}, 'title', this)">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Slug</label>
+                            <input type="text" value="${escapeHtml(chapter.slug)}" class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm" placeholder="ex: canto-i-proposicao" oninput="adminUpdateChapterField(${chapterIndex}, 'slug', this)">
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Contexto</label>
+                        <textarea class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm" rows="2" placeholder="Notas de contexto" oninput="adminUpdateChapterField(${chapterIndex}, 'context', this)">${escapeHtml(chapter.context)}</textarea>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Conteúdo</label>
+                        <textarea class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm" rows="4" placeholder="Texto ou HTML do capítulo" oninput="adminUpdateChapterField(${chapterIndex}, 'content', this)">${escapeHtml(chapter.content)}</textarea>
+                    </div>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Áudio URL</label>
+                            <input type="text" value="${escapeHtml(chapter.audioUrl)}" class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm" placeholder="https://..." oninput="adminUpdateChapterField(${chapterIndex}, 'audioUrl', this)">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Duração</label>
+                            <input type="text" value="${escapeHtml(chapter.audioDuration)}" class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-sm" placeholder="00:00" oninput="adminUpdateChapterField(${chapterIndex}, 'audioDuration', this)">
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Anotações (JSON)</p>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-[0.4em] text-gray-400">Colar JSON de anotações</label>
+                            <textarea id="admin-annotations-json-${chapterIndex}" class="w-full rounded-2xl border border-gray-200 px-4 py-2 text-xs font-mono bg-gray-50" rows="4" placeholder='[{"target":"palavra","text":"explicação"}]'>${escapeHtml(JSON.stringify(chapter.annotations || [], null, 2))}</textarea>
+                            <div class="flex items-center gap-3">
+                                <button type="button" onclick="adminApplyAnnotationsJson(${chapterIndex})" class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition">Aplicar JSON</button>
+                                <p class="text-xs text-gray-500">Aceita array JSON ou <code>{ "annotations": [...] }</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(value) {
+            if (!value) return '';
+            return value.replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function updateAdminPreview() {
+            const output = document.getElementById('admin-json-output');
+            if (!output) return;
+            const payload = getAdminPayload();
+            output.value = JSON.stringify(payload, null, 2);
+        }
+
+        function getAdminPayload() {
+            const tags = adminBook.tags
+                ? adminBook.tags.split(',').map(tag => tag.trim()).filter(Boolean)
+                : [];
+            const chapters = adminBook.chapters.map(chapter => normalizeAdminChapter({
+                ...chapter,
+                slug: normalizedChapterSlug(chapter)
+            })).filter(chapter => chapter.slug);
+
+            const chapterOrder = chapters.map(chapter => chapter.slug);
+            const chapterFiles = Object.fromEntries(chapters.map(chapter => [chapter.slug, {
+                title: chapter.title,
+                context: chapter.context,
+                content: chapter.content,
+                audioUrl: chapter.audioUrl,
+                audioDuration: chapter.audioDuration,
+                annotations: (chapter.annotations || []).map(annotation => ({
+                    target: annotation.target,
+                    text: annotation.text
+                })).filter(annotation => annotation.target && annotation.text)
+            }]));
+
+            const book = {
+                id: adminBook.id ? Number(adminBook.id) : undefined,
+                slug: adminBook.slug || slugify(adminBook.title || ""),
+                title: adminBook.title,
+                author: adminBook.author,
+                coverImage: adminBook.coverImage,
+                authorId: adminBook.authorId || slugify(adminBook.author || ""),
+                authorBio: adminBook.authorBio,
+                description: adminBook.description,
+                year: adminBook.year,
+                language: adminBook.language,
+                tags,
+                chapterOrder
+            };
+
+            Object.keys(book).forEach(key => {
+                const value = book[key];
+                if (value === undefined || (typeof value === 'string' && !value.trim())) {
+                    delete book[key];
+                }
+            });
+            if (!book.tags || !book.tags.length) {
+                delete book.tags;
+            }
+            if (!book.slug) {
+                delete book.slug;
+            }
+            if (!book.chapterOrder || !book.chapterOrder.length) {
+                delete book.chapterOrder;
+            }
+
+            const compiled = {
+                ...book,
+                chapters: chapterOrder.map(slug => ({
+                    slug,
+                    ...chapterFiles[slug]
+                }))
+            };
+            delete compiled.chapterOrder;
+
+            return {
+                book,
+                chapters: chapterFiles,
+                compiled
+            };
+        }
+
+        function slugify(value) {
+            return value
+                .toString()
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
+
+        function getAdminApiBase() {
+            const input = document.getElementById('admin-api-url');
+            const value = input && input.value ? input.value.trim() : 'http://127.0.0.1:8765';
+            return value.replace(/\/+$/, '');
+        }
+
+        function setAdminFeedback(message, isError = false) {
+            const feedback = document.getElementById('admin-copy-feedback');
+            if (!feedback) return;
+            feedback.classList.toggle('text-green-600', !isError);
+            feedback.classList.toggle('text-red-600', isError);
+            feedback.innerText = message;
+            setTimeout(() => {
+                feedback.innerText = '';
+            }, 3000);
+        }
+
+        function getAdminApiTroubleshootingTip() {
+            const base = getAdminApiBase();
+            if (window.location.protocol === 'https:' && base.startsWith('http://')) {
+                return 'Bloqueio de segurança: página HTTPS não pode chamar API HTTP local (mixed content). Abra a página em http:// ou file://, ou use uma API em HTTPS.';
+            }
+            return `Verifique se a API está ativa: python3 scripts/admin_api.py (URL atual: ${base}).`;
+        }
+
+        async function checkAdminApiHealth() {
+            const base = getAdminApiBase();
+            const response = await fetch(`${base}/api/health`, { cache: 'no-cache' });
+            if (!response.ok) {
+                throw new Error(`Healthcheck falhou (HTTP ${response.status})`);
+            }
+            const result = await response.json();
+            if (!result.ok) {
+                throw new Error('Healthcheck devolveu ok=false');
+            }
+        }
+
+        async function saveAdminFiles(button) {
+            const payload = getAdminPayload();
+            if (!payload.book || !payload.book.slug) {
+                setAdminFeedback('Defina um slug válido antes de guardar.', true);
+                return;
+            }
+
+            const originalText = button ? button.innerText : '';
+            if (button) button.innerText = 'A guardar...';
+
+            try {
+                await checkAdminApiHealth();
+                const response = await fetch(`${getAdminApiBase()}/api/books/save`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (!response.ok || !result.ok) {
+                    throw new Error(result.error || `HTTP ${response.status}`);
+                }
+
+                if (Array.isArray(result.books)) {
+                    books = result.books;
+                    renderGrid();
+                    renderAuthors();
+                    renderAdminBookOptions();
+                }
+                setAdminFeedback('Ficheiros guardados com sucesso.');
+            } catch (error) {
+                const hint = getAdminApiTroubleshootingTip();
+                const message = error && error.message ? error.message : 'Falha de rede';
+                setAdminFeedback(`Erro ao guardar: ${message}. ${hint}`, true);
+                console.error(error);
+            } finally {
+                if (button) button.innerText = originalText || 'Guardar Ficheiros';
+            }
+        }
+
+        async function compileAllBooks(button) {
+            const originalText = button ? button.innerText : '';
+            if (button) button.innerText = 'A compilar...';
+
+            try {
+                await checkAdminApiHealth();
+                const response = await fetch(`${getAdminApiBase()}/api/compile`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({})
+                });
+                const result = await response.json();
+                if (!response.ok || !result.ok) {
+                    throw new Error(result.error || `HTTP ${response.status}`);
+                }
+                setAdminFeedback('Compilação concluída.');
+            } catch (error) {
+                const hint = getAdminApiTroubleshootingTip();
+                const message = error && error.message ? error.message : 'Falha de rede';
+                setAdminFeedback(`Erro na compilação: ${message}. ${hint}`, true);
+                console.error(error);
+            } finally {
+                if (button) button.innerText = originalText || 'Compilar Tudo';
+            }
+        }
+
+        function copyAdminJson() {
+            const output = document.getElementById('admin-json-output');
+            const feedback = document.getElementById('admin-copy-feedback');
+            if (!output || !output.value.trim()) return;
+            const showMessage = (text) => {
+                if (feedback) {
+                    feedback.innerText = text;
+                    setTimeout(() => {
+                        feedback.innerText = "";
+                    }, 2000);
+                }
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(output.value).then(() => showMessage('Copiado!'), () => showMessage('Copie manualmente.'));
+            } else if (document.execCommand) {
+                output.select();
+                document.execCommand('copy');
+                showMessage('Copiado!');
+            } else {
+                showMessage('Copie manualmente.');
+            }
+        }
+
+        function copyMergedJson() {
+            const feedback = document.getElementById('admin-copy-feedback');
+            const payload = getAdminPayload();
+            const mergedEntry = {
+                id: payload.book.id,
+                slug: payload.book.slug,
+                title: payload.book.title,
+                author: payload.book.author,
+                coverImage: payload.book.coverImage,
+                authorId: payload.book.authorId,
+                authorBio: payload.book.authorBio,
+                description: payload.book.description,
+                year: payload.book.year,
+                language: payload.book.language,
+                tags: payload.book.tags
+            };
+            Object.keys(mergedEntry).forEach(key => {
+                const value = mergedEntry[key];
+                if (value === undefined || (typeof value === 'string' && !value.trim())) {
+                    delete mergedEntry[key];
+                }
+            });
+            const merged = Array.isArray(books) ? [...books, mergedEntry] : [mergedEntry];
+            const text = JSON.stringify(merged, null, 2);
+            const showMessage = (message) => {
+                if (feedback) {
+                    feedback.innerText = message;
+                    setTimeout(() => feedback.innerText = "", 2000);
+                }
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => showMessage('Dataset completo copiado!'), () => showMessage('Copie manualmente.'));
+            } else if (document.execCommand) {
+                const tmp = document.createElement('textarea');
+                tmp.value = text;
+                document.body.appendChild(tmp);
+                tmp.select();
+                document.execCommand('copy');
+                document.body.removeChild(tmp);
+                showMessage('Dataset completo copiado!');
+            } else {
+                showMessage('Copie manualmente.');
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+
+</html>

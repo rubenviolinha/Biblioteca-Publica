@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "slug": "os-lusiadas",
+    "title": "Os Lusíadas",
+    "author": "Luís de Camões",
+    "authorId": "luis-de-camoes",
+    "authorBio": "Considerado o maior poeta de língua portuguesa.",
+    "description": "Epopeia sobre os Descobrimentos portugueses.",
+    "year": "1572",
+    "language": "pt",
+    "tags": [
+      "epopeia",
+      "descobrimentos"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "mensagem",
+    "title": "Mensagem",
+    "author": "Fernando Pessoa",
+    "year": "1934",
+    "authorBio": "Poeta moderno e metafísico.",
+    "description": "Única obra publicada em vida por Pessoa.",
+    "tags": [
+      "modernismo"
+    ],
+    "language": "pt",
+    "authorId": "fernando-pessoa"
+  },
+  {
+    "id": 3,
+    "slug": "os-maias",
+    "title": "Os Maias",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Mestre do realismo português que expõe a decadência da alta sociedade lisboeta.",
+    "description": "Romance sobre a família Maia, a nostalgia de um tempo perdido e o peso da herança social.",
+    "year": "1888",
+    "language": "pt",
+    "tags": [
+      "realismo",
+      "Lisboa",
+      "sociedade"
+    ]
+  }
+]
