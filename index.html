@@ -156,12 +156,12 @@
         @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translate(-50%, 10px);
+                transform: translateY(10px);
             }
 
             to {
                 opacity: 1;
-                transform: translate(-50%, 0);
+                transform: translateY(0);
             }
         }
 
@@ -215,25 +215,14 @@
     </div>
 
     <!-- Header -->
-    <header class="py-12 px-6 md:px-12 grid grid-cols-[1fr_auto_1fr] items-center gap-4 border-b border-gray-100">
+    <header class="py-12 px-6 md:px-12 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gray-100">
         <div class="cursor-pointer" onclick="showHome()">
             <h1 class="serif text-2xl font-bold tracking-tight">Biblioteca Pública</h1>
             <p class="text-xs uppercase tracking-[0.2em] text-gray-400 mt-1">Portugal • Domínio Público</p>
         </div>
-        <div class="hidden md:block text-[10px] uppercase tracking-[0.4em] text-gray-400 justify-self-center">Leitura livre</div>
-        <div class="flex items-center gap-6 justify-self-end">
-            <nav class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <button type="button" onclick="showHome()" id="nav-collection" class="nav-link nav-collection active">COLECÇÃO</button>
-                <button type="button" onclick="showAuthors()" id="nav-authors" class="nav-link nav-authors">AUTORES</button>
-            </nav>
-            <button id="admin-entry" onclick="openAdminPanel()"
-                class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition-all">
-                ADMIN
-            </button>
-        </div>
-        <nav class="col-span-3 flex md:hidden justify-center gap-8 text-sm font-medium tracking-wide" aria-label="Navegação principal">
-            <button type="button" onclick="showHome()" class="nav-link nav-collection active">COLECÇÃO</button>
-            <button type="button" onclick="showAuthors()" class="nav-link nav-authors">AUTORES</button>
+        <nav class="flex self-center md:self-auto gap-8 text-sm font-medium tracking-wide" aria-label="Navegação principal">
+            <button type="button" onclick="showHome()" id="nav-collection" class="nav-link nav-collection active">COLECÇÃO</button>
+            <button type="button" onclick="showAuthors()" id="nav-authors" class="nav-link nav-authors">AUTORES</button>
         </nav>
     </header>
 
@@ -243,10 +232,8 @@
         <div id="home-view">
             <div class="max-w-6xl mx-auto">
                 <header class="mb-16">
-                    <h2 class="serif text-4xl md:text-5xl mb-4">A essência da literatura lusófona, <br>disponível para
-                        todos.</h2>
-                    <p class="text-gray-500 max-w-lg">Obras clássicas que moldaram a nossa língua e cultura, preservadas
-                        num formato digital puro e essencial.</p>
+                    <h2 class="serif text-4xl md:text-5xl mb-4">Literatura lusófona,<br>disponível para todos.</h2>
+                    <p class="text-gray-500 max-w-lg">Obras clássicas em domínio público que moldaram a nossa língua e cultura, preservadas num formato digital.</p>
                 </header>
 
                 <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -326,9 +313,9 @@
                         </a>
 
                         <!-- Insights Toggle -->
-                        <button onclick="toggleInsights()" id="insights-toggle"
-                            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-xs uppercase tracking-wider text-gray-500 hover:border-black hover:text-black transition-all">
-                            <span id="insights-status">Activar Notas</span>
+                        <button onclick="toggleInsights()" id="insights-toggle" aria-pressed="true"
+                            class="flex items-center gap-2 px-4 py-2 rounded-full border border-black bg-black text-white text-xs uppercase tracking-wider transition-all">
+                            <span id="insights-status">Desactivar Notas</span>
                             <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -557,7 +544,7 @@
         let currentBookPdfUrl = "";
         let currentBookPdfCheckToken = 0;
         let currentChapterIndex = 0;
-        let showInsights = false;
+        let showInsights = true;
         const readerFontStorageKey = 'readerFontSizeRem';
         const defaultReaderFontRem = 1.15;
         const minReaderFontRem = 0.95;
@@ -808,10 +795,6 @@
             loadReaderFontSize();
             applyReaderFontSize();
             document.getElementById('current-year').textContent = new Date().getFullYear();
-            const adminEntry = document.getElementById('admin-entry');
-            if (adminEntry && !['localhost', '127.0.0.1'].includes(window.location.hostname)) {
-                adminEntry.classList.add('hidden');
-            }
 
             // Audio events
             audio.addEventListener('timeupdate', updateProgress);
@@ -847,15 +830,16 @@
             showInsights = !showInsights;
             const status = document.getElementById('insights-status');
             const toggleBtn = document.getElementById('insights-toggle');
+            toggleBtn.setAttribute('aria-pressed', String(showInsights));
 
             if (showInsights) {
                 status.innerText = "Desactivar Notas";
                 toggleBtn.classList.add('bg-black', 'text-white', 'border-black');
-                toggleBtn.classList.remove('text-gray-500', 'hover:border-black');
+                toggleBtn.classList.remove('border-gray-200', 'text-gray-500', 'hover:border-black');
             } else {
                 status.innerText = "Activar Notas";
                 toggleBtn.classList.remove('bg-black', 'text-white', 'border-black');
-                toggleBtn.classList.add('text-gray-500', 'hover:border-black');
+                toggleBtn.classList.add('border-gray-200', 'text-gray-500', 'hover:border-black');
                 closeInsight();
             }
 
@@ -922,7 +906,7 @@
                 if (!byAuthor.has(key)) {
                     byAuthor.set(key, { ...book, works: [] });
                 }
-                byAuthor.get(key).works.push(book.title);
+                byAuthor.get(key).works.push({ title: book.title, slug: book.slug });
             });
             const uniqueAuthors = Array.from(byAuthor.values());
 
@@ -931,11 +915,14 @@
                     <h3 class="serif text-xl mb-2">${escapeHtml(book.author)}</h3>
                     <div class="w-12 h-1 bg-gray-100 mb-6"></div>
                     <p class="text-gray-600 text-sm leading-relaxed">${escapeHtml(book.authorBio || 'Biografia não disponível.')}</p>
-                    <div class="mt-6 pt-4 border-t border-gray-50 flex gap-2">
-                        <span class="text-[10px] uppercase tracking-widest text-gray-400">Obras na colecção:</span>
-                        <span class="text-[10px] uppercase tracking-widest text-black font-medium">
-                            ${book.works.map(escapeHtml).join(', ')}
-                        </span>
+                    <div class="mt-6 pt-4 border-t border-gray-50">
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400">Obras na colecção:</p>
+                        <ul class="mt-3 space-y-2">
+                            ${book.works.map(work => `
+                                <li><a href="?livro=${encodeURIComponent(work.slug)}&amp;capitulo=1"
+                                    class="text-sm text-gray-800 underline decoration-gray-300 underline-offset-4 hover:text-black hover:decoration-black">${escapeHtml(work.title)}</a></li>
+                            `).join('')}
+                        </ul>
                     </div>
                 </div>
             `).join('');
@@ -1036,6 +1023,7 @@
         }
 
         function showChapter(index, options = {}) {
+            closeInsight();
             // Reset audio if changing
             if (index !== currentChapterIndex) {
                 audio.pause();
@@ -1268,6 +1256,7 @@
         }
 
         function showAuthors(options = {}) {
+            closeInsight();
             document.getElementById('home-view').classList.add('hidden');
             document.getElementById('reader-view').classList.add('hidden');
             document.getElementById('authors-view').classList.remove('hidden');

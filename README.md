@@ -87,13 +87,13 @@ O campo `coverImage` de `book.json` e do catálogo identifica a imagem utilizada
 
 ## Administração local
 
-O painel ADMIN só aparece quando o site é aberto em `localhost` ou `127.0.0.1`. Para guardar alterações nos ficheiros do projecto, inicie a API local noutro terminal:
+A navegação pública não apresenta comandos de administração. Para manutenção dos ficheiros do projecto, inicie a API local noutro terminal:
 
 ```bash
 python3 scripts/admin_api.py
 ```
 
-O painel envia as alterações à API em `http://127.0.0.1:8765`. Esta API destina-se apenas à gestão local; não é necessária para publicar ou ler o site.
+O painel de edição local pode ser aberto pela consola do navegador com `openAdminPanel()` e envia as alterações à API em `http://127.0.0.1:8765`. Esta API destina-se apenas à gestão local; não é necessária para publicar ou ler o site.
 
 ## Publicar com GitHub Pages
 
