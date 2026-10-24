@@ -4,7 +4,7 @@
     "slug": "os-lusiadas",
     "title": "Os Lusíadas",
     "author": "Luís de Camões",
-    "coverImage": "./data/books/os-lusiadas/cover.png",
+    "coverImage": "./data/books/os-lusiadas/cover-sketch.webp",
     "authorId": "luis-de-camoes",
     "authorBio": "Considerado o maior poeta de língua portuguesa.",
     "description": "Epopeia sobre os Descobrimentos portugueses.",
@@ -45,14 +45,14 @@
       "Lisboa",
       "sociedade"
     ],
-    "coverImage": "./data/books/os-maias/cover.svg"
+    "coverImage": "./data/books/os-maias/cover-sketch.webp"
   },
   {
     "id": 4,
     "slug": "viagens-na-minha-terra",
     "title": "Viagens na Minha Terra",
     "author": "Almeida Garrett",
-    "coverImage": "./data/books/viagens-na-minha-terra/cover.svg",
+    "coverImage": "./data/books/viagens-na-minha-terra/cover-sketch.webp",
     "authorId": "almeida-garrett",
     "authorBio": "Escritor, dramaturgo e político português (1799–1854), figura central do Romantismo e do liberalismo português.",
     "description": "Viagem pelo Tejo e pelo Ribatejo que entrelaça observação, memória, crítica política e a história de Joaninha.",
@@ -70,7 +70,7 @@
     "slug": "amor-de-perdicao",
     "title": "Amor de Perdição",
     "author": "Camilo Castelo Branco",
-    "coverImage": "./data/books/amor-de-perdicao/cover.svg",
+    "coverImage": "./data/books/amor-de-perdicao/cover-sketch.webp",
     "authorId": "camilo-castelo-branco",
     "authorBio": "Romancista português (1825–1890), um dos nomes centrais da ficção romântica portuguesa.",
     "description": "A paixão de Simão e Teresa enfrenta a rivalidade das famílias, a clausura e o degredo; Mariana acompanha o destino dos amantes.",
@@ -88,7 +88,7 @@
     "slug": "o-primo-bazilio",
     "title": "O Primo Basílio",
     "author": "Eça de Queirós",
-    "coverImage": "./data/books/o-primo-bazilio/cover.svg",
+    "coverImage": "./data/books/o-primo-bazilio/cover-sketch.webp",
     "authorId": "eca-de-queiros",
     "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
     "description": "Um romance de adultério, chantagem e convenções sociais na Lisboa burguesa do século XIX.",
@@ -111,7 +111,7 @@
     "description": "Jacinto troca o conforto tecnológico de Paris pela vida em Tormes, numa reflexão irónica sobre progresso, felicidade e pertença.",
     "year": "1901",
     "language": "pt",
-    "coverImage": "./data/books/a-cidade-e-as-serras/cover.svg",
+    "coverImage": "./data/books/a-cidade-e-as-serras/cover-sketch.webp",
     "tags": [
       "realismo",
       "Paris",
@@ -129,7 +129,7 @@
     "description": "Uma família vive entre o amor, a honra e a esperança de que um desaparecido na batalha de Alcácer-Quibir possa regressar.",
     "year": "1843",
     "language": "pt",
-    "coverImage": "./data/books/frei-luis-de-sousa/cover.svg",
+    "coverImage": "./data/books/frei-luis-de-sousa/cover-sketch.webp",
     "tags": [
       "teatro",
       "Romantismo",
@@ -147,7 +147,7 @@
     "description": "Memórias e cartas compõem o retrato de Fradique Mendes, poeta fictício cosmopolita criado por Eça de Queirós.",
     "year": "1900",
     "language": "pt",
-    "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover.svg",
+    "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover-sketch.webp",
     "tags": [
       "epistolar",
       "memórias",
@@ -165,7 +165,7 @@
     "description": "Uma escolha tentadora leva um modesto funcionário a herdar uma fortuna distante e a enfrentar o preço moral da riqueza.",
     "year": "1880",
     "language": "pt",
-    "coverImage": "./data/books/o-mandarim/cover.svg",
+    "coverImage": "./data/books/o-mandarim/cover-sketch.webp",
     "tags": [
       "novela",
       "fantástico",
@@ -183,7 +183,7 @@
     "description": "Um mistério contado por cartas, testemunhos e versões contraditórias, originalmente publicado em folhetins no Diário de Notícias.",
     "year": "1870",
     "language": "pt",
-    "coverImage": "./data/books/o-misterio-da-estrada-de-sintra/cover.svg",
+    "coverImage": "./data/books/o-misterio-da-estrada-de-sintra/cover-sketch.webp",
     "tags": [
       "romance epistolar",
       "mistério",
@@ -201,7 +201,7 @@
     "description": "Poemas de fé, liberdade, paisagem e memória reunidos nas três séries de uma obra central do Romantismo português.",
     "year": "1838",
     "language": "pt",
-    "coverImage": "./data/books/a-harpa-do-crente/cover.svg",
+    "coverImage": "./data/books/a-harpa-do-crente/cover-sketch.webp",
     "tags": [
       "poesia",
       "Romantismo",
@@ -219,7 +219,7 @@
     "description": "Uma colectânea satírica que cruza poesia narrativa, crítica religiosa e intervenção na vida pública portuguesa.",
     "year": "1885",
     "language": "pt",
-    "coverImage": "./data/books/a-velhice-do-padre-eterno/cover.svg",
+    "coverImage": "./data/books/a-velhice-do-padre-eterno/cover-sketch.webp",
     "tags": [
       "poesia",
       "sátira",
@@ -237,7 +237,7 @@
     "description": "Poemas de Cesário Verde reunidos por Silva Pinto numa edição póstuma que atravessa a cidade, o campo e a experiência moderna.",
     "year": "1887",
     "language": "pt",
-    "coverImage": "./data/books/o-livro-de-cesario-verde/cover.svg",
+    "coverImage": "./data/books/o-livro-de-cesario-verde/cover-sketch.webp",
     "tags": [
       "poesia",
       "Lisboa",
@@ -260,7 +260,7 @@
       "Península Ibérica"
     ],
     "language": "pt",
-    "coverImage": "./data/books/eurico-o-presbitero/cover.svg"
+    "coverImage": "./data/books/eurico-o-presbitero/cover-sketch.webp"
   },
   {
     "id": 16,
@@ -278,7 +278,7 @@
       "Lisboa"
     ],
     "language": "pt",
-    "coverImage": "./data/books/a-queda-dum-anjo/cover.svg"
+    "coverImage": "./data/books/a-queda-dum-anjo/cover-sketch.webp"
   },
   {
     "id": 17,
@@ -296,7 +296,7 @@
       "religião"
     ],
     "language": "pt",
-    "coverImage": "./data/books/o-crime-do-padre-amaro/cover.svg"
+    "coverImage": "./data/books/o-crime-do-padre-amaro/cover-sketch.webp"
   },
   {
     "id": 18,
@@ -314,7 +314,7 @@
       "religião"
     ],
     "language": "pt",
-    "coverImage": "./data/books/a-reliquia/cover.svg"
+    "coverImage": "./data/books/a-reliquia/cover-sketch.webp"
   },
   {
     "id": 19,
@@ -332,7 +332,7 @@
       "política"
     ],
     "language": "pt",
-    "coverImage": "./data/books/a-ilustre-casa-de-ramires/cover.svg"
+    "coverImage": "./data/books/a-ilustre-casa-de-ramires/cover-sketch.webp"
   },
   {
     "id": 20,
@@ -350,7 +350,7 @@
       "Paris"
     ],
     "language": "pt",
-    "coverImage": "./data/books/so/cover.svg"
+    "coverImage": "./data/books/so/cover-sketch.webp"
   },
   {
     "id": 21,
@@ -368,6 +368,6 @@
       "Geração de 70"
     ],
     "language": "pt",
-    "coverImage": "./data/books/os-sonetos-completos-de-antero-de-quental/cover.svg"
+    "coverImage": "./data/books/os-sonetos-completos-de-antero-de-quental/cover-sketch.webp"
   }
 ]

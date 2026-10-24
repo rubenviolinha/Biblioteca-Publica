@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import import_more_classics as importer
+import import_additional_classics as classic_importer
 from build_pdfs import format_block
 
 
@@ -65,6 +66,20 @@ class EditionImportTests(unittest.TestCase):
     def test_transcription_superscripts_become_readable_inline_text(self):
         soup = BeautifulSoup('<body><p>S.^{ta} Iria e V. Ex.^{a}</p></body>', 'html.parser')
         self.assertEqual(importer.serialise(soup), 'S.ta Iria e V. Ex.a')
+
+    def test_reimport_preserves_chosen_cover_artwork(self):
+        import json
+        with TemporaryDirectory() as directory:
+            folder = Path(directory, 'sample')
+            folder.mkdir()
+            (folder / 'book.json').write_text(json.dumps({'coverImage': './data/books/sample/cover-sketch.webp'}))
+            book = {'title': 'Sample', 'slug': 'sample', 'coverImage': './default.svg'}
+            chapters = [{'slug': 'one', 'content': 'Original text.', 'annotations': []}]
+            with patch.object(classic_importer, 'BOOKS_DIR', Path(directory)), patch('builtins.print'):
+                classic_importer.save_book('sample', book, chapters)
+            stored = json.loads((folder / 'book.json').read_text())
+            self.assertEqual(stored['coverImage'], './data/books/sample/cover-sketch.webp')
+            self.assertEqual(book['coverImage'], stored['coverImage'])
 
     def test_pdf_dialogue_bar_uses_supported_glyph(self):
         self.assertEqual(format_block('― Olá!\nA & B'), '— Olá!<br/>A &amp; B')

@@ -8,7 +8,7 @@
   "description": "Memórias e cartas compõem o retrato de Fradique Mendes, poeta fictício cosmopolita criado por Eça de Queirós.",
   "year": "1900",
   "language": "pt",
-  "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover.svg",
+  "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover-sketch.webp",
   "tags": [
     "epistolar",
     "memórias",

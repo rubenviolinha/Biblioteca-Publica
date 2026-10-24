@@ -79,6 +79,12 @@ Os testes de importação verificam os limites das secções, a remoção das p�
 python3 -m unittest discover -s tests -v
 ```
 
+## Capas e catálogo
+
+As capas da colecção seguem o desenho a grafite sobre papel claro usado em **Mensagem**. Cada obra tem uma ilustração própria; os títulos e autores são apresentados como texto sob a imagem para manter a leitura nítida. As novas imagens estão em `data/books/<slug>/cover-sketch.webp`, com os prompts e a referência de estilo em `design/cover-sketches.json`.
+
+O campo `coverImage` de `book.json` e do catálogo identifica a imagem utilizada. Os importadores preservam a capa já escolhida quando actualizam o texto de uma obra.
+
 ## Administração local
 
 O painel ADMIN só aparece quando o site é aberto em `localhost` ou `127.0.0.1`. Para guardar alterações nos ficheiros do projecto, inicie a API local noutro terminal:

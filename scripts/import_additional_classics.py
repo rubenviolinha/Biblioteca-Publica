@@ -444,6 +444,11 @@ def chapter_record(slug, title, section, context, content, notes, minimum_length
 def save_book(slug, book, chapters):
     book_dir = BOOKS_DIR / slug
     book_dir.mkdir(parents=True, exist_ok=True)
+    existing_path = book_dir / "book.json"
+    if existing_path.exists():
+        existing = json.loads(existing_path.read_text(encoding="utf-8"))
+        if isinstance(existing.get("coverImage"), str) and existing["coverImage"]:
+            book["coverImage"] = existing["coverImage"]
     chapter_slugs = []
     for chapter in chapters:
         write_json(book_dir / "chapters" / f"{chapter['slug']}.json", chapter)

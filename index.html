@@ -891,22 +891,17 @@
 
                 return `
                     <div role="button" tabindex="0" class="book-card group w-full text-left" onclick="openBook(${Number(book.id)})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openBook(${Number(book.id)})}" aria-label="Ler ${escapeHtml(book.title)}">
-                        <div class="aspect-[3/4] relative overflow-hidden border border-gray-100 bg-white shadow-sm mb-6 transition-all group-hover:shadow-md group-hover:border-gray-200">
-                            <div class="absolute inset-0 ${coverUrl ? 'bg-white' : 'book-cover-fallback'}"></div>
+                        <div class="aspect-[3/4] relative overflow-hidden border border-gray-100 bg-[#f6f2e9] mb-5 transition-all group-hover:shadow-md group-hover:border-gray-200">
+                            <div class="absolute inset-0 ${coverUrl ? 'bg-[#f6f2e9]' : 'book-cover-fallback'}"></div>
                             ${coverUrl ? `
                                 <img src="${coverUrl}" alt="${escapeHtml(coverAlt)}" loading="lazy" decoding="async"
                                     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
                             ` : ''}
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>
-                            <div class="absolute inset-0 p-8 flex flex-col justify-between">
-                                <div>
-                                    <p class="text-[10px] tracking-[0.3em] text-white/70 uppercase mb-4">${escapeHtml(book.year || '')}</p>
-                                    <h3 class="serif text-2xl text-white drop-shadow-sm">${escapeHtml(book.title)}</h3>
-                                </div>
-                                <p class="text-xs tracking-widest text-white/80 uppercase drop-shadow-sm">${escapeHtml(book.author)}</p>
-                            </div>
                         </div>
-                        <p class="text-sm text-gray-500 leading-relaxed opacity-100 md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100 transition-opacity duration-500">
+                        <p class="text-[10px] tracking-[0.25em] text-gray-400 uppercase mb-2">${escapeHtml(book.year || '')}</p>
+                        <h3 class="serif text-2xl text-gray-900 mb-2">${escapeHtml(book.title)}</h3>
+                        <p class="text-xs tracking-widest text-gray-500 uppercase mb-3">${escapeHtml(book.author)}</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">
                             ${escapeHtml(book.description || '')}
                         </p>
                     </div>
