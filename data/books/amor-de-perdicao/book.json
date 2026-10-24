@@ -1,0 +1,47 @@
+{
+  "id": 5,
+  "slug": "amor-de-perdicao",
+  "title": "Amor de Perdição",
+  "author": "Camilo Castelo Branco",
+  "authorId": "camilo-castelo-branco",
+  "authorBio": "Romancista português (1825–1890), um dos nomes centrais da ficção romântica portuguesa.",
+  "description": "A paixão de Simão e Teresa enfrenta a rivalidade das famílias, a clausura e o degredo; Mariana acompanha o destino dos amantes.",
+  "year": "1862",
+  "language": "pt",
+  "coverImage": "./data/books/amor-de-perdicao/cover.svg",
+  "tags": [
+    "romantismo",
+    "amor",
+    "tragédia",
+    "Coimbra"
+  ],
+  "source": {
+    "title": "Amor de Perdição: Memórias d'uma família (1862)",
+    "url": "https://www.gutenberg.org/ebooks/16425",
+    "transcription": "Project Gutenberg; créditos de transcrição incluem a Biblioteca Nacional Digital.",
+    "editorialNote": "Texto integral em grafia original, com prólogo e as duas partes. O Project Gutenberg identifica o estatuto nos Estados Unidos; a obra original é de autor falecido em 1890 e está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "prologo",
+    "parte-1-capitulo-01",
+    "parte-1-capitulo-02",
+    "parte-1-capitulo-03",
+    "parte-1-capitulo-04",
+    "parte-1-capitulo-05",
+    "parte-1-capitulo-06",
+    "parte-1-capitulo-07",
+    "parte-1-capitulo-08",
+    "parte-1-capitulo-09",
+    "parte-1-capitulo-10",
+    "parte-2-capitulo-01",
+    "parte-2-capitulo-02",
+    "parte-2-capitulo-03",
+    "parte-2-capitulo-04",
+    "parte-2-capitulo-05",
+    "parte-2-capitulo-06",
+    "parte-2-capitulo-07",
+    "parte-2-capitulo-08",
+    "parte-2-capitulo-09",
+    "parte-2-capitulo-10"
+  ]
+}

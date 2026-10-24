@@ -7,8 +7,11 @@ Uma biblioteca digital gratuita para ler clássicos da literatura portuguesa. O 
 - **Os Lusíadas**, Luís de Camões — os dez cantos, com introduções e notas.
 - **Mensagem**, Fernando Pessoa — os 44 poemas, organizados pelas três partes e secções do livro.
 - **Os Maias**, Eça de Queirós — os 18 capítulos dos dois volumes, com a ortografia da edição de 1888.
+- **Viagens na Minha Terra**, Almeida Garrett — os 49 capítulos da edição de 1846, entre viagem, romance e comentário político.
+- **Amor de Perdição**, Camilo Castelo Branco — prólogo e os 20 capítulos das duas partes, na grafia da edição de 1862.
+- **O Primo Basílio**, Eça de Queirós — o texto da segunda edição de 1878, organizado segundo os 16 títulos de capítulo explícitos na transcrição de referência.
 
-As obras e os ficheiros do site têm termos de utilização diferentes. Consulte `data/books/*/book.json` para a edição e a fonte de cada texto. A transcrição de *Mensagem* vem da Wikisource e é disponibilizada sob CC BY-SA 4.0; *Os Maias* usa uma transcrição do Project Gutenberg preparada a partir de digitalizações da Biblioteca Nacional de Portugal. As notas editoriais são conteúdo do projecto.
+As obras e os ficheiros do site têm termos de utilização diferentes. Consulte `data/books/*/book.json` para a edição, a origem da transcrição e a nota editorial de cada texto. As obras originais aqui incluídas estão no domínio público em Portugal; a situação de uma transcrição, edição ou material gráfico pode ser diferente. As notas de leitura e as capas criadas para este projecto são conteúdo editorial do projecto.
 
 ## Ver o site no computador
 
@@ -35,12 +38,15 @@ python3 -m pip install -r requirements.txt
 python3 scripts/build_pdfs.py
 ```
 
-O importador que recria as edições completas de *Mensagem* e *Os Maias* consulta as fontes online e pode ser executado com:
+Os importadores consultam as fontes online e recriam as edições completas:
 
 ```bash
 python3 scripts/import_public_domain.py
+python3 scripts/import_additional_classics.py
 python3 scripts/build_books.py
 ```
+
+Para actualizar também todos os PDFs, instale a dependência e execute `python3 scripts/build_pdfs.py`. O Project Gutenberg identifica o estatuto de direitos das suas edições nos Estados Unidos e recomenda que leitores de outros países confirmem a lei local; os metadados de cada livro identificam a edição consultada e a fonte da transcrição.
 
 ## Administração local
 

@@ -45,5 +45,59 @@
       "Lisboa",
       "sociedade"
     ]
+  },
+  {
+    "id": 4,
+    "slug": "viagens-na-minha-terra",
+    "title": "Viagens na Minha Terra",
+    "author": "Almeida Garrett",
+    "coverImage": "./data/books/viagens-na-minha-terra/cover.svg",
+    "authorId": "almeida-garrett",
+    "authorBio": "Escritor, dramaturgo e político português (1799–1854), figura central do Romantismo e do liberalismo português.",
+    "description": "Viagem pelo Tejo e pelo Ribatejo que entrelaça observação, memória, crítica política e a história de Joaninha.",
+    "year": "1846",
+    "language": "pt",
+    "tags": [
+      "romantismo",
+      "viagem",
+      "Santarém",
+      "guerra civil"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "amor-de-perdicao",
+    "title": "Amor de Perdição",
+    "author": "Camilo Castelo Branco",
+    "coverImage": "./data/books/amor-de-perdicao/cover.svg",
+    "authorId": "camilo-castelo-branco",
+    "authorBio": "Romancista português (1825–1890), um dos nomes centrais da ficção romântica portuguesa.",
+    "description": "A paixão de Simão e Teresa enfrenta a rivalidade das famílias, a clausura e o degredo; Mariana acompanha o destino dos amantes.",
+    "year": "1862",
+    "language": "pt",
+    "tags": [
+      "romantismo",
+      "amor",
+      "tragédia",
+      "Coimbra"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "o-primo-bazilio",
+    "title": "O Primo Basílio",
+    "author": "Eça de Queirós",
+    "coverImage": "./data/books/o-primo-bazilio/cover.svg",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+    "description": "Um romance de adultério, chantagem e convenções sociais na Lisboa burguesa do século XIX.",
+    "year": "1878",
+    "language": "pt",
+    "tags": [
+      "realismo",
+      "Lisboa",
+      "romance",
+      "sociedade"
+    ]
   }
 ]

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 960" role="img" aria-labelledby="title desc">
+  <title id="title">Viagens na Minha Terra — Almeida Garrett</title>
+  <desc id="desc">Capa ilustrada com o curso do Tejo e uma rota de viagem até Santarém.</desc>
+  <defs>
+    <linearGradient id="bg" x2=".9" y2="1"><stop stop-color="#173f43"/><stop offset="1" stop-color="#092b32"/></linearGradient>
+    <linearGradient id="river" x2="1" y2=".3"><stop stop-color="#b9b47e" stop-opacity=".1"/><stop offset=".48" stop-color="#d4c995" stop-opacity=".68"/><stop offset="1" stop-color="#b9b47e" stop-opacity=".08"/></linearGradient>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M54 0H0V54" fill="none" stroke="#e7dfc4" stroke-opacity=".08"/></pattern>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h640v960H0z"/><path fill="url(#grid)" d="M0 0h640v960H0z"/>
+  <rect x="30" y="30" width="580" height="900" rx="3" fill="none" stroke="#d6c99b" stroke-opacity=".6"/>
+  <text x="64" y="93" fill="#d6c99b" font-family="sans-serif" font-size="14" letter-spacing="4">BIBLIOTECA PÚBLICA</text>
+  <text x="64" y="122" fill="#d6c99b" font-family="sans-serif" font-size="11" letter-spacing="3" opacity=".72">LITERATURA PORTUGUESA · 01</text>
+  <path d="M75 500c88-68 103-6 175-77s119-53 155-5 78 65 160-12 50-13 34 47c-27 99-81 89-143 137s-106 10-165 44-93 65-216 35z" fill="url(#river)"/>
+  <path d="M115 592c60-58 92-7 149-64s97-39 121 4 77 67 136 12" fill="none" stroke="#e3d6a8" stroke-width="2" stroke-dasharray="3 10" opacity=".8"/>
+  <circle cx="115" cy="592" r="7" fill="#e5c77d"/><circle cx="521" cy="544" r="7" fill="#e5c77d"/>
+  <text x="93" y="626" fill="#e5c77d" font-family="sans-serif" font-size="12" letter-spacing="2">LISBOA</text>
+  <text x="475" y="578" fill="#e5c77d" font-family="sans-serif" font-size="12" letter-spacing="2">SANTARÉM</text>
+  <text x="64" y="746" fill="#f3ecd8" font-family="Georgia,serif" font-size="48">Viagens na</text>
+  <text x="64" y="804" fill="#f3ecd8" font-family="Georgia,serif" font-size="48">Minha Terra</text>
+  <path d="M64 834h96" stroke="#d6c99b" stroke-width="2"/>
+  <text x="64" y="878" fill="#d6c99b" font-family="Georgia,serif" font-size="22">Almeida Garrett</text>
+  <text x="575" y="878" text-anchor="end" fill="#d6c99b" font-family="sans-serif" font-size="12" letter-spacing="2">1846</text>
+</svg>

@@ -1,0 +1,42 @@
+{
+  "id": 6,
+  "slug": "o-primo-bazilio",
+  "title": "O Primo Basílio",
+  "author": "Eça de Queirós",
+  "authorId": "eca-de-queiros",
+  "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+  "description": "Um romance de adultério, chantagem e convenções sociais na Lisboa burguesa do século XIX.",
+  "year": "1878",
+  "language": "pt",
+  "coverImage": "./data/books/o-primo-bazilio/cover.svg",
+  "tags": [
+    "realismo",
+    "Lisboa",
+    "romance",
+    "sociedade"
+  ],
+  "source": {
+    "title": "O Primo Bazilio: Episodio Domestico (segunda edição revista, 1878)",
+    "url": "https://www.gutenberg.org/ebooks/42942",
+    "transcription": "Project Gutenberg; transcrição produzida a partir de imagens disponibilizadas pela Biblioteca Nacional de Portugal.",
+    "editorialNote": "Texto integral da segunda edição de 1878, mantendo a grafia de época e a numeração dos capítulos tal como aparece na transcrição. Esta transcrição digital apresenta dezasseis títulos de capítulo explícitos. O Project Gutenberg identifica o estatuto nos Estados Unidos; a obra original é de autor falecido em 1900 e está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "capitulo-01",
+    "capitulo-02",
+    "capitulo-03",
+    "capitulo-04",
+    "capitulo-05",
+    "capitulo-06",
+    "capitulo-07",
+    "capitulo-08",
+    "capitulo-09",
+    "capitulo-10",
+    "capitulo-12",
+    "capitulo-13",
+    "capitulo-15",
+    "capitulo-16",
+    "capitulo-17",
+    "capitulo-18"
+  ]
+}
