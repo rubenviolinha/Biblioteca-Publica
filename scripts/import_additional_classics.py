@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import six Portuguese classics from documented Project Gutenberg editions.
+"""Import eleven Portuguese classics from documented Project Gutenberg editions.
 
 The novels' original authors are long deceased. Project Gutenberg's own
 notices describe US status, so each book also records its Portuguese source
@@ -10,6 +10,7 @@ transcription or edition.
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 from import_public_domain import fetch, normalize_prose, write_json
@@ -288,6 +289,99 @@ FRADIQUE_NOTES = [
     ("Ramalho", "Abreviação de Ramalho Ortigão, escritor e amigo do círculo literário de Eça de Queirós."),
 ]
 
+MANDARIM_CONTEXTS = [
+    "O prólogo contrapõe o estudo da realidade e a liberdade da fantasia, preparando a fábula moral que se segue.",
+    "Teodoro apresenta a sua vida modesta em Lisboa e a tentação que lhe surge sob a forma de um sino capaz de lhe dar uma fortuna distante.",
+    "Depois da decisão de tocar o sino, Teodoro recebe a herança e tenta converter a riqueza inesperada numa vida confortável.",
+    "A fortuna transforma o quotidiano de Teodoro, mas não elimina a consciência do homem cuja morte tornou possível a herança.",
+    "O remorso leva Teodoro a procurar sinais do mandarim e a confrontar as consequências da sua escolha.",
+    "A viagem de Teodoro à China converte a fantasia inicial numa série de encontros com o poder, a violência e a culpa.",
+    "A experiência na China não oferece a redenção simples que Teodoro esperava e deixa-o diante dos limites do arrependimento.",
+    "No desenlace, Teodoro conserva a riqueza e formula a moral amarga da narrativa sobre a tentação e a responsabilidade.",
+    "A conclusão retoma a escolha inicial e deixa o leitor diante da facilidade com que a fortuna alheia pode parecer abstracta.",
+]
+MANDARIM_NOTES = [
+    ("Theodoro", "Teodoro, empregado público lisboeta e narrador da novela, troca a vida modesta por uma fortuna obtida através de uma escolha moralmente destrutiva."),
+    ("D. Augusta", "Dona Augusta é a senhoria viúva de Teodoro; o seu ambiente doméstico ajuda a caracterizar a vida modesta de Lisboa."),
+    ("tenente Couceiro", "O tenente Couceiro é um dos companheiros de casa de Teodoro e participa no retrato satírico da pequena burguesia lisboeta."),
+    ("Mandarim", "O mandarim representa a pessoa distante cuja morte é convertida em condição abstracta para a riqueza de Teodoro."),
+    ("sino", "O toque do sino funciona como escolha moral: uma acção fácil e sem testemunhas produz consequências irreversíveis para alguém desconhecido."),
+    ("China", "A China da novela é uma geografia imaginada pela fantasia europeia do século XIX, não um retrato documental do país."),
+    ("Lisboa", "A Lisboa burocrática e doméstica do início contrasta com o império fantástico que a fortuna abre a Teodoro."),
+    ("Diabo", "A figura demoníaca transforma uma tentação abstracta numa proposta concreta e aparentemente sem custo."),
+]
+
+MISTERIO_SECTIONS = [
+    ("EXPOSIÇÃO DO DOUTOR", "Exposição do Doutor", "O primeiro correspondente relata o encontro e os acontecimentos que o levam a investigar o mistério da estrada de Sintra."),
+    ("INTERVENÇÃO DE Z.", "Intervenção de Z.", "Uma nova voz comenta as primeiras cartas e acrescenta dúvidas à reconstrução dos acontecimentos."),
+    ("DE F... AO MEDICO", "De F... ao médico", "Uma carta dirigida ao médico relata a experiência de um dos envolvidos e oferece uma perspectiva parcial sobre o crime."),
+    ("NARRATIVA DO +MASCARADO ALTO+", "Narrativa do mascarado alto", "O homem mascarado acrescenta a sua versão, alargando a intriga a uma viagem, a identidades ocultas e a relações entre os suspeitos."),
+    ("+AS REVELAÇÕES DE A. M. C.+", "As revelações de A. M. C.", "A correspondência de A. M. C. reorganiza os acontecimentos em torno da condessa, do conde e do homem assassinado."),
+    ("+A CONFISSÃO D'ELLA+", "A confissão d'ella", "A confissão da condessa reinterpreta as cartas anteriores e apresenta a dimensão íntima do caso."),
+    ("CONCLUEM AS REVELAÇÕES DE A. M. C.", "Conclusão das revelações de A. M. C.", "As últimas revelações e os documentos reunidos aproximam as diferentes versões de uma explicação comum."),
+    ("A ULTIMA CARTA", "A última carta", "A carta final fecha a troca de correspondência e comenta o modo como o mistério foi apresentado ao público."),
+]
+MISTERIO_NOTES = [
+    ("Diario de Noticias", "O Diário de Notícias é o jornal lisboeta que publica as cartas e serve de moldura à narrativa serializada."),
+    ("Diário de Notícias", "O Diário de Notícias é o jornal lisboeta que publica as cartas e serve de moldura à narrativa serializada."),
+    ("Sintra", "A estrada e a paisagem de Sintra situam o episódio inicial e dão à intriga um cenário afastado da cidade."),
+    ("condessa", "A condessa é uma figura central nas diferentes narrativas; a sua história é revelada gradualmente por cartas de vários correspondentes."),
+    ("mascarado", "O mascarado é um dos narradores que oferece uma versão dos acontecimentos, mantendo a incerteza própria do romance epistolar."),
+    ("A. M. C.", "As iniciais A. M. C. identificam uma das correspondentes cujas revelações reconstroem o centro da intriga."),
+    ("Rytmel", "Rytmel é uma personagem ligada à condessa e ao crime; as versões sobre a sua morte sustentam a estrutura de mistério."),
+    ("Eça de Queiroz", "Eça de Queirós escreveu o romance em colaboração com Ramalho Ortigão, publicando-o originalmente em folhetins em 1870."),
+]
+
+HARPA_CONTEXTS = [
+    "A primeira série tem como núcleo A Semana Santa: uma meditação poética sobre a fé, a memória religiosa e a relação entre crença e liberdade.",
+    "A segunda série reúne poemas de paisagem, exílio, memória e vida pública, articulando contemplação natural e reflexão sobre Portugal.",
+    "A terceira série concentra poemas breves e homenagens, encerrando o conjunto com uma voz lírica marcada pela lembrança e pela amizade.",
+]
+HARPA_NOTES = [
+    ("Alexandre Herculano", "Alexandre Herculano (1810–1877) foi escritor, historiador e uma das figuras centrais do Romantismo português."),
+    ("A Semana Santa", "Poema longo que enquadra a primeira série e transforma a Semana Santa numa ocasião de reflexão religiosa e cívica."),
+    ("Schiller", "Friedrich Schiller, poeta e dramaturgo alemão, é citado em epígrafe no início de A Semana Santa."),
+    ("exílio", "A experiência do exílio e da distância da pátria atravessa vários poemas e aproxima paisagem, memória e identidade nacional."),
+    ("liberdade", "A liberdade aparece ligada à crítica do despotismo e à memória das lutas políticas do século XIX."),
+    ("Pátria", "A ideia de pátria associa-se à paisagem e à história, sem se limitar a um elogio abstracto da nação."),
+]
+
+VELHICE_POEMS = [
+    "Aos simples", "A vinha do Senhor", "A Caridade e a Justiça", "O Papão", "Parasitas",
+    "Resposta ao Sillabus", "O Baptismo", "Eurico", "A Arvore do Mal", "A Semana Santa",
+    "A Barca de S. Pedro", "Ladainha", "Como se faz um monstro", "Calembour", "A agua de Lourdes",
+    "Antonelli", "O Dinheiro de S. Pedro", "Ao nuncio Masella", "Ladainha moderna", "O Melro",
+    "Circular", "A benção da locomotiva", "A Hydra", "A Valla commum", "A Sèsta do snr. Abade",
+    "O Genesis", "Fantasmas", "Post scriptum",
+]
+VELHICE_NOTES = [
+    ("Guerra Junqueiro", "Abílio Manuel Guerra Junqueiro (1850–1923) foi poeta e político; esta colectânea combina sátira anticlerical, crítica social e poesia narrativa."),
+    ("Padre Eterno", "A figura do Padre Eterno é mobilizada pelo livro numa sátira religiosa e institucional, em tom deliberadamente polémico."),
+    ("Jesuítas", "A Companhia de Jesus surge como alvo recorrente da crítica anticlerical de Junqueiro e deve ser lida no contexto das disputas políticas e religiosas do século XIX."),
+    ("Papa", "As referências ao papado participam na sátira da autoridade religiosa e das relações entre Igreja e poder."),
+    ("melro", "O melro dá título a um dos poemas mais conhecidos do livro e enquadra uma cena de observação da natureza e da violência humana."),
+    ("locomotiva", "A locomotiva representa a modernidade técnica, incorporada na linguagem celebratória e satírica do poema."),
+    ("Calvario", "A imagem do Calvário liga a linguagem religiosa à crítica das instituições que falam em nome da fé."),
+    ("Portugal", "A crítica religiosa e social da colectânea também se dirige às instituições e aos costumes portugueses do fim do século XIX."),
+]
+
+CESARIO_POEMS = [
+    "Deslumbramentos", "Septentrional", "Meridional", "Ironias do Desgosto", "Humilhações", "Responso",
+    "Contrariedades", "A Debil", "N'um bairro moderno", "Crystalisações", "Noites gelidas", "Sardenta",
+    "Flores velhas", "Noite fechada", "Manhans brumosas", "Frigida", "De verão",
+    "O sentimento d'um occidental", "De tarde", "Em petiz", "Nós", "Provincianas",
+]
+CESARIO_NOTES = [
+    ("Cesario Verde", "Cesário Verde (1855–1886) renovou a poesia portuguesa ao aproximar a observação quotidiana, a cidade e o campo de uma linguagem moderna."),
+    ("Lisboa", "Lisboa é observada através das ruas, do trabalho, da vida nocturna e das diferenças sociais, sobretudo em O sentimento d'um occidental."),
+    ("Silva Pinto", "Silva Pinto reuniu e publicou postumamente a colectânea em 1887; o prefácio e as notas do compilador são distintos dos poemas de Cesário Verde."),
+    ("cidade", "A cidade moderna aparece como espaço de trabalho, desigualdade, movimento e observação, não apenas como cenário."),
+    ("campo", "As paisagens rurais oferecem um contraste sensorial e social com Lisboa e com a experiência urbana do poeta."),
+    ("ocidental", "O sentimento d'um occidental organiza uma caminhada nocturna por Lisboa em quatro partes: Ave Marias, Noite Fechada, Ao gaz e Horas Mortas."),
+    ("Febre", "A febre e a doença aparecem ligadas à experiência urbana e à vulnerabilidade física, em contraste com imagens idealizadas da modernidade."),
+    ("quotidiano", "A poesia de Cesário transforma cenas, objectos e pessoas comuns em matéria de observação e composição artística."),
+]
+
 
 def body_lines(book_id):
     raw = fetch(f"https://www.gutenberg.org/cache/epub/{book_id}/pg{book_id}.txt").decode("utf-8-sig")
@@ -331,9 +425,9 @@ def matching_notes(content, candidates, limit=5):
     return found
 
 
-def chapter_record(slug, title, section, context, content, notes):
+def chapter_record(slug, title, section, context, content, notes, minimum_length=250):
     content = content.strip()
-    if len(content) < 250:
+    if len(content) < minimum_length:
         raise RuntimeError(f"{title} parece incompleto ({len(content)} caracteres).")
     return {
         "slug": slug,
@@ -563,6 +657,177 @@ def import_fradique():
     save_book(book["slug"], book, chapters)
 
 
+def import_mandarim():
+    lines = body_lines("16384")
+    prologue_start = next(i for i, line in enumerate(lines) if line.strip().casefold() == "prologo")
+    markers = roman_chapter_markers(lines)
+    if [number for _, number in markers] != ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]:
+        raise RuntimeError("A estrutura de capítulos de O Mandarim mudou.")
+    end_note = next(i for i, line in enumerate(lines) if line.strip() == "Angers, junho, 1880.")
+    lines = lines[:end_note + 1]
+    chapters = [chapter_record("prologo", "Prólogo", "Prólogo",
+                               MANDARIM_CONTEXTS[0], normalize_prose(lines[prologue_start + 1:markers[0][0]]), MANDARIM_NOTES)]
+    for index, (start, number) in enumerate(markers):
+        end = markers[index + 1][0] if index + 1 < len(markers) else len(lines)
+        content = normalize_prose(lines[start + 1:end])
+        chapters.append(chapter_record(f"capitulo-{roman_number(number):02d}", f"Capítulo {number}", "Novela",
+                                       MANDARIM_CONTEXTS[index + 1], content, MANDARIM_NOTES))
+    book = {
+        "id": 10, "slug": "o-mandarim", "title": "O Mandarim", "author": "Eça de Queirós",
+        "authorId": "eca-de-queiros", "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+        "description": "Uma escolha tentadora leva um modesto funcionário a herdar uma fortuna distante e a enfrentar o preço moral da riqueza.",
+        "year": "1880", "language": "pt", "coverImage": "./data/books/o-mandarim/cover.svg",
+        "tags": ["novela", "fantástico", "Lisboa", "China"],
+        "source": {"title": "O Mandarim (1880)", "url": "https://www.gutenberg.org/ebooks/16384",
+                   "transcription": "Project Gutenberg; transcrição a partir de imagens da Biblioteca Nacional de Portugal.",
+                   "editorialNote": "Texto integral com prólogo e oito capítulos, em grafia da edição de 1880; excluem-se as páginas de impressão posteriores ao final da narrativa. O Project Gutenberg indica o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e a obra está no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
+def normalized_heading(value):
+    value = unicodedata.normalize("NFKD", value.casefold())
+    value = "".join(char for char in value if not unicodedata.combining(char))
+    return re.sub(r"[^a-z0-9]+", " ", value).strip()
+
+
+def import_misterio():
+    lines = body_lines("20574")
+    end_index = next(i for i, line in enumerate(lines) if line.strip().upper() == "INDICE")
+    story_lines = lines[:end_index]
+    markers = []
+    for index, line in enumerate(story_lines):
+        heading = normalized_heading(line.strip().strip("+* "))
+        for source_heading, title, _context in MISTERIO_SECTIONS:
+            if heading == normalized_heading(source_heading):
+                markers.append((index, title, _context))
+                break
+    expected_titles = [item[1] for item in MISTERIO_SECTIONS]
+    if [title for _, title, _ in markers] != expected_titles:
+        raise RuntimeError(f"A estrutura epistolar de O Mistério da Estrada de Sintra mudou: {[t for _, t, _ in markers]}.")
+    chapters = []
+    for index, (start, title, context) in enumerate(markers):
+        end = markers[index + 1][0] if index + 1 < len(markers) else len(story_lines)
+        content = normalize_prose(story_lines[start:end])
+        slug = f"secao-{index + 1:02d}"
+        chapters.append(chapter_record(slug, title, "Romance epistolar", context, content, MISTERIO_NOTES))
+    book = {
+        "id": 11, "slug": "o-misterio-da-estrada-de-sintra", "title": "O Mistério da Estrada de Sintra",
+        "author": "Eça de Queirós e Ramalho Ortigão", "authorId": "eca-de-queiros-ramalho-ortigao",
+        "authorBio": "Eça de Queirós (1845–1900) e Ramalho Ortigão (1836–1915), escritores e críticos portugueses.",
+        "description": "Um mistério contado por cartas, testemunhos e versões contraditórias, originalmente publicado em folhetins no Diário de Notícias.",
+        "year": "1870", "language": "pt", "coverImage": "./data/books/o-misterio-da-estrada-de-sintra/cover.svg",
+        "tags": ["romance epistolar", "mistério", "Sintra", "Lisboa"],
+        "source": {"title": "O Mysterio da Estrada de Cintra (terceira edição, 1894)", "url": "https://www.gutenberg.org/ebooks/20574",
+                   "transcription": "Project Gutenberg; transcrição baseada em imagens da Biblioteca Nacional de Portugal.",
+                   "editorialNote": "Romance publicado originalmente em folhetins em 1870; esta transcrição segue a terceira edição de 1894 e mantém a grafia de época. O prefácio e o índice da edição são excluídos do texto de leitura. O Project Gutenberg declara o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e Ramalho Ortigão em 1915, e a obra está no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
+def import_harpa():
+    lines = body_lines("22742")
+    headers = [(i, line.strip()) for i, line in enumerate(lines)
+               if line.strip().upper() in {"PRIMEIRA SERIE.", "SEGUNDA SERIE.", "TERCEIRA SERIE."}]
+    if len(headers) != 3:
+        raise RuntimeError(f"Esperava três séries em A Harpa do Crente; encontrei {len(headers)}.")
+    end = next((i for i, line in enumerate(lines) if "end of project gutenberg's a harpa do crente" in line.casefold()), len(lines))
+    lines = lines[:end]
+    chapters = []
+    for index, (start, title) in enumerate(headers):
+        next_start = headers[index + 1][0] if index + 1 < len(headers) else len(lines)
+        content = normalize_prose(lines[start:next_start])
+        chapters.append(chapter_record(f"serie-{index + 1}", title.rstrip("." ).title(), "Poesia",
+                                       HARPA_CONTEXTS[index], content, HARPA_NOTES))
+    book = {
+        "id": 12, "slug": "a-harpa-do-crente", "title": "A Harpa do Crente", "author": "Alexandre Herculano",
+        "authorId": "alexandre-herculano", "authorBio": "Escritor, poeta e historiador português (1810–1877), figura central do Romantismo e da historiografia nacional.",
+        "description": "Poemas de fé, liberdade, paisagem e memória reunidos nas três séries de uma obra central do Romantismo português.",
+        "year": "1838", "language": "pt", "coverImage": "./data/books/a-harpa-do-crente/cover.svg",
+        "tags": ["poesia", "Romantismo", "religião", "liberdade"],
+        "source": {"title": "A Harpa do Crente: Tentativas poéticas (1838)", "url": "https://www.gutenberg.org/ebooks/22742",
+                   "transcription": "Project Gutenberg; texto transcrito a partir de imagens de material em domínio público.",
+                   "editorialNote": "Texto integral, organizado pelas três séries da edição de 1838; grafia original preservada. O Project Gutenberg indica o estatuto nos Estados Unidos; Alexandre Herculano morreu em 1877 e a obra está no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
+def import_velhice():
+    lines = body_lines("23526")
+    start = next(i for i, line in enumerate(lines) if normalized_heading(line) == normalized_heading("AOS SIMPLES"))
+    notes = max(i for i, line in enumerate(lines[start + 1:], start=start + 1)
+                if normalized_heading(line) == normalized_heading("NOTA"))
+    body = lines[start:notes]
+    markers = []
+    cursor = 0
+    for title in VELHICE_POEMS:
+        target = normalized_heading(title)
+        found = next((i for i in range(cursor, len(body)) if normalized_heading(body[i]) == target), None)
+        if found is None:
+            raise RuntimeError(f"Não encontrei o poema '{title}' em A Velhice do Padre Eterno.")
+        markers.append((found, title))
+        cursor = found + 1
+    chapters = []
+    for index, (marker, title) in enumerate(markers):
+        end = markers[index + 1][0] if index + 1 < len(markers) else len(body)
+        content = normalize_prose(body[marker:end])
+        chapters.append(chapter_record(f"poema-{index + 1:02d}", title, "Poesia satírica",
+                                       f"«{title}» integra a colectânea satírica de Guerra Junqueiro, que combina verso, comentário social e crítica das instituições do seu tempo.",
+                                       content, VELHICE_NOTES, minimum_length=30))
+    book = {
+        "id": 13, "slug": "a-velhice-do-padre-eterno", "title": "A Velhice do Padre Eterno", "author": "Guerra Junqueiro",
+        "authorId": "guerra-junqueiro", "authorBio": "Poeta e político português (1850–1923), conhecido pela sátira social e religiosa e pela poesia de intervenção.",
+        "description": "Uma colectânea satírica que cruza poesia narrativa, crítica religiosa e intervenção na vida pública portuguesa.",
+        "year": "1885", "language": "pt", "coverImage": "./data/books/a-velhice-do-padre-eterno/cover.svg",
+        "tags": ["poesia", "sátira", "sociedade", "religião"],
+        "source": {"title": "A Velhice do Padre Eterno (1885)", "url": "https://www.gutenberg.org/ebooks/23526",
+                   "transcription": "Project Gutenberg; transcrição produzida a partir de imagens disponibilizadas pela Biblioteca Nacional de Portugal.",
+                   "editorialNote": "Os poemas são organizados como unidades de leitura, preservando as divisões internas e a grafia da edição oitocentista; excluem-se notas de transcrição e lista de erros corrigidos. O Project Gutenberg declara o estatuto nos Estados Unidos; Guerra Junqueiro morreu em 1923 e a obra está no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
+def import_cesario():
+    lines = body_lines("8698")
+    first = next(i for i, line in enumerate(lines) if normalized_heading(line) == normalized_heading("DESLUMBRAMENTOS"))
+    notes_start = next(i for i, line in enumerate(lines[first + 1:], start=first + 1)
+                       if normalized_heading(line) == normalized_heading("NOTAS"))
+    body = lines[first:notes_start]
+    markers = []
+    cursor = 0
+    for title in CESARIO_POEMS:
+        target = normalized_heading(title)
+        found = next((i for i in range(cursor, len(body)) if normalized_heading(body[i]) == target), None)
+        if found is None:
+            raise RuntimeError(f"Não encontrei o poema '{title}' em O Livro de Cesário Verde.")
+        markers.append((found, title))
+        cursor = found + 1
+    chapters = []
+    for index, (marker, title) in enumerate(markers):
+        end = markers[index + 1][0] if index + 1 < len(markers) else len(body)
+        poem_lines = body[marker:end]
+        if index == len(markers) - 1:
+            compiler_note = next((i for i, line in enumerate(poem_lines) if normalized_heading(line).startswith("nota incompleta esta poesia")), None)
+            if compiler_note is not None:
+                poem_lines = poem_lines[:compiler_note]
+        content = normalize_prose(poem_lines)
+        section = "Crise Romanesca" if index < 6 else "Naturaes"
+        context = (f"«{title}» integra a secção {section} da colectânea póstuma e exemplifica a atenção de Cesário Verde à experiência quotidiana, à paisagem e à vida moderna.")
+        chapters.append(chapter_record(f"poema-{index + 1:02d}", title, section, context, content,
+                                       CESARIO_NOTES, minimum_length=30))
+    book = {
+        "id": 14, "slug": "o-livro-de-cesario-verde", "title": "O Livro de Cesário Verde", "author": "Cesário Verde",
+        "authorId": "cesario-verde", "authorBio": "Poeta português (1855–1886), cuja obra transformou a observação da cidade, do campo e da vida quotidiana.",
+        "description": "Poemas de Cesário Verde reunidos por Silva Pinto numa edição póstuma que atravessa a cidade, o campo e a experiência moderna.",
+        "year": "1887", "language": "pt", "coverImage": "./data/books/o-livro-de-cesario-verde/cover.svg",
+        "tags": ["poesia", "Lisboa", "modernidade", "quotidiano"],
+        "source": {"title": "O Livro de Cesario Verde: 1873–1886 (1887)", "url": "https://www.gutenberg.org/ebooks/8698",
+                   "transcription": "Project Gutenberg; transcrição produzida a partir de imagens da Biblioteca Nacional de Portugal.",
+                   "editorialNote": "Incluem-se os poemas e excluem-se o prefácio, as notas biográficas e o índice escritos ou organizados pelo compilador Silva Pinto. A nota editorial sobre a incompletude de Provincianas é registada aqui, sem ser incorporada no poema. Cesário Verde morreu em 1886 e Silva Pinto em 1911; os direitos patrimoniais das respectivas contribuições estão no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
 def main():
     try:
         import_viagens()
@@ -571,6 +836,11 @@ def main():
         import_cidade()
         import_frei()
         import_fradique()
+        import_mandarim()
+        import_misterio()
+        import_harpa()
+        import_velhice()
+        import_cesario()
         print("Importação concluída. Execute scripts/build_books.py e scripts/build_pdfs.py para compilar as novas edições.")
     except Exception as exc:
         print(f"Erro de importação: {exc}", file=sys.stderr)

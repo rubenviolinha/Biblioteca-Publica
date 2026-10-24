@@ -1,0 +1,35 @@
+{
+  "id": 10,
+  "slug": "o-mandarim",
+  "title": "O Mandarim",
+  "author": "Eça de Queirós",
+  "authorId": "eca-de-queiros",
+  "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+  "description": "Uma escolha tentadora leva um modesto funcionário a herdar uma fortuna distante e a enfrentar o preço moral da riqueza.",
+  "year": "1880",
+  "language": "pt",
+  "coverImage": "./data/books/o-mandarim/cover.svg",
+  "tags": [
+    "novela",
+    "fantástico",
+    "Lisboa",
+    "China"
+  ],
+  "source": {
+    "title": "O Mandarim (1880)",
+    "url": "https://www.gutenberg.org/ebooks/16384",
+    "transcription": "Project Gutenberg; transcrição a partir de imagens da Biblioteca Nacional de Portugal.",
+    "editorialNote": "Texto integral com prólogo e oito capítulos, em grafia da edição de 1880; excluem-se as páginas de impressão posteriores ao final da narrativa. O Project Gutenberg indica o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e a obra está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "prologo",
+    "capitulo-01",
+    "capitulo-02",
+    "capitulo-03",
+    "capitulo-04",
+    "capitulo-05",
+    "capitulo-06",
+    "capitulo-07",
+    "capitulo-08"
+  ]
+}

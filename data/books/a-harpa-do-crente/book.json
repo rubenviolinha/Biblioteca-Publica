@@ -1,0 +1,29 @@
+{
+  "id": 12,
+  "slug": "a-harpa-do-crente",
+  "title": "A Harpa do Crente",
+  "author": "Alexandre Herculano",
+  "authorId": "alexandre-herculano",
+  "authorBio": "Escritor, poeta e historiador português (1810–1877), figura central do Romantismo e da historiografia nacional.",
+  "description": "Poemas de fé, liberdade, paisagem e memória reunidos nas três séries de uma obra central do Romantismo português.",
+  "year": "1838",
+  "language": "pt",
+  "coverImage": "./data/books/a-harpa-do-crente/cover.svg",
+  "tags": [
+    "poesia",
+    "Romantismo",
+    "religião",
+    "liberdade"
+  ],
+  "source": {
+    "title": "A Harpa do Crente: Tentativas poéticas (1838)",
+    "url": "https://www.gutenberg.org/ebooks/22742",
+    "transcription": "Project Gutenberg; texto transcrito a partir de imagens de material em domínio público.",
+    "editorialNote": "Texto integral, organizado pelas três séries da edição de 1838; grafia original preservada. O Project Gutenberg indica o estatuto nos Estados Unidos; Alexandre Herculano morreu em 1877 e a obra está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "serie-1",
+    "serie-2",
+    "serie-3"
+  ]
+}

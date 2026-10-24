@@ -13,6 +13,11 @@ Uma biblioteca digital gratuita para ler clássicos da literatura portuguesa. O 
 - **A Cidade e as Serras**, Eça de Queirós — os 16 capítulos da edição póstuma de 1901, organizados entre Paris e Tormes.
 - **Frei Luís de Sousa**, Almeida Garrett — a peça completa de 1843, organizada pelos seus três actos.
 - **A Correspondência de Fradique Mendes**, Eça de Queirós — oito secções de memórias e as 16 cartas da edição de 1900.
+- **O Mandarim**, Eça de Queirós — prólogo e oito capítulos da novela publicada em 1880, com notas de leitura.
+- **O Mistério da Estrada de Sintra**, Eça de Queirós e Ramalho Ortigão — oito partes do romance epistolar publicado em 1870.
+- **A Harpa do Crente**, Alexandre Herculano — as três séries de poemas da edição de 1838.
+- **A Velhice do Padre Eterno**, Guerra Junqueiro — 28 poemas da edição de 1885, incluindo o posfácio.
+- **O Livro de Cesário Verde**, Cesário Verde — 22 poemas na compilação de Silva Pinto publicada em 1887.
 
 As obras e os ficheiros do site têm termos de utilização diferentes. Consulte `data/books/*/book.json` para a edição, a origem da transcrição e a nota editorial de cada texto. As obras originais aqui incluídas estão no domínio público em Portugal; a situação de uma transcrição, edição ou material gráfico pode ser diferente. As notas de leitura e as capas criadas para este projecto são conteúdo editorial do projecto.
 
