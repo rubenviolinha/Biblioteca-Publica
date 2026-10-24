@@ -9,3 +9,5 @@ env/
 .mypy_cache/
 dist/
 build/
+node_modules/
+.playwright-mcp/

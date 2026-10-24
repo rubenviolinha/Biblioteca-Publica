@@ -99,5 +99,59 @@
       "romance",
       "sociedade"
     ]
+  },
+  {
+    "id": 7,
+    "slug": "a-cidade-e-as-serras",
+    "title": "A Cidade e as Serras",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+    "description": "Jacinto troca o conforto tecnológico de Paris pela vida em Tormes, numa reflexão irónica sobre progresso, felicidade e pertença.",
+    "year": "1901",
+    "language": "pt",
+    "coverImage": "./data/books/a-cidade-e-as-serras/cover.svg",
+    "tags": [
+      "realismo",
+      "Paris",
+      "Douro",
+      "modernidade"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "frei-luis-de-sousa",
+    "title": "Frei Luís de Sousa",
+    "author": "Almeida Garrett",
+    "authorId": "almeida-garrett",
+    "authorBio": "Escritor e dramaturgo português (1799–1854), figura decisiva do Romantismo e do teatro nacional.",
+    "description": "Uma família vive entre o amor, a honra e a esperança de que um desaparecido na batalha de Alcácer-Quibir possa regressar.",
+    "year": "1843",
+    "language": "pt",
+    "coverImage": "./data/books/frei-luis-de-sousa/cover.svg",
+    "tags": [
+      "teatro",
+      "Romantismo",
+      "sebastianismo",
+      "tragédia"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "a-correspondencia-de-fradique-mendes",
+    "title": "A Correspondência de Fradique Mendes",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+    "description": "Memórias e cartas compõem o retrato de Fradique Mendes, poeta fictício cosmopolita criado por Eça de Queirós.",
+    "year": "1900",
+    "language": "pt",
+    "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover.svg",
+    "tags": [
+      "epistolar",
+      "memórias",
+      "Lisboa",
+      "Paris"
+    ]
   }
 ]

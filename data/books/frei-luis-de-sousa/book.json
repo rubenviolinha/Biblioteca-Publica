@@ -1,0 +1,29 @@
+{
+  "id": 8,
+  "slug": "frei-luis-de-sousa",
+  "title": "Frei Luís de Sousa",
+  "author": "Almeida Garrett",
+  "authorId": "almeida-garrett",
+  "authorBio": "Escritor e dramaturgo português (1799–1854), figura decisiva do Romantismo e do teatro nacional.",
+  "description": "Uma família vive entre o amor, a honra e a esperança de que um desaparecido na batalha de Alcácer-Quibir possa regressar.",
+  "year": "1843",
+  "language": "pt",
+  "coverImage": "./data/books/frei-luis-de-sousa/cover.svg",
+  "tags": [
+    "teatro",
+    "Romantismo",
+    "sebastianismo",
+    "tragédia"
+  ],
+  "source": {
+    "title": "Frei Luiz de Sousa (1843)",
+    "url": "https://www.gutenberg.org/ebooks/17591",
+    "transcription": "Project Gutenberg; transcrição digital da peça em três actos.",
+    "editorialNote": "Texto integral em grafia de época; a edição fonte usa 'Luiz' e 'Magdalena'. O título da biblioteca adopta a grafia actual 'Luís'. O Project Gutenberg declara o estatuto nos Estados Unidos; Almeida Garrett morreu em 1854 e a obra está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "acto-1",
+    "acto-2",
+    "acto-3"
+  ]
+}

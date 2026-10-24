@@ -10,6 +10,9 @@ Uma biblioteca digital gratuita para ler clássicos da literatura portuguesa. O 
 - **Viagens na Minha Terra**, Almeida Garrett — os 49 capítulos da edição de 1846, entre viagem, romance e comentário político.
 - **Amor de Perdição**, Camilo Castelo Branco — prólogo e os 20 capítulos das duas partes, na grafia da edição de 1862.
 - **O Primo Basílio**, Eça de Queirós — o texto da segunda edição de 1878, organizado segundo os 16 títulos de capítulo explícitos na transcrição de referência.
+- **A Cidade e as Serras**, Eça de Queirós — os 16 capítulos da edição póstuma de 1901, organizados entre Paris e Tormes.
+- **Frei Luís de Sousa**, Almeida Garrett — a peça completa de 1843, organizada pelos seus três actos.
+- **A Correspondência de Fradique Mendes**, Eça de Queirós — oito secções de memórias e as 16 cartas da edição de 1900.
 
 As obras e os ficheiros do site têm termos de utilização diferentes. Consulte `data/books/*/book.json` para a edição, a origem da transcrição e a nota editorial de cada texto. As obras originais aqui incluídas estão no domínio público em Portugal; a situação de uma transcrição, edição ou material gráfico pode ser diferente. As notas de leitura e as capas criadas para este projecto são conteúdo editorial do projecto.
 
@@ -38,6 +41,13 @@ python3 -m pip install -r requirements.txt
 python3 scripts/build_pdfs.py
 ```
 
+Os estilos estão incluídos no repositório. Se alterar as classes do leitor, actualize-os com:
+
+```bash
+npm ci
+npm run build:css
+```
+
 Os importadores consultam as fontes online e recriam as edições completas:
 
 ```bash
@@ -60,14 +70,17 @@ O painel envia as alterações à API em `http://127.0.0.1:8765`. Esta API desti
 
 ## Publicar com GitHub Pages
 
-O workflow em `.github/workflows/pages.yml` prepara e publica automaticamente o site depois de activar **GitHub Actions** e **GitHub Pages → Build and deployment → GitHub Actions** nas definições do repositório. Também pode iniciar a publicação manualmente no separador **Actions**. O site não precisa de um processo de build JavaScript.
+O workflow em `.github/workflows/pages.yml` compila os estilos, prepara os livros e publica automaticamente o site depois de activar **GitHub Actions** e **GitHub Pages → Build and deployment → GitHub Actions** nas definições do repositório. Também pode iniciar a publicação manualmente no separador **Actions**. O leitor não precisa de um processo de build JavaScript.
 
-O leitor suporta pesquisa no catálogo, ligações directas para livros e capítulos, PDFs, tamanho de letra ajustável e anotações activáveis. As capas, tipos de letra e Tailwind CSS são carregados de serviços externos.
+O leitor suporta pesquisa no catálogo, ligações directas para livros e capítulos, PDFs, tamanho de letra ajustável e anotações activáveis. Os estilos são compilados para um ficheiro local; as fontes tipográficas usam Google Fonts com alternativas do sistema.
 
 ## Estrutura
 
 ```text
 index.html                      Leitor estático
+assets/tailwind.css             Estilos compilados para produção
+styles/tailwind.css             Entrada dos estilos Tailwind CSS
+package.json                    Dependências e comando de compilação dos estilos
 data/books.json                 Catálogo
 data/books/<slug>/book.json     Metadados e ordem dos capítulos
 data/books/<slug>/chapters/     Conteúdo-fonte, notas e contexto

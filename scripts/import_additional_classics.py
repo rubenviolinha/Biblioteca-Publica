@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import three Portuguese classics from documented Project Gutenberg editions.
+"""Import six Portuguese classics from documented Project Gutenberg editions.
 
 The novels' original authors are long deceased. Project Gutenberg's own
 notices describe US status, so each book also records its Portuguese source
@@ -181,6 +181,113 @@ PRIMO_NOTES = [
     ("Lisboa", "A cidade é mais do que cenário: os salões, ruas e casas expõem as hierarquias e os códigos de respeitabilidade da burguesia."),
 ]
 
+CIDADE_CONTEXTS = [
+    "A abertura apresenta a origem e a fortuna de Jacinto, cuja vida em Paris se organiza em torno da ideia de que a civilização traz felicidade.",
+    "Zé Fernandes reencontra Jacinto no 202 dos Campos Elísios e descreve a casa, os aparelhos e o modo de vida do amigo.",
+    "A rotina tecnológica do 202 revela o contraste entre a abundância de aparelhos e a insatisfação de Jacinto.",
+    "Uma festa no 202 reúne a elite de Paris e expõe as convenções, a conversa e o espectáculo da vida mundana.",
+    "As avarias dos aparelhos levam Jacinto a tentar dominar a matéria através de soluções ainda mais complicadas.",
+    "As visitas, os encontros amorosos e a vida social parisiense mostram uma civilização sofisticada, mas cansada.",
+    "Zé Fernandes prepara uma viagem pela Europa, enquanto Jacinto começa a imaginar outra relação com a vida.",
+    "Jacinto decide acompanhar o amigo a Portugal e parte para a serra, deixando para trás o conforto acumulado no 202.",
+    "Zé Fernandes regressa a Guiães e encontra sinais de que Jacinto está a preparar uma mudança para Tormes.",
+    "A chegada de Jacinto a Tormes é marcada pela falta de comodidades e pelo contacto directo com a paisagem e os habitantes.",
+    "A vida em Tormes aproxima Jacinto das pessoas da região e dá forma prática à sua mudança de hábitos.",
+    "O aniversário de Zé Fernandes reúne a família e os vizinhos, permitindo a Jacinto participar na vida social da serra.",
+    "A festa no aniversário de Zé Fernandes contrasta as poses da cidade com a espontaneidade e os costumes locais.",
+    "O passeio a cavalo aproxima Jacinto de Joaninha e mostra como ele se integra na paisagem e nas relações de Tormes.",
+    "Cinco anos depois, Jacinto construiu uma vida familiar e produtiva na serra, sem abandonar a curiosidade intelectual.",
+    "O capítulo final recorda o desejo de Jacinto de regressar a Paris e deixa em aberto a relação entre cidade e campo.",
+]
+
+CIDADE_NOTES = [
+    ("Jacintho", "Jacinto de Tormes é o protagonista; começa como defensor do progresso técnico em Paris e encontra em Tormes uma vida mais ligada à terra e às pessoas."),
+    ("Zé Fernandes", "Narrador e amigo de Jacinto; o seu olhar irónico mede as diferenças entre a vida parisiense e a experiência rural portuguesa."),
+    ("Tormes", "Propriedade da família de Jacinto no Douro, ligada à serra e à agricultura; torna-se o cenário da transformação do protagonista."),
+    ("202", "Número da residência parisiense de Jacinto nos Campos Elísios, equipada com aparelhos que prometem tornar a vida mais confortável."),
+    ("Civilisação", "A grafia de época para 'civilização'; o romance questiona se a acumulação de tecnologia e luxo produz realmente felicidade."),
+    ("civilização", "O romance contrapõe o ideal de progresso urbano à experiência de Jacinto na serra, sem reduzir a crítica a uma simples rejeição da modernidade."),
+    ("Paris", "Centro da vida cosmopolita de Jacinto e Zé Fernandes; a cidade representa o luxo, a velocidade e o cansaço da modernidade."),
+    ("Guiães", "Localidade minhota ligada à família de Zé Fernandes, de onde o narrador parte para visitar Tormes."),
+    ("Grillo", "Criado de Jacinto, cuja interpretação das avarias e da mudança do patrão ajuda a revelar a perspectiva prática da casa."),
+    ("Madame d'Oriol", "Figura da sociedade parisiense que participa nas visitas e relações mundanas de Jacinto."),
+    ("Joanninha", "Prima de Zé Fernandes, também chamada Joaninha; a sua presença aproxima Jacinto da vida familiar e social da serra."),
+    ("Flôr da Malva", "Quinta da família de Joaninha, perto de Tormes, associada à vida local e ao futuro doméstico de Jacinto."),
+    ("serra", "A serra representa a experiência directa da natureza, do trabalho e das relações locais, em contraste com a vida mecanizada do 202."),
+    ("Tormes", "A mudança para Tormes permite a Jacinto trocar o consumo de novidades por uma relação mais concreta com o lugar e os seus habitantes."),
+]
+
+FREI_CONTEXTS = [
+    "No palácio de Almada, Madalena e Telmo falam do passado e do receio de que D. João de Portugal ainda esteja vivo; a chegada de Manuel altera a casa e conduz a família à decisão de regressar ao palácio de D. João.",
+    "No antigo palácio de D. João, as recordações e os sinais do passado intensificam o medo de Madalena; a notícia de um peregrino desconhecido aproxima a família da verdade que todos receiam.",
+    "O regresso ao palácio e a identificação do Romeiro destroem a vida familiar; Maria adoece, enquanto Manuel e Madalena escolhem a vida religiosa.",
+]
+
+FREI_NOTES = [
+    ("Manuel de Sousa Coutinho", "Nobre português e marido de Madalena; depois da revelação do regresso de D. João, toma o hábito e passa a chamar-se Frei Luís de Sousa."),
+    ("Frei Luiz", "Nome religioso assumido por Manuel de Sousa Coutinho no final da peça."),
+    ("Magdalena", "Madalena de Vilhena, esposa de Manuel e antiga mulher de D. João de Portugal; vive assombrada pela possibilidade de o primeiro marido estar vivo."),
+    ("D. João de Portugal", "Primeiro marido de Madalena, dado como desaparecido na batalha de Alcácer-Quibir; o seu regresso desencadeia a catástrofe da peça."),
+    ("Romeiro", "Peregrino que regressa à família e se identifica como D. João de Portugal, transformando a suspeita em certeza."),
+    ("Maria", "Filha de Madalena e Manuel, jovem de saúde frágil e imaginação intensa; a revelação final precipita a sua morte."),
+    ("Telmo", "Antigo aio de D. João e criado fiel da família; a lealdade ao antigo senhor entra em conflito com o afecto por Maria."),
+    ("Frei Jorge", "Irmão de Manuel e frade dominicano; acompanha a família nos momentos de crise e na decisão de professar."),
+    ("Alcácer-Quibir", "Batalha de 1578 em Marrocos, onde desapareceu o rei D. Sebastião e muitos nobres portugueses, entre eles D. João segundo a narrativa."),
+    ("sebastianismo", "Expectativa do regresso de D. Sebastião, que alimenta a esperança de que os desaparecidos em Alcácer-Quibir possam voltar."),
+    ("profissão", "Cerimónia em que Manuel e Madalena assumem a vida religiosa, consequência da impossibilidade moral de manter o casamento."),
+    ("palácio", "Os dois palácios funcionam como espaços da memória: o primeiro pertence à vida com Manuel; o segundo conserva os vestígios de D. João."),
+    ("D. Sebastião", "Rei desaparecido em Alcácer-Quibir; a crença no seu regresso ajuda a manter viva a possibilidade de D. João também estar vivo."),
+]
+
+FRADIQUE_MEMOIRS_CONTEXTS = [
+    "O narrador recorda o primeiro encontro com Fradique em Paris e a impressão de pose, luxo e originalidade que o poeta lhe causou.",
+    "A memória de Fradique reúne episódios da sua vida cosmopolita e a reacção dos amigos à sua personalidade teatral e independente.",
+    "O narrador acompanha a distância entre os encontros e constrói o retrato de Fradique através das viagens, das amizades e das ideias que deixou.",
+    "Uma nova secção retoma as viagens e a vida intelectual de Fradique, aprofundando a relação entre a sua imagem pública e a sua curiosidade privada.",
+    "O narrador descreve a inteligência de Fradique e a maneira como ele observa a sociedade, as artes e as ideias sem se prender a um sistema.",
+    "O último encontro com Fradique dá lugar a conversas sobre as viagens, a religião e a possibilidade de transformar as experiências em livro.",
+    "O narrador explica como reuniu as cartas e por que considera a correspondência uma forma privilegiada de conhecer Fradique.",
+    "A secção final das memórias prepara a passagem do retrato do homem para as cartas que mostram directamente a sua voz.",
+]
+
+FRADIQUE_LETTER_CONTEXTS = [
+    "Fradique responde a uma pergunta prática sobre alfaiates e aproveita-a para distinguir a roupa escolhida segundo a pessoa e o propósito.",
+    "Uma carta a Madame de Jouarre mistura observação social, intimidade e comentário sobre a vida parisiense.",
+    "Fradique escreve a Oliveira Martins sobre antiguidades, viagens e a maneira de observar culturas sem as reduzir a fórmulas.",
+    "A resposta a Madame S. começa com um conselho sobre a aprendizagem do espanhol e desenvolve uma reflexão sobre educação e experiência.",
+    "Fradique discute com Guerra Junqueiro a religião, a Igreja e a força estética dos rituais.",
+    "Uma carta a Ramalho Ortigão transforma um encontro inesperado e uma viagem numa sequência de observações irónicas.",
+    "A carta de Lisboa a Madame de Jouarre relata o regresso de Fradique e a impressão que a cidade lhe causa.",
+    "Fradique responde a um director de revista que lhe pede informação biográfica e reflecte sobre a construção de uma vida pública.",
+    "Uma carta a Clara recorda o primeiro encontro e converte a memória amorosa numa narrativa cuidadosamente construída.",
+    "Fradique descreve a vida em Lisboa à sua madrinha, com retratos da cidade, das relações sociais e dos seus conhecidos.",
+    "A carta a Bertrand B. cruza a Páscoa, a paisagem e uma reflexão sobre a história religiosa e política.",
+    "Da quinta de Refaldes, Fradique escreve sobre o Minho, a vida rural e as pessoas que encontra.",
+    "A carta a Clara revisita a intimidade amorosa e as imagens de viagem que a memória conserva.",
+    "Fradique relata a Madame de Jouarre uma conversa com um padre e expõe a sua curiosidade pela religião e pelas pessoas.",
+    "A carta a Bento de S. critica o projecto de fundar um jornal e comenta a imprensa e a vida pública.",
+    "A última carta a Clara retoma a distância amorosa e a maneira como Fradique transforma os sentimentos em linguagem.",
+]
+
+FRADIQUE_NOTES = [
+    ("Fradique Mendes", "Carlos Fradique Mendes é um poeta fictício, cosmopolita e erudito; Eça constrói o seu retrato através das memórias do narrador e das cartas atribuídas a Fradique."),
+    ("Oliveira Martins", "Historiador e político português, amigo de Eça de Queirós e correspondente de Fradique na ficção."),
+    ("Ramalho Ortigão", "Escritor português e antigo colaborador de Eça; aparece entre os destinatários das cartas de Fradique."),
+    ("Guerra Junqueiro", "Poeta português a quem Fradique escreve sobre religião e vida cultural."),
+    ("Madame de Jouarre", "Madrinha e confidente de Fradique, destinatária de várias cartas que revelam a sua vida quotidiana e afectiva."),
+    ("Clara", "Destinatária de cartas amorosas que mostram uma dimensão íntima e vulnerável de Fradique."),
+    ("Paris", "Centro da vida cosmopolita de Fradique e cenário de vários encontros, debates e cartas."),
+    ("Lisboa", "Cidade revisitada por Fradique; as cartas observam a sua sociedade, as suas instituições e os seus hábitos."),
+    ("Londres", "Cidade onde Fradique vive e escreve sobre a vida social, os costumes e a experiência de viagem."),
+    ("Correspondencia", "A grafia de época de 'correspondência'; o livro apresenta as cartas como acesso à personalidade e às ideias de Fradique."),
+    ("Torre de Marfim", "Imagem de isolamento intelectual e afectivo, usada por Fradique para descrever uma forma de vida retirada."),
+    ("Mazzini", "Giuseppe Mazzini, revolucionário e nacionalista italiano, referido na rede de amizades e interesses políticos de Fradique."),
+    ("Garibaldi", "Giuseppe Garibaldi, figura das lutas pela unificação italiana, lembrado entre as relações políticas de Fradique."),
+    ("Oliveira Martins", "A correspondência com o historiador mostra o interesse de Fradique pela história, pelas viagens e pela interpretação cultural."),
+    ("Junqueiro", "Abreviação de Guerra Junqueiro, poeta a quem Fradique dirige uma carta sobre religião e liturgia."),
+    ("Ramalho", "Abreviação de Ramalho Ortigão, escritor e amigo do círculo literário de Eça de Queirós."),
+]
+
 
 def body_lines(book_id):
     raw = fetch(f"https://www.gutenberg.org/cache/epub/{book_id}/pg{book_id}.txt").decode("utf-8-sig")
@@ -359,11 +466,111 @@ def import_primo():
     save_book(book["slug"], book, chapters)
 
 
+def import_cidade():
+    lines = body_lines("18220")
+    ending = next(i for i, line in enumerate(lines) if line.strip().casefold() == "fim")
+    lines = lines[:ending]
+    markers = roman_chapter_markers(lines)
+    if len(markers) != 16:
+        raise RuntimeError(f"Esperava 16 capítulos em A Cidade e as Serras; encontrei {len(markers)}.")
+    chapters = []
+    for index, (start, number) in enumerate(markers):
+        end = markers[index + 1][0] if index + 1 < len(markers) else len(lines)
+        content = normalize_prose(lines[start + 1:end])
+        section = "Paris" if index < 8 else "Tormes"
+        chapters.append(chapter_record(
+            f"capitulo-{roman_number(number):02d}", f"Capítulo {number}", section,
+            CIDADE_CONTEXTS[index], content, CIDADE_NOTES))
+    book = {
+        "id": 7, "slug": "a-cidade-e-as-serras", "title": "A Cidade e as Serras", "author": "Eça de Queirós",
+        "authorId": "eca-de-queiros", "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+        "description": "Jacinto troca o conforto tecnológico de Paris pela vida em Tormes, numa reflexão irónica sobre progresso, felicidade e pertença.",
+        "year": "1901", "language": "pt", "coverImage": "./data/books/a-cidade-e-as-serras/cover.svg",
+        "tags": ["realismo", "Paris", "Douro", "modernidade"],
+        "source": {"title": "A Cidade e as Serras (1901)", "url": "https://www.gutenberg.org/ebooks/18220",
+                   "transcription": "Project Gutenberg; transcrição produzida a partir de imagens disponibilizadas pela Biblioteca Nacional Digital.",
+                   "editorialNote": "Edição póstuma, publicada em 1901; o texto integral do romance termina em 'Fim' e exclui anúncios editoriais posteriores. A advertência da edição refere que as provas a partir da página 241 não foram revistas pelo autor. O Project Gutenberg declara o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e a obra está no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
+def import_frei():
+    lines = body_lines("17591")
+    curtain = max(i for i, line in enumerate(lines) if "panno" in line.casefold())
+    lines = lines[:curtain + 1]
+    headers = [(i, line.strip()) for i, line in enumerate(lines)
+               if line.strip().upper() in {"ACTO PRIMEIRO", "ACTO SEGUNDO", "ACTO TERCEIRO"}]
+    if len(headers) != 3:
+        raise RuntimeError(f"Esperava três actos em Frei Luís de Sousa; encontrei {len(headers)}.")
+    contexts = FREI_CONTEXTS
+    chapters = []
+    for index, (start, title) in enumerate(headers):
+        end = headers[index + 1][0] if index + 1 < len(headers) else len(lines)
+        content = normalize_prose(lines[start:end])
+        chapters.append(chapter_record(f"acto-{index + 1}", title.title(), f"Acto {index + 1}",
+                                       contexts[index], content, FREI_NOTES))
+    book = {
+        "id": 8, "slug": "frei-luis-de-sousa", "title": "Frei Luís de Sousa", "author": "Almeida Garrett",
+        "authorId": "almeida-garrett", "authorBio": "Escritor e dramaturgo português (1799–1854), figura decisiva do Romantismo e do teatro nacional.",
+        "description": "Uma família vive entre o amor, a honra e a esperança de que um desaparecido na batalha de Alcácer-Quibir possa regressar.",
+        "year": "1843", "language": "pt", "coverImage": "./data/books/frei-luis-de-sousa/cover.svg",
+        "tags": ["teatro", "Romantismo", "sebastianismo", "tragédia"],
+        "source": {"title": "Frei Luiz de Sousa (1843)", "url": "https://www.gutenberg.org/ebooks/17591",
+                   "transcription": "Project Gutenberg; transcrição digital da peça em três actos.",
+                   "editorialNote": "Texto integral em grafia de época; a edição fonte usa 'Luiz' e 'Magdalena'. O título da biblioteca adopta a grafia actual 'Luís'. O Project Gutenberg declara o estatuto nos Estados Unidos; Almeida Garrett morreu em 1854 e a obra está no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
+def import_fradique():
+    lines = body_lines("27637")
+    letters_header = next(i for i, line in enumerate(lines) if line.strip().upper() == "AS CARTAS")
+    notes_start = next(i for i, line in enumerate(lines[letters_header:], start=letters_header)
+                       if line.strip().casefold() == "notas:")
+    lines = lines[:notes_start]
+    memoir_lines = lines[:letters_header]
+    memoir_markers = roman_chapter_markers(memoir_lines)
+    expected_memoirs = ["I", "II", "III", "III", "IV", "V", "VI", "VII"]
+    if [number for _, number in memoir_markers] != expected_memoirs:
+        raise RuntimeError("A estrutura das memórias de A Correspondência de Fradique Mendes mudou.")
+    letter_lines = lines[letters_header + 1:]
+    letter_markers = roman_chapter_markers(letter_lines)
+    if len(letter_markers) != 16:
+        raise RuntimeError(f"Esperava 16 cartas de Fradique; encontrei {len(letter_markers)}.")
+    chapters = []
+    for index, (start, _source_number) in enumerate(memoir_markers):
+        end = memoir_markers[index + 1][0] if index + 1 < len(memoir_markers) else len(memoir_lines)
+        content = normalize_prose(memoir_lines[start + 1:end])
+        source_note = " A transcrição fonte repete o algarismo III nesta secção; a navegação distingue-a como capítulo IV." if index == 3 else ""
+        chapter = chapter_record(f"memorias-capitulo-{index + 1:02d}", f"Capítulo {index + 1} — Memórias", "Memórias",
+                                 FRADIQUE_MEMOIRS_CONTEXTS[index] + source_note, content, FRADIQUE_NOTES)
+        chapters.append(chapter)
+    for index, (start, number) in enumerate(letter_markers):
+        end = letter_markers[index + 1][0] if index + 1 < len(letter_markers) else len(letter_lines)
+        content = normalize_prose(letter_lines[start + 1:end])
+        chapters.append(chapter_record(f"carta-{roman_number(number):02d}", f"Carta {number}", "Correspondência",
+                                       FRADIQUE_LETTER_CONTEXTS[index], content, FRADIQUE_NOTES))
+    book = {
+        "id": 9, "slug": "a-correspondencia-de-fradique-mendes", "title": "A Correspondência de Fradique Mendes", "author": "Eça de Queirós",
+        "authorId": "eca-de-queiros", "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+        "description": "Memórias e cartas compõem o retrato de Fradique Mendes, poeta fictício cosmopolita criado por Eça de Queirós.",
+        "year": "1900", "language": "pt", "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover.svg",
+        "tags": ["epistolar", "memórias", "Lisboa", "Paris"],
+        "source": {"title": "A Correspondência de Fradique Mendes (1900)", "url": "https://www.gutenberg.org/ebooks/27637",
+                   "transcription": "Project Gutenberg; transcrição baseada em imagens da Biblioteca Nacional Digital.",
+                   "editorialNote": "Texto integral com oito secções de memórias e dezasseis cartas. A transcrição fonte repete o número III numa das secções; a biblioteca preserva o texto e distingue as secções na navegação. O Project Gutenberg declara o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e a obra está no domínio público em Portugal."},
+    }
+    save_book(book["slug"], book, chapters)
+
+
 def main():
     try:
         import_viagens()
         import_amor()
         import_primo()
+        import_cidade()
+        import_frei()
+        import_fradique()
         print("Importação concluída. Execute scripts/build_books.py e scripts/build_pdfs.py para compilar as novas edições.")
     except Exception as exc:
         print(f"Erro de importação: {exc}", file=sys.stderr)

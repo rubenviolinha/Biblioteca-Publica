@@ -1,0 +1,42 @@
+{
+  "id": 7,
+  "slug": "a-cidade-e-as-serras",
+  "title": "A Cidade e as Serras",
+  "author": "Eça de Queirós",
+  "authorId": "eca-de-queiros",
+  "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+  "description": "Jacinto troca o conforto tecnológico de Paris pela vida em Tormes, numa reflexão irónica sobre progresso, felicidade e pertença.",
+  "year": "1901",
+  "language": "pt",
+  "coverImage": "./data/books/a-cidade-e-as-serras/cover.svg",
+  "tags": [
+    "realismo",
+    "Paris",
+    "Douro",
+    "modernidade"
+  ],
+  "source": {
+    "title": "A Cidade e as Serras (1901)",
+    "url": "https://www.gutenberg.org/ebooks/18220",
+    "transcription": "Project Gutenberg; transcrição produzida a partir de imagens disponibilizadas pela Biblioteca Nacional Digital.",
+    "editorialNote": "Edição póstuma, publicada em 1901; o texto integral do romance termina em 'Fim' e exclui anúncios editoriais posteriores. A advertência da edição refere que as provas a partir da página 241 não foram revistas pelo autor. O Project Gutenberg declara o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e a obra está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "capitulo-01",
+    "capitulo-02",
+    "capitulo-03",
+    "capitulo-04",
+    "capitulo-05",
+    "capitulo-06",
+    "capitulo-07",
+    "capitulo-08",
+    "capitulo-09",
+    "capitulo-10",
+    "capitulo-11",
+    "capitulo-12",
+    "capitulo-13",
+    "capitulo-14",
+    "capitulo-15",
+    "capitulo-16"
+  ]
+}

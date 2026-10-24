@@ -1,0 +1,50 @@
+{
+  "id": 9,
+  "slug": "a-correspondencia-de-fradique-mendes",
+  "title": "A Correspondência de Fradique Mendes",
+  "author": "Eça de Queirós",
+  "authorId": "eca-de-queiros",
+  "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+  "description": "Memórias e cartas compõem o retrato de Fradique Mendes, poeta fictício cosmopolita criado por Eça de Queirós.",
+  "year": "1900",
+  "language": "pt",
+  "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover.svg",
+  "tags": [
+    "epistolar",
+    "memórias",
+    "Lisboa",
+    "Paris"
+  ],
+  "source": {
+    "title": "A Correspondência de Fradique Mendes (1900)",
+    "url": "https://www.gutenberg.org/ebooks/27637",
+    "transcription": "Project Gutenberg; transcrição baseada em imagens da Biblioteca Nacional Digital.",
+    "editorialNote": "Texto integral com oito secções de memórias e dezasseis cartas. A transcrição fonte repete o número III numa das secções; a biblioteca preserva o texto e distingue as secções na navegação. O Project Gutenberg declara o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e a obra está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "memorias-capitulo-01",
+    "memorias-capitulo-02",
+    "memorias-capitulo-03",
+    "memorias-capitulo-04",
+    "memorias-capitulo-05",
+    "memorias-capitulo-06",
+    "memorias-capitulo-07",
+    "memorias-capitulo-08",
+    "carta-01",
+    "carta-02",
+    "carta-03",
+    "carta-04",
+    "carta-05",
+    "carta-06",
+    "carta-07",
+    "carta-08",
+    "carta-09",
+    "carta-10",
+    "carta-11",
+    "carta-12",
+    "carta-13",
+    "carta-14",
+    "carta-15",
+    "carta-16"
+  ]
+}
