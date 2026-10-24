@@ -295,7 +295,7 @@
             <div class="max-w-3xl mx-auto relative">
 
                 <!-- Reader Top Bar -->
-                <div class="flex justify-between items-center mb-12">
+                <div class="flex flex-col items-start gap-5 sm:flex-row sm:justify-between sm:items-center mb-12">
                     <button onclick="showHome()"
                         class="flex items-center gap-2 text-sm text-gray-400 hover:text-black transition-colors">
                         <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -305,7 +305,7 @@
                         VOLTAR À COLECÇÃO
                     </button>
 
-                    <div class="flex items-center gap-3">
+                    <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
                         <div class="flex items-center gap-2">
                             <button onclick="decreaseReaderFontSize()" id="font-size-decrease" aria-label="Diminuir tamanho do texto"
                                 title="Diminuir tamanho do texto"
@@ -800,6 +800,10 @@
         }
 
         async function init() {
+            const initialParams = new URLSearchParams(window.location.search);
+            if (initialParams.has('livro') || initialParams.has('book')) {
+                document.getElementById('home-view').classList.add('hidden');
+            }
             await loadBooks();
             loadReaderFontSize();
             applyReaderFontSize();
@@ -890,7 +894,7 @@
                         <div class="aspect-[3/4] relative overflow-hidden border border-gray-100 bg-white shadow-sm mb-6 transition-all group-hover:shadow-md group-hover:border-gray-200">
                             <div class="absolute inset-0 ${coverUrl ? 'bg-white' : 'book-cover-fallback'}"></div>
                             ${coverUrl ? `
-                                <img src="${coverUrl}" alt="${escapeHtml(coverAlt)}"
+                                <img src="${coverUrl}" alt="${escapeHtml(coverAlt)}" loading="lazy" decoding="async"
                                     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
                             ` : ''}
                             <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>

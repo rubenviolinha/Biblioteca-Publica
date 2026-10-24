@@ -1,0 +1,32 @@
+{
+  "id": 18,
+  "slug": "a-reliquia",
+  "title": "A Relíquia",
+  "author": "Eça de Queirós",
+  "authorId": "eca-de-queiros",
+  "authorBio": "Escritor português (1845–1900), figura central do Realismo, conhecido pela ironia e pela crítica dos costumes e das instituições.",
+  "year": "1887",
+  "description": "Teodorico Raposo conta a sua peregrinação à Terra Santa numa sátira em que devoção, herança e desejo se cruzam.",
+  "tags": [
+    "romance",
+    "sátira",
+    "viagem",
+    "religião"
+  ],
+  "language": "pt",
+  "coverImage": "./data/books/a-reliquia/cover.svg",
+  "source": {
+    "title": "A Reliquia — Porto, Typ. de A. J. da Silva Teixeira, 1887",
+    "url": "https://www.gutenberg.org/ebooks/17515",
+    "transcription": "Project Gutenberg e Distributed Proofreaders; transcrição a partir de imagens disponibilizadas pela Biblioteca Nacional de Portugal.",
+    "editorialNote": "Texto integral organizado pela abertura do narrador e pelos cinco capítulos. O colofão da fonte identifica Porto e a tipografia de A. J. da Silva Teixeira, em 1887; estas linhas de impressão são excluídas do texto de leitura. A grafia da fonte é preservada. Eça de Queirós morreu em 1900. As marcas tipográficas de sobrescrito da transcrição são apresentadas em linha. As obras originais estão no domínio público em Portugal: os autores morreram há mais de 70 anos. O Project Gutenberg identifica o estatuto nos Estados Unidos; a transcrição e a edição devem ser distinguidas do texto original."
+  },
+  "chapterOrder": [
+    "abertura",
+    "capitulo-01",
+    "capitulo-02",
+    "capitulo-03",
+    "capitulo-04",
+    "capitulo-05"
+  ]
+}

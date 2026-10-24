@@ -1,0 +1,52 @@
+{
+  "id": 17,
+  "slug": "o-crime-do-padre-amaro",
+  "title": "O Crime do Padre Amaro",
+  "author": "Eça de Queirós",
+  "authorId": "eca-de-queiros",
+  "authorBio": "Escritor português (1845–1900), figura central do Realismo, conhecido pela ironia e pela crítica dos costumes e das instituições.",
+  "year": "1875",
+  "description": "Em Leiria, a relação entre o padre Amaro e Amélia expõe os mecanismos de desejo, autoridade e hipocrisia de um meio devoto.",
+  "tags": [
+    "romance",
+    "Realismo",
+    "Leiria",
+    "religião"
+  ],
+  "language": "pt",
+  "coverImage": "./data/books/o-crime-do-padre-amaro/cover.svg",
+  "source": {
+    "title": "O Crime do Padre Amaro — terceira edição, Livraria Internacional de Ernesto Chardron, 1889",
+    "url": "https://www.gutenberg.org/ebooks/31971",
+    "transcription": "Project Gutenberg e Distributed Proofreaders; transcrição a partir de imagens disponibilizadas pela Biblioteca Nacional de Portugal.",
+    "editorialNote": "A primeira versão foi publicada em 1875 na Revista Ocidental; a edição-fonte de 1889 contém a nota da segunda edição e 25 divisões de capítulo explícitas: I–X e XII–XXVI. A transcrição não apresenta um cabeçalho XI; mantém-se essa numeração sem fabricar uma divisão. Excluem-se publicidade, nota moderna de transcrição e tabela de erratas. Eça de Queirós morreu em 1900. As marcas tipográficas de sobrescrito da transcrição são apresentadas em linha. As obras originais estão no domínio público em Portugal: os autores morreram há mais de 70 anos. O Project Gutenberg identifica o estatuto nos Estados Unidos; a transcrição e a edição devem ser distinguidas do texto original."
+  },
+  "chapterOrder": [
+    "nota-do-autor",
+    "capitulo-01",
+    "capitulo-02",
+    "capitulo-03",
+    "capitulo-04",
+    "capitulo-05",
+    "capitulo-06",
+    "capitulo-07",
+    "capitulo-08",
+    "capitulo-09",
+    "capitulo-10",
+    "capitulo-12",
+    "capitulo-13",
+    "capitulo-14",
+    "capitulo-15",
+    "capitulo-16",
+    "capitulo-17",
+    "capitulo-18",
+    "capitulo-19",
+    "capitulo-20",
+    "capitulo-21",
+    "capitulo-22",
+    "capitulo-23",
+    "capitulo-24",
+    "capitulo-25",
+    "capitulo-26"
+  ]
+}

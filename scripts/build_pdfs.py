@@ -68,7 +68,7 @@ def split_blocks(text: str) -> List[str]:
 
 
 def format_block(block: str) -> str:
-    return xml_escape(block).replace("\n", "<br/>")
+    return xml_escape(block.replace("\u2015", "\u2014")).replace("\n", "<br/>")
 
 
 def build_styles():

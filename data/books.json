@@ -243,5 +243,130 @@
       "modernidade",
       "quotidiano"
     ]
+  },
+  {
+    "id": 15,
+    "slug": "eurico-o-presbitero",
+    "title": "Eurico, o Presbítero",
+    "author": "Alexandre Herculano",
+    "authorId": "alexandre-herculano",
+    "authorBio": "Escritor e historiador português (1810–1877), figura central do Romantismo e do romance histórico.",
+    "year": "1844",
+    "description": "Amor, renúncia e guerra no fim do reino visigótico, num romance histórico que acompanha o sacerdote e guerreiro Eurico.",
+    "tags": [
+      "romance histórico",
+      "Romantismo",
+      "Península Ibérica"
+    ],
+    "language": "pt",
+    "coverImage": "./data/books/eurico-o-presbitero/cover.svg"
+  },
+  {
+    "id": 16,
+    "slug": "a-queda-dum-anjo",
+    "title": "A Queda d’um Anjo",
+    "author": "Camilo Castelo Branco",
+    "authorId": "camilo-castelo-branco",
+    "authorBio": "Romancista português (1825–1890), autor de uma vasta obra de ficção, polémica e crítica dos costumes.",
+    "year": "1866",
+    "description": "A chegada de um morgado provinciano ao parlamento lisboeta desencadeia uma sátira à política, à respeitabilidade e à transformação dos costumes.",
+    "tags": [
+      "romance",
+      "sátira",
+      "política",
+      "Lisboa"
+    ],
+    "language": "pt",
+    "coverImage": "./data/books/a-queda-dum-anjo/cover.svg"
+  },
+  {
+    "id": 17,
+    "slug": "o-crime-do-padre-amaro",
+    "title": "O Crime do Padre Amaro",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Escritor português (1845–1900), figura central do Realismo, conhecido pela ironia e pela crítica dos costumes e das instituições.",
+    "year": "1875",
+    "description": "Em Leiria, a relação entre o padre Amaro e Amélia expõe os mecanismos de desejo, autoridade e hipocrisia de um meio devoto.",
+    "tags": [
+      "romance",
+      "Realismo",
+      "Leiria",
+      "religião"
+    ],
+    "language": "pt",
+    "coverImage": "./data/books/o-crime-do-padre-amaro/cover.svg"
+  },
+  {
+    "id": 18,
+    "slug": "a-reliquia",
+    "title": "A Relíquia",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Escritor português (1845–1900), figura central do Realismo, conhecido pela ironia e pela crítica dos costumes e das instituições.",
+    "year": "1887",
+    "description": "Teodorico Raposo conta a sua peregrinação à Terra Santa numa sátira em que devoção, herança e desejo se cruzam.",
+    "tags": [
+      "romance",
+      "sátira",
+      "viagem",
+      "religião"
+    ],
+    "language": "pt",
+    "coverImage": "./data/books/a-reliquia/cover.svg"
+  },
+  {
+    "id": 19,
+    "slug": "a-ilustre-casa-de-ramires",
+    "title": "A Ilustre Casa de Ramires",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Escritor português (1845–1900), figura central do Realismo, conhecido pela ironia e pela crítica dos costumes e das instituições.",
+    "year": "1900",
+    "description": "Gonçalo Mendes Ramires escreve a história heroica dos antepassados enquanto procura o seu lugar na sociedade e na política do presente.",
+    "tags": [
+      "romance",
+      "Realismo",
+      "história",
+      "política"
+    ],
+    "language": "pt",
+    "coverImage": "./data/books/a-ilustre-casa-de-ramires/cover.svg"
+  },
+  {
+    "id": 20,
+    "slug": "so",
+    "title": "Só",
+    "author": "António Nobre",
+    "authorId": "antonio-nobre",
+    "authorBio": "Poeta português (1867–1900), cuja escrita aproxima a memória de infância, a saudade, a linguagem familiar e a experiência do exílio.",
+    "year": "1892",
+    "description": "A primeira edição da colectânea de António Nobre, entre memória familiar, paisagens portuguesas, doença, viagem e saudade.",
+    "tags": [
+      "poesia",
+      "saudade",
+      "memória",
+      "Paris"
+    ],
+    "language": "pt",
+    "coverImage": "./data/books/so/cover.svg"
+  },
+  {
+    "id": 21,
+    "slug": "os-sonetos-completos-de-antero-de-quental",
+    "title": "Os Sonetos Completos de Antero de Quental",
+    "author": "Antero de Quental",
+    "authorId": "antero-de-quental",
+    "authorBio": "Poeta e pensador português (1842–1891), figura da Geração de 70, cuja poesia interroga a consciência, o ideal, a fé e o sofrimento.",
+    "year": "1886",
+    "description": "A edição de 1886 apresentada por Oliveira Martins, com poemas de abertura e sonetos organizados por períodos da vida do poeta.",
+    "tags": [
+      "poesia",
+      "sonetos",
+      "filosofia",
+      "Geração de 70"
+    ],
+    "language": "pt",
+    "coverImage": "./data/books/os-sonetos-completos-de-antero-de-quental/cover.svg"
   }
 ]

@@ -1,0 +1,46 @@
+{
+  "id": 15,
+  "slug": "eurico-o-presbitero",
+  "title": "Eurico, o Presbítero",
+  "author": "Alexandre Herculano",
+  "authorId": "alexandre-herculano",
+  "authorBio": "Escritor e historiador português (1810–1877), figura central do Romantismo e do romance histórico.",
+  "year": "1844",
+  "description": "Amor, renúncia e guerra no fim do reino visigótico, num romance histórico que acompanha o sacerdote e guerreiro Eurico.",
+  "tags": [
+    "romance histórico",
+    "Romantismo",
+    "Península Ibérica"
+  ],
+  "language": "pt",
+  "coverImage": "./data/books/eurico-o-presbitero/cover.svg",
+  "source": {
+    "title": "Eurico o Presbytero — quinta edição, Imprensa Nacional, 1864",
+    "url": "https://www.gutenberg.org/ebooks/45966",
+    "transcription": "Project Gutenberg e Distributed Proofreaders; transcrição a partir de imagens do Google Print.",
+    "editorialNote": "Inclui o prefácio, os 19 capítulos e as notas históricas do autor; exclui a nota moderna de transcrição e a tabela de erratas. Preserva a grafia da edição de 1864 e as subdivisões internas. Alexandre Herculano morreu em 1877. As marcas tipográficas de sobrescrito da transcrição são apresentadas em linha. As obras originais estão no domínio público em Portugal: os autores morreram há mais de 70 anos. O Project Gutenberg identifica o estatuto nos Estados Unidos; a transcrição e a edição devem ser distinguidas do texto original."
+  },
+  "chapterOrder": [
+    "prefacio",
+    "capitulo-01",
+    "capitulo-02",
+    "capitulo-03",
+    "capitulo-04",
+    "capitulo-05",
+    "capitulo-06",
+    "capitulo-07",
+    "capitulo-08",
+    "capitulo-09",
+    "capitulo-10",
+    "capitulo-11",
+    "capitulo-12",
+    "capitulo-13",
+    "capitulo-14",
+    "capitulo-15",
+    "capitulo-16",
+    "capitulo-17",
+    "capitulo-18",
+    "capitulo-19",
+    "notas-do-autor"
+  ]
+}

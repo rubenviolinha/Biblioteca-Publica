@@ -1,0 +1,38 @@
+{
+  "id": 19,
+  "slug": "a-ilustre-casa-de-ramires",
+  "title": "A Ilustre Casa de Ramires",
+  "author": "Eça de Queirós",
+  "authorId": "eca-de-queiros",
+  "authorBio": "Escritor português (1845–1900), figura central do Realismo, conhecido pela ironia e pela crítica dos costumes e das instituições.",
+  "year": "1900",
+  "description": "Gonçalo Mendes Ramires escreve a história heroica dos antepassados enquanto procura o seu lugar na sociedade e na política do presente.",
+  "tags": [
+    "romance",
+    "Realismo",
+    "história",
+    "política"
+  ],
+  "language": "pt",
+  "coverImage": "./data/books/a-ilustre-casa-de-ramires/cover.svg",
+  "source": {
+    "title": "A Illustre Casa de Ramires — Livraria Chardron, 1900",
+    "url": "https://www.gutenberg.org/ebooks/23145",
+    "transcription": "Project Gutenberg e Distributed Proofreaders; transcrição a partir de imagens disponibilizadas pela Biblioteca Nacional de Portugal.",
+    "editorialNote": "Os 12 capítulos da edição de 1900 são preservados, incluindo a novela histórica intercalada e a grafia de época. Excluem-se publicidade e páginas de impressão; a nota final dos editores informa que as provas desde a página 417 até ao fim não foram revistas pelo autor, tendo os editores seguido o original. Essa nota é registada aqui em vez de integrar a narrativa. Eça de Queirós morreu em 1900. As marcas tipográficas de sobrescrito da transcrição são apresentadas em linha. As obras originais estão no domínio público em Portugal: os autores morreram há mais de 70 anos. O Project Gutenberg identifica o estatuto nos Estados Unidos; a transcrição e a edição devem ser distinguidas do texto original."
+  },
+  "chapterOrder": [
+    "capitulo-01",
+    "capitulo-02",
+    "capitulo-03",
+    "capitulo-04",
+    "capitulo-05",
+    "capitulo-06",
+    "capitulo-07",
+    "capitulo-08",
+    "capitulo-09",
+    "capitulo-10",
+    "capitulo-11",
+    "capitulo-12"
+  ]
+}

@@ -19,6 +19,15 @@ Uma biblioteca digital gratuita para ler clássicos da literatura portuguesa. O 
 - **A Velhice do Padre Eterno**, Guerra Junqueiro — 28 poemas da edição de 1885, incluindo o posfácio.
 - **O Livro de Cesário Verde**, Cesário Verde — 22 poemas na compilação de Silva Pinto publicada em 1887.
 
+
+- **Eurico, o Presbítero**, Alexandre Herculano — prefácio, 19 capítulos e notas históricas da quinta edição de 1864.
+- **A Queda d’um Anjo**, Camilo Castelo Branco — dedicatória, 36 capítulos e notas da edição de 1866.
+- **O Crime do Padre Amaro**, Eça de Queirós — nota do autor e 25 divisões da transcrição da edição de 1889, que passa de X a XII sem cabeçalho XI.
+- **A Relíquia**, Eça de Queirós — abertura do narrador e cinco capítulos da edição impressa no Porto em 1887.
+- **A Ilustre Casa de Ramires**, Eça de Queirós — os 12 capítulos da edição de 1900, com a novela histórica intercalada.
+- **Só**, António Nobre — poema de dedicatória e 29 poemas da primeira edição de 1892, com versos e estrofes preservados.
+- **Os Sonetos Completos de Antero de Quental**, Antero de Quental — prefácio de Oliveira Martins e 99 unidades poéticas da edição de 1886, mantendo os ciclos e os períodos cronológicos.
+
 As obras e os ficheiros do site têm termos de utilização diferentes. Consulte `data/books/*/book.json` para a edição, a origem da transcrição e a nota editorial de cada texto. As obras originais aqui incluídas estão no domínio público em Portugal; a situação de uma transcrição, edição ou material gráfico pode ser diferente. As notas de leitura e as capas criadas para este projecto são conteúdo editorial do projecto.
 
 ## Ver o site no computador
@@ -53,15 +62,22 @@ npm ci
 npm run build:css
 ```
 
-Os importadores consultam as fontes online e recriam as edições completas:
+Os importadores consultam as fontes online e recriam as edições de referência. Instale primeiro as dependências com `python3 -m pip install -r requirements.txt`:
 
 ```bash
 python3 scripts/import_public_domain.py
 python3 scripts/import_additional_classics.py
+python3 scripts/import_more_classics.py
 python3 scripts/build_books.py
 ```
 
 Para actualizar também todos os PDFs, instale a dependência e execute `python3 scripts/build_pdfs.py`. O Project Gutenberg identifica o estatuto de direitos das suas edições nos Estados Unidos e recomenda que leitores de outros países confirmem a lei local; os metadados de cada livro identificam a edição consultada e a fonte da transcrição.
+
+Os testes de importação verificam os limites das secções, a remoção das páginas de origem e a preservação dos versos:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
 
 ## Administração local
 
@@ -94,6 +110,7 @@ data/books/<slug>/compiled.pdf  Edição PDF para descarregar
 scripts/build_books.py          Compilador do catálogo de leitura
 scripts/build_pdfs.py           Gerador de PDFs
 scripts/import_public_domain.py Importador de edições de referência
+scripts/import_more_classics.py Importador de sete novas edições de referência
 scripts/admin_api.py            API para edição local
 ```
 
