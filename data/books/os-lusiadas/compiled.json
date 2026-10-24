@@ -3,11 +3,18 @@
   "slug": "os-lusiadas",
   "title": "Os Lusíadas",
   "author": "Luís de Camões",
+  "coverImage": "./data/books/os-lusiadas/cover.png",
   "authorId": "luis-de-camoes",
   "authorBio": "Considerado o maior poeta de língua portuguesa.",
   "description": "Epopeia sobre os Descobrimentos portugueses.",
   "year": "1572",
   "language": "pt",
+  "source": {
+    "title": "Os Lusíadas — Project Gutenberg, eBook 3333",
+    "url": "https://www.gutenberg.org/ebooks/3333",
+    "transcription": "Project Gutenberg",
+    "editorialNote": "Edição digital em português; as notas de leitura são editoriais."
+  },
   "tags": [
     "epopeia",
     "descobrimentos"
@@ -45,7 +52,7 @@
           "text": "Deus romano da guerra (Ares na mitologia grega). N’Os Lusíadas, é um dos principais defensores dos portugueses junto dos deuses."
         },
         {
-          "target": "bem nascida segurança / Da Lusitana antígua liberdade",
+          "target": "Da Lusitana antígua liberdade",
           "text": "O poeta dirige-se ao Rei D. Sebastião, a quem dedica o poema, vendo nele a garantia da independência e futuro de Portugal."
         },
         {
@@ -77,7 +84,7 @@
           "text": "Mercúrio (Hermes), o mensageiro dos deuses. Era filho de Maia, que por sua vez era filha do gigante Atlas (Atlante)."
         },
         {
-          "target": "gente / De Luso",
+          "target": "De Luso",
           "text": "Os portugueses. Mitologicamente, Luso seria filho ou companheiro de Baco que se estabeleceu na Lusitânia, dando nome à região."
         },
         {
@@ -171,7 +178,7 @@
           "text": "Degredados ou criminosos embarcados nas naus, muitas vezes usados em missões perigosas de reconhecimento em terra."
         },
         {
-          "target": "aquele que sempre a mocidade / Tem no rosto perpétua, e foi nascido / De duas mães",
+          "target": "Tem no rosto perpétua, e foi nascido",
           "text": "Baco (Dioniso), deus do vinho, eternamente jovem. Segundo o mito, nasceu de Sémele e foi depois gerado de novo na coxa de Júpiter, o que explica a referência a ‘duas mães’."
         },
         {
@@ -187,7 +194,7 @@
           "text": "Os doze Apóstolos de Cristo, aqui figurados num falso altar para enganar os portugueses, fazendo-os crer que estão entre cristãos."
         },
         {
-          "target": "línguas que caíram, / De fogo",
+          "target": "línguas que caíram,",
           "text": "Alusão ao Pentecostes, momento em que o Espírito Santo desceu sobre os Apóstolos em línguas de fogo."
         },
         {
@@ -243,11 +250,11 @@
           "text": "Outra referência à cosmologia medieval/ptolomaica, em que os deuses e os astros ocupavam diferentes esferas celestes."
         },
         {
-          "target": "ao Troiano, / Na selva Idea",
+          "target": "Na selva Idea",
           "text": "Referência a Eneias, herói troiano, a quem Vénus apareceu no monte Ida sob forma humana."
         },
         {
-          "target": "o caçador, que o vulto humano / Perdeu, vendo Diana na água clara",
+          "target": "Perdeu, vendo Diana na água clara",
           "text": "Alusão a Actéon, que viu Diana nua e foi transformado em cervo, sendo depois devorado pelos próprios cães."
         },
         {
@@ -465,7 +472,7 @@
           "text": "Figuras mitológicas amadas por Apolo, frequentemente transformadas em elementos naturais (árvore, flor, etc.)."
         },
         {
-          "target": "Tejo / Aganipe / Pindo",
+          "target": "Aganipe",
           "text": "Referências à tradição poética clássica: Aganipe e Pindo são lugares associados às musas na Grécia; Camões afirma a superioridade da inspiração portuguesa (Tejo)."
         },
         {
@@ -477,7 +484,7 @@
           "text": "Estrela do hemisfério norte (Arcturus), usada como referência geográfica e astronómica."
         },
         {
-          "target": "montes Rifeios / alagoa Meotis",
+          "target": "montes Rifeios",
           "text": "Referências geográficas clássicas (Montes Urais e Mar de Azov), usadas para delimitar Europa e Ásia."
         },
         {
@@ -493,11 +500,11 @@
           "text": "Povos antigos das regiões do norte do Mar Negro, frequentemente associados a territórios frios e bárbaros."
         },
         {
-          "target": "Noruega / Escandinávia",
+          "target": "Escandinávia",
           "text": "Regiões do norte da Europa, descritas como frias e remotas na visão geográfica medieval."
         },
         {
-          "target": "Tánais / Istro",
+          "target": "Tánais",
           "text": "Nomes antigos dos rios Don (Tánais) e Danúbio (Istro)."
         },
         {
@@ -505,7 +512,7 @@
           "text": "Figura mitológica cujo nome deu origem ao Helesponto (estreito dos Dardanelos)."
         },
         {
-          "target": "Bizâncio / Constantino",
+          "target": "Constantino",
           "text": "Bizâncio (Constantinopla), capital do Império Romano do Oriente, associada ao imperador Constantino."
         },
         {
@@ -513,7 +520,7 @@
           "text": "Cordilheira que atravessa a Itália."
         },
         {
-          "target": "Séquana, Ródano, Reno",
+          "target": "Séquana",
           "text": "Rios europeus importantes (Sena, Ródano e Reno)."
         },
         {
@@ -549,15 +556,15 @@
           "text": "D. Henrique de Borgonha, pai de D. Afonso Henriques."
         },
         {
-          "target": "descendentes da escrava Agar",
+          "target": "Agar",
           "text": "Referência bíblica aos muçulmanos, considerados descendentes de Ismael, filho de Agar."
         },
         {
-          "target": "Hierosólima / Jordão",
+          "target": "Hierosólima",
           "text": "Jerusalém e o rio Jordão, ligados às Cruzadas e à história cristã."
         },
         {
-          "target": "Progne, Medeia, Cila",
+          "target": "Progne",
           "text": "Figuras mitológicas associadas a atos extremos contra familiares, usadas para condenar Teresa."
         },
         {
@@ -565,7 +572,7 @@
           "text": "Nobre português símbolo de lealdade, que se ofereceu em sacrifício para cumprir a palavra dada ao rei de Castela."
         },
         {
-          "target": "Zopiro / Dario",
+          "target": "Zopiro",
           "text": "Referência à história persa: Zopiro mutilou-se para ajudar Dario a conquistar Babilónia."
         },
         {
@@ -577,11 +584,11 @@
           "text": "Elementos do escudo de Portugal, simbolizando os cinco reis mouros vencidos."
         },
         {
-          "target": "Sintra / Lisboa",
+          "target": "Sintra",
           "text": "Locais importantes na consolidação do território português."
         },
         {
-          "target": "Albis, Reno, Bretanha",
+          "target": "Bretanha",
           "text": "Regiões de onde vieram cruzados que ajudaram na conquista de Lisboa."
         },
         {
@@ -621,7 +628,7 @@
           "text": "D. Pedro I, que vingou a morte de Inês de Castro."
         },
         {
-          "target": "Aleides / Teseu",
+          "target": "Aleides",
           "text": "Heróis mitológicos (Hércules e Teseu), símbolos de força e justiça."
         },
         {
@@ -633,7 +640,7 @@
           "text": "Figura da mitologia cuja beleza causou a Guerra de Troia."
         },
         {
-          "target": "David / Cleopatra / Marco António",
+          "target": "Marco António",
           "text": "Referências históricas e bíblicas que exemplificam o poder destrutivo do amor."
         },
         {
@@ -649,7 +656,7 @@
           "text": "Santo guerreiro associado aos cristãos nas batalhas da Reconquista."
         },
         {
-          "target": "Mário / Tito",
+          "target": "Mário",
           "text": "Figuras históricas romanas usadas para comparação com batalhas sangrentas."
         },
         {
@@ -683,7 +690,7 @@
           "text": "Astíanax, filho de Heitor e Andrómaca, lançado das muralhas de Troia após a sua queda. Serve aqui de comparação para a violência da revolta popular."
         },
         {
-          "target": "Mário e do cruento / Sila",
+          "target": "Mário e do cruento",
           "text": "Caio Mário e Lúcio Cornélio Sula, figuras da história romana associadas a guerras civis e grandes crueldades."
         },
         {
@@ -719,7 +726,7 @@
           "text": "D. Afonso Henriques, fundador do reino de Portugal."
         },
         {
-          "target": "Cornélio moço / Canas",
+          "target": "Cornélio moço",
           "text": "Alusão a Cipião Africano, que, após a derrota romana em Canas, impediu o desânimo e a rendição dos sobreviventes."
         },
         {
@@ -735,7 +742,7 @@
           "text": "Átila, rei dos Hunos, célebre pela destruição que causou na Europa."
         },
         {
-          "target": "Mem Rodrigues de Vasconcelos",
+          "target": "Vasconcelos",
           "text": "Cavaleiro português que teve comando militar na batalha de Aljubarrota."
         },
         {
@@ -771,7 +778,7 @@
           "text": "Divindade infernal romana, associada à escuridão e ao submundo."
         },
         {
-          "target": "Ceita / Tetuão",
+          "target": "Tetuão",
           "text": "Ceuta e Tetuão, cidades do norte de África, evocadas numa comparação com o leão cercado por caçadores."
         },
         {
@@ -783,7 +790,7 @@
           "text": "O rio Estige, um dos rios do Inferno na mitologia clássica."
         },
         {
-          "target": "Mestre de Santiago",
+          "target": "Santiago",
           "text": "Chefe da Ordem de Santiago, que combate do lado castelhano em Aljubarrota."
         },
         {
@@ -795,7 +802,7 @@
           "text": "Cérbero, o cão de três cabeças que guarda o Inferno."
         },
         {
-          "target": "terras Transtaganas",
+          "target": "Transtaganas",
           "text": "Terras do Alentejo, situadas para além do Tejo em relação ao centro político do reino."
         },
         {
@@ -807,7 +814,7 @@
           "text": "Referência às alianças matrimoniais luso-inglesas que consolidaram a paz e amizade entre Portugal e Inglaterra."
         },
         {
-          "target": "Africano / Mafamede",
+          "target": "Africano",
           "text": "O muçulmano do norte de África; Mafamede é forma antiga de referir Maomé."
         },
         {
@@ -839,7 +846,7 @@
           "text": "O Infante D. Fernando, depois chamado o Infante Santo, capturado em Tânger e mantido cativo em Marrocos."
         },
         {
-          "target": "Codro, Régulo, Cúrcio, os Décios",
+          "target": "Régulo",
           "text": "Exemplos clássicos de heroísmo e sacrifício pela pátria, usados para engrandecer o gesto do Infante D. Fernando."
         },
         {
@@ -851,7 +858,7 @@
           "text": "Hércules, natural de Tirinto, herói clássico que conquistou as maçãs de ouro."
         },
         {
-          "target": "Alcácer / Tângere / Arzila",
+          "target": "Alcácer",
           "text": "Alcácer Ceguer, Tânger e Arzila, praças do norte de África associadas à política expansionista portuguesa."
         },
         {
@@ -859,7 +866,7 @@
           "text": "Fernando, o Católico, rei de Aragão, envolvido nas disputas sucessórias castelhanas que levaram à batalha de Toro."
         },
         {
-          "target": "Octaviano / António / Filípicos campos",
+          "target": "Filípicos campos",
           "text": "Referência à batalha de Filipos, onde Octaviano e Marco António derrotaram os assassinos de Júlio César."
         },
         {
@@ -883,7 +890,7 @@
           "text": "Antiga cidade egípcia, usada aqui como marco das viagens exploratórias."
         },
         {
-          "target": "Etiópia, sobre Egito, / Que de Cristo lá guarda o santo rito",
+          "target": "Que de Cristo lá guarda o santo rito",
           "text": "Referência ao imaginário cristão do Preste João e aos reinos cristãos africanos que os portugueses procuravam contactar."
         },
         {
@@ -915,7 +922,7 @@
           "text": "Babilónia, símbolo bíblico da dispersão das línguas."
         },
         {
-          "target": "Tigre / Eufrates",
+          "target": "Eufrates",
           "text": "Os dois grandes rios da Mesopotâmia."
         },
         {
@@ -943,11 +950,11 @@
           "text": "As nascentes míticas do Ganges e do Indo, representadas em sonho a D. Manuel."
         },
         {
-          "target": "Alfeu / Aretusa",
+          "target": "Aretusa",
           "text": "Mito clássico segundo o qual o rio Alfeu corre subterraneamente até à fonte de Aretusa, na Sicília."
         },
         {
-          "target": "Ganges / Indo",
+          "target": "Ganges",
           "text": "Os grandes rios da Índia, personificados como reis que profetizam domínio e resistência."
         },
         {
@@ -955,11 +962,11 @@
           "text": "Euristeu impôs a Hércules (Alcides) os seus famosos trabalhos, aqui usados para exaltar os perigos da viagem."
         },
         {
-          "target": "leão Cleoneu, Harpias, porco de Erimanto, Hidra",
+          "target": "Erimanto",
           "text": "Alguns dos trabalhos de Hércules, invocados por Vasco da Gama para mostrar a sua disponibilidade para qualquer perigo."
         },
         {
-          "target": "Dite / Estige",
+          "target": "Estige",
           "text": "Dite é o mundo infernal; Estige é um dos rios do Inferno."
         },
         {
@@ -971,7 +978,7 @@
           "text": "Navegador português, um dos capitães da armada de Vasco da Gama."
         },
         {
-          "target": "Mínias / Véu dourado / mar Euxínio",
+          "target": "Véu dourado",
           "text": "Os Argonautas, companheiros de Jasão, que partiram na nau Argo em busca do Velo de Ouro, navegando para o mar Negro (Euxino)."
         },
         {
@@ -987,11 +994,11 @@
           "text": "Referência à nau Argo, transformada em constelação; sugere a futura glorificação celeste das naus portuguesas."
         },
         {
-          "target": "santo templo / nome tem da terra, para exemplo, / Donde Deus foi em carne ao mundo dado",
+          "target": "Donde Deus foi em carne ao mundo dado",
           "text": "O mosteiro de Santa Maria de Belém, ligado simbolicamente ao nascimento de Cristo em Belém."
         },
         {
-          "target": "Velho do Restelo",
+          "target": "Velho",
           "text": "Figura simbólica que condena a ambição imperial, a vaidade da fama e os riscos da expansão marítima."
         },
         {
@@ -999,11 +1006,11 @@
           "text": "Os muçulmanos, segundo a tradição bíblica descendentes de Ismael."
         },
         {
-          "target": "filho de Jápeto / Prometeu",
+          "target": "filho de Jápeto",
           "text": "Prometeu, titã que roubou o fogo aos deuses e o entregou aos homens."
         },
         {
-          "target": "moço miserando / o grande Arquiteto co'o filho",
+          "target": "o grande Arquiteto co'o filho",
           "text": "Alusão a Faetonte, que conduziu o carro do Sol, e a Dédalo com Ícaro; exemplos míticos de ambição e ousadia desmedidas."
         },
         {
@@ -1033,7 +1040,7 @@
           "text": "O Infante D. Henrique, impulsionador dos descobrimentos portugueses na costa africana."
         },
         {
-          "target": "Mauritânia / Anteu",
+          "target": "Mauritânia",
           "text": "Mauritânia designa o noroeste de África. Anteu é o gigante mítico, filho da Terra, associado ao norte africano."
         },
         {
@@ -1065,15 +1072,15 @@
           "text": "Rio Senegal, importante referência geográfica da costa africana."
         },
         {
-          "target": "Cabo Arsinário / Cabo Verde",
+          "target": "Cabo Arsinário",
           "text": "Nome antigo substituído pelo topónimo dado pelos portugueses ao cabo da costa africana."
         },
         {
-          "target": "Canárias / Fortunadas",
+          "target": "Fortunadas",
           "text": "As Ilhas Canárias, chamadas pelos antigos de Ilhas Afortunadas ou Fortunadas."
         },
         {
-          "target": "filhas / Do velho Hespério, Hespérides chamadas",
+          "target": "Do velho Hespério, Hespérides chamadas",
           "text": "As ilhas de Cabo Verde, associadas poeticamente às Hespérides, ninfas do Ocidente."
         },
         {
@@ -1101,7 +1108,7 @@
           "text": "Ilhas ou regiões associadas miticamente às Górgonas."
         },
         {
-          "target": "Irmãs, que outro tempo ali viviam, / Que de vista total sendo privadas, / Todas três dum só olho se serviam",
+          "target": "Irmãs, que outro tempo ali viviam,",
           "text": "As Górgonas ou Gréias, figuras da mitologia clássica que partilhavam um só olho."
         },
         {
@@ -1117,7 +1124,7 @@
           "text": "Cabo das Palmas, na costa ocidental africana."
         },
         {
-          "target": "Ilha ilustre que tomou / O nome dum que o lado a Deus tocou",
+          "target": "O nome dum que o lado a Deus tocou",
           "text": "Ilha de São Tomé, associada ao apóstolo Tomé, célebre por tocar as chagas de Cristo."
         },
         {
@@ -1133,7 +1140,7 @@
           "text": "A Ursa Maior, associada à ninfa Calisto."
         },
         {
-          "target": "término ardente / onde o meio do mundo é limitado",
+          "target": "onde o meio do mundo é limitado",
           "text": "O equador, concebido como linha média do mundo."
         },
         {
@@ -1149,15 +1156,15 @@
           "text": "Deus dos ventos."
         },
         {
-          "target": "Ursas, apesar de Juno, / Banharem-se nas águas de Netuno",
+          "target": "Banharem-se nas águas de Netuno",
           "text": "Alusão mítica às constelações da Ursa Maior e Menor, que segundo a lenda Juno proibira de mergulhar no oceano; aqui a viagem leva-as poeticamente a 'banhar-se'."
         },
         {
-          "target": "lume vivo / que a marítima gente tem por santo",
+          "target": "que a marítima gente tem por santo",
           "text": "Fogo de Santelmo, fenómeno elétrico atmosférico visto pelos marinheiros como sinal sagrado."
         },
         {
-          "target": "nuvens do mar com largo cano / Sorver as altas águas do Oceano",
+          "target": "Sorver as altas águas do Oceano",
           "text": "Descrição de uma tromba de água, fenómeno meteorológico observado no mar."
         },
         {
@@ -1173,7 +1180,7 @@
           "text": "Ciclope da Odisseia, símbolo de selvajaria e brutalidade."
         },
         {
-          "target": "rica pelo / De Colcos",
+          "target": "rica pelo",
           "text": "O Velo de Ouro da Cólquida, símbolo de riqueza preciosa."
         },
         {
@@ -1189,15 +1196,15 @@
           "text": "Nome antigo dado ao Cabo da Boa Esperança antes de ser renomeado; aqui ligado ao medo e ao perigo."
         },
         {
-          "target": "figura / ... / rosto carregado, a barba esquálida",
+          "target": "rosto carregado, a barba esquálida",
           "text": "Descrição do Adamastor, gigante mítico que personifica o Cabo das Tormentas."
         },
         {
-          "target": "segundo / De Rodes estranhíssimo Colosso",
+          "target": "De Rodes estranhíssimo Colosso",
           "text": "Comparação com o Colosso de Rodes, uma das sete maravilhas do mundo antigo."
         },
         {
-          "target": "Ptolomeu, Pompónio, Estrabo, / Plínio",
+          "target": "Ptolomeu, Pompónio, Estrabo,",
           "text": "Autores e geógrafos da Antiguidade que não conheceram este promontório africano em termos reais de navegação oceânica."
         },
         {
@@ -1205,7 +1212,7 @@
           "text": "Quíloa (Kilwa) e Mombaça, cidades da costa oriental africana associadas aos perigos que os portugueses viriam a enfrentar."
         },
         {
-          "target": "Outro também virá de honrada fama, / Liberal, cavaleiro, enamorado",
+          "target": "Outro também virá de honrada fama,",
           "text": "Profecia alusiva a Manuel de Sousa Sepúlveda e a Leonor de Sá, protagonistas de um célebre naufrágio posterior."
         },
         {
@@ -1241,7 +1248,7 @@
           "text": "Ninfa do mar por quem Adamastor se apaixona."
         },
         {
-          "target": "Alfeu de Arcádia em Siracusa / Vai buscar os abraços de Aretusa",
+          "target": "buscar",
           "text": "Alusão ao mito do rio Alfeu, que corre subterraneamente até à fonte Aretusa, em Siracusa."
         },
         {
@@ -1285,11 +1292,11 @@
           "text": "Descrição clássica do escorbuto, doença causada por carência de vitamina C, frequente nas longas viagens marítimas."
         },
         {
-          "target": "Moçambique / Mombaça / teu seguro porto",
+          "target": "teu seguro porto",
           "text": "Etapas da costa oriental africana: Moçambique e Mombaça foram locais de engano e hostilidade; Melinde, o porto seguro e amigo."
         },
         {
-          "target": "Eneias e o facundo / Ulisses",
+          "target": "Eneias e o facundo",
           "text": "Heróis clássicos de Virgílio e Homero, aqui comparados a Vasco da Gama para exaltar a viagem portuguesa."
         },
         {
@@ -1297,7 +1304,7 @@
           "text": "Água da Aónia, região das musas; símbolo da poesia inspirada."
         },
         {
-          "target": "Rodes, Smirna e Colofónia, / Atenas, Ios, Argo e Salamina",
+          "target": "Atenas, Ios, Argo e Salamina",
           "text": "Cidades que disputavam a honra de ser a pátria de Homero."
         },
         {
@@ -1305,15 +1312,15 @@
           "text": "Virgílio, poeta latino que glorificou Eneias e Roma."
         },
         {
-          "target": "Míncio / Tibre",
+          "target": "Míncio",
           "text": "O Míncio é o rio da região natal de Virgílio; o Tibre é o grande rio de Roma."
         },
         {
-          "target": "Circes, Polifemos, / Sirenas",
+          "target": "Circes, Polifemos,",
           "text": "Figuras míticas da Odisseia."
         },
         {
-          "target": "Cicones / loto",
+          "target": "Cicones",
           "text": "Episódios da Odisseia ligados aos Cicones e aos Lotófagos."
         },
         {
@@ -1325,7 +1332,7 @@
           "text": "Aquiles, herói épico; Alexandre Magno, conquistador célebre."
         },
         {
-          "target": "Melcíades / Temístoeles",
+          "target": "Temístoeles",
           "text": "Milcíades e Temístocles, grandes chefes gregos, usados como exemplos da força estimulante da glória alheia."
         },
         {
@@ -1333,11 +1340,11 @@
           "text": "A poesia de Virgílio, natural de Mântua."
         },
         {
-          "target": "Cipiões, / Césares, Alexandros, e dá Augustos",
+          "target": "Césares, Alexandros, e dá Augustos",
           "text": "Grandes figuras militares e imperiais da Antiguidade, usadas para dizer que Portugal produz homens de igual grandeza."
         },
         {
-          "target": "Octávio / Fúlvia / António / Glafira",
+          "target": "Octávio",
           "text": "Referências à história romana, usadas para mostrar que grandes chefes também cultivavam a poesia e as letras."
         },
         {
@@ -1357,7 +1364,7 @@
           "text": "As tradições latina, grega e não clássica, nas quais os grandes capitães acumulavam armas e saber."
         },
         {
-          "target": "Calíope / Tágides",
+          "target": "Calíope",
           "text": "Calíope é a musa épica; as Tágides são as ninfas do Tejo, musas portuguesas de Camões."
         }
       ],
@@ -1411,7 +1418,7 @@
           "text": "Titã que roubou o fogo aos deuses para o dar aos homens."
         },
         {
-          "target": "Tifeu / Etna",
+          "target": "Tifeu",
           "text": "Tifeu (ou Tifão), gigante mitológico vencido pelos deuses e soterrado sob o Etna, vulcão da Sicília."
         },
         {
@@ -1443,7 +1450,7 @@
           "text": "Oceano, divindade primordial das águas que rodeiam o mundo."
         },
         {
-          "target": "Nereu / Dóris",
+          "target": "Nereu",
           "text": "Nereu é um antigo deus marinho; Dóris, sua esposa e mãe das Nereidas."
         },
         {
@@ -1471,7 +1478,7 @@
           "text": "Nereida do séquito marinho."
         },
         {
-          "target": "Circe / Cila",
+          "target": "Circe",
           "text": "Circe transformou a bela Cila em monstro marinho, por ciúme amoroso."
         },
         {
@@ -1483,7 +1490,7 @@
           "text": "Os Argonautas, companheiros de Jasão, primeiros navegadores míticos de grande fama."
         },
         {
-          "target": "Eolo / Hipótades",
+          "target": "Hipótades",
           "text": "Eolo, deus dos ventos, filho de Hipotes; Hipótades é um epíteto seu."
         },
         {
@@ -1491,7 +1498,7 @@
           "text": "Tétis, aqui figura marinha que intervém no conselho divino."
         },
         {
-          "target": "quarto da prima / segundo",
+          "target": "quarto da prima",
           "text": "Referência à divisão do tempo de vigia a bordo durante a noite."
         },
         {
@@ -1567,7 +1574,7 @@
           "text": "Júpiter, senhor do trovão."
         },
         {
-          "target": "grã dilúvio, donde sós viveram / Os dois que em gente as pedras converteram",
+          "target": "Os dois que em gente as pedras converteram",
           "text": "Deucalião e Pirra, sobreviventes do dilúvio mítico, que repovoaram o mundo lançando pedras."
         },
         {
@@ -1583,11 +1590,11 @@
           "text": "Baixos e golfos perigosos da costa do norte de África, célebres na Antiguidade."
         },
         {
-          "target": "segundo / Povoador do alagado e vácuo mundo",
+          "target": "Povoador do alagado e vácuo mundo",
           "text": "Noé, que repovoou o mundo depois do Dilúvio."
         },
         {
-          "target": "Cila e Caríbdis / Acroceráunios",
+          "target": "Cila e Caríbdis",
           "text": "Perigos marítimos clássicos da tradição greco-latina; os Acroceraunos eram promontórios temidos pelos navegadores."
         },
         {
@@ -1665,7 +1672,7 @@
           "text": "O Império Otomano, principal potência muçulmana e adversário da Cristandade no Mediterrâneo oriental."
         },
         {
-          "target": "duro Inglês, que se nomeia / Rei da velha e santíssima cidade",
+          "target": "Rei da velha e santíssima cidade",
           "text": "Referência a Henrique VIII de Inglaterra, que rompeu com Roma e assumiu autoridade religiosa própria, em vez de combater pela recuperação de Jerusalém."
         },
         {
@@ -1673,11 +1680,11 @@
           "text": "Designação tradicional, de fundo bíblico e medieval, para os muçulmanos, considerados descendentes de Ismael."
         },
         {
-          "target": "Hierosólima terrestre / Hierosólima celeste",
+          "target": "Hierosólima terrestre",
           "text": "Jerusalém terrestre é a cidade santa histórica; Jerusalém celeste é a cidade espiritual e eterna da tradição cristã."
         },
         {
-          "target": "Galo indigno / nome Cristianíssimo",
+          "target": "nome Cristianíssimo",
           "text": "Alusão crítica ao rei de França, que detinha o título de 'Rei Cristianíssimo', mas que Camões acusa de não o honrar devidamente."
         },
         {
@@ -1761,7 +1768,7 @@
           "text": "Sri Lanka, ilha importante do oceano Índico, conhecida pelos portugueses como Ceilão."
         },
         {
-          "target": "Delis, Patanes, Decanis, Oriás, Bengala",
+          "target": "Patanes",
           "text": "Diversos povos, regiões e reinos da Índia medieval e pré-moderna, mostrando a diversidade política e étnica do subcontinente."
         },
         {
@@ -1789,7 +1796,7 @@
           "text": "Título do soberano de Calecute."
         },
         {
-          "target": "Berberia / Anteu",
+          "target": "Berberia",
           "text": "O Norte de África, terra associada miticamente ao gigante Anteu."
         },
         {
@@ -1813,7 +1820,7 @@
           "text": "Referência à Península Arábica e à difusão do Islão a partir dela."
         },
         {
-          "target": "Cochim, Cananor, Chalé, ilha da Pimenta, Coulão, Cranganor",
+          "target": "Cranganor",
           "text": "Diversas cidades e regiões comerciais da costa do Malabar repartidas, segundo a tradição narrada, após a divisão do antigo reino."
         },
         {
@@ -1877,11 +1884,11 @@
           "text": "Bastões rituais associados a Baco; aqui, sinal de que a figura representada é Baco como conquistador da Índia."
         },
         {
-          "target": "Nisa / Semele",
+          "target": "Semele",
           "text": "Nisa é cidade mítica associada a Baco; Semele é sua mãe."
         },
         {
-          "target": "Assíria gente / feminino senhorio",
+          "target": "feminino senhorio",
           "text": "Alusão a Semíramis, rainha lendária da Assíria, famosa pela beleza, poder e devassidão segundo a tradição clássica."
         },
         {
@@ -1889,7 +1896,7 @@
           "text": "O império de Alexandre Magno, entendido na tradição historiográfica como sucessor dos grandes impérios orientais."
         },
         {
-          "target": "de Filipo, mas sem falta / De progénie de Júpiter",
+          "target": "de Filipo, mas sem falta",
           "text": "Alexandre Magno, filho de Filipe da Macedónia, mas que se apresentava como descendente de Júpiter."
         },
         {
@@ -1937,7 +1944,7 @@
           "text": "Provável referência a um sábio ou legislador antigo figurado com ramo simbólico, talvez ligado à paz, à vitória ou à autoridade."
         },
         {
-          "target": "Ninfas do Tejo e do Mondego / Camenas",
+          "target": "Ninfas do Tejo e do Mondego",
           "text": "As musas portuguesas e latinas invocadas por Camões para continuar o canto épico."
         },
         {
@@ -2015,7 +2022,7 @@
           "text": "A corça branca de Sertório, que ele apresentava como sinal divino e instrumento político."
         },
         {
-          "target": "Úngaro / Lotaríngia",
+          "target": "Lotaríngia",
           "text": "Referência a D. Henrique, pai de D. Afonso Henriques, cuja origem foi objeto de tradições divergentes, ora húngaras, ora lorenas."
         },
         {
@@ -2035,7 +2042,7 @@
           "text": "Aio e vassalo leal de D. Afonso Henriques, célebre por se oferecer, com a família, em sacrifício para cumprir a palavra dada ao rei de Castela."
         },
         {
-          "target": "forças Caudinas / Samnítico jugo",
+          "target": "forças Caudinas",
           "text": "Referência histórica romana à humilhação sofrida pelos romanos nas Forcas Caudinas perante os Samnitas."
         },
         {
@@ -2087,7 +2094,7 @@
           "text": "Mestre da Ordem de Santiago, figura central na conquista do Algarve."
         },
         {
-          "target": "Tavila / sete caçadores",
+          "target": "sete caçadores",
           "text": "Tavira, tomada segundo a tradição em vingança da morte de sete cavaleiros ou caçadores cristãos."
         },
         {
@@ -2151,7 +2158,7 @@
           "text": "Sacerdotes adivinhos da Antiguidade que interpretavam sinais nas entranhas das vítimas sacrificadas."
         },
         {
-          "target": "Profeta falso e noto / filho da escrava Agar",
+          "target": "filho da escrava Agar",
           "text": "Referência depreciativa a Maomé, segundo a perspetiva religiosa da epopeia."
         },
         {
@@ -2179,11 +2186,11 @@
           "text": "Expressão para designar a origem ou instrumento da maldade e da perfídia."
         },
         {
-          "target": "Antarcticos frios / ardores / Carneiro",
+          "target": "Antarcticos frios",
           "text": "Referência aos extremos climáticos enfrentados pelos navegadores: os frios austrais e os calores das zonas tropicais sob o signo de Áries."
         },
         {
-          "target": "ramo claro / venturoso Rei, que arou primeiro / o mar",
+          "target": "venturoso Rei, que arou primeiro",
           "text": "Referência ao Infante D. Henrique, pioneiro da expansão marítima portuguesa."
         },
         {
@@ -2199,20 +2206,16 @@
           "text": "Tétis, deusa marinha, usada poeticamente para designar o mar."
         },
         {
-          "target": "Polidoro / Ptei Treício",
+          "target": "Ptei Treício",
           "text": "Polidoro foi morto por Polimestor, rei da Trácia, por cobiça do ouro confiado à sua guarda."
         },
         {
-          "target": "filha de Acriso / chuva d'ouro",
+          "target": "filha de Acriso",
           "text": "Dânae, filha de Acrísio, fecundada por Júpiter sob a forma de chuva de ouro."
         },
         {
           "target": "Tarpeia",
           "text": "Virgem romana que traiu a cidadela de Roma por cobiça e foi morta pelos próprios inimigos."
-        },
-        {
-          "target": "Proteio",
-          "text": "Proteu, deus marinho capaz de mudar de forma; símbolo de oportunismo e mutabilidade."
         }
       ],
       "slug": "canto-oitavo"
@@ -2253,7 +2256,7 @@
           "text": "Deus romano do fogo e da metalurgia; aqui representa a artilharia."
         },
         {
-          "target": "Cípria / Acidália",
+          "target": "Acidália",
           "text": "Epítetos de Vénus, deusa do amor, protetora dos portugueses."
         },
         {
@@ -2357,7 +2360,7 @@
           "text": "Filho da Aurora; referência ao amanhecer."
         },
         {
-          "target": "Latona / Febo",
+          "target": "Latona",
           "text": "Latona é mãe de Apolo (Febo) e Diana."
         },
         {
@@ -2381,7 +2384,7 @@
           "text": "A fama que eterniza os feitos heroicos."
         },
         {
-          "target": "Júpiter, Mercúrio, Febo, Marte",
+          "target": "Mercúrio",
           "text": "Deuses romanos que, segundo Camões, foram originalmente homens elevados à divindade."
         },
         {
@@ -2389,7 +2392,7 @@
           "text": "Heróis fundadores ligados à origem de Roma."
         },
         {
-          "target": "Semideuses / Indígetes",
+          "target": "Semideuses",
           "text": "Categorias de heróis divinizados na tradição clássica."
         },
         {
@@ -2451,7 +2454,7 @@
           "text": "General bizantino famoso pela sua glória e posterior ingratidão sofrida."
         },
         {
-          "target": "Aiace e Ulisses",
+          "target": "Ulisses",
           "text": "Heróis gregos; referência ao julgamento das armas de Aquiles, simbolizando injustiça na recompensa."
         },
         {
@@ -2499,7 +2502,7 @@
           "text": "Nome antigo do Ceilão (Sri Lanka)."
         },
         {
-          "target": "São Tomé",
+          "target": "Tomé",
           "text": "Apóstolo cristão que, segundo a tradição, evangelizou a Índia."
         },
         {
@@ -2519,7 +2522,7 @@
           "text": "Ilha mencionada como futura terra cristianizada e fonte de prata."
         },
         {
-          "target": "Ternate e Tidore",
+          "target": "Ternate",
           "text": "Ilhas das especiarias (Molucas), importantes para o comércio português."
         },
         {
@@ -2531,7 +2534,7 @@
           "text": "Grande ilha africana mencionada como território relevante."
         },
         {
-          "target": "Brasil / Santa Cruz",
+          "target": "Santa Cruz",
           "text": "Referência à descoberta do Brasil pelos portugueses."
         },
         {
@@ -2547,11 +2550,11 @@
           "text": "Esfera mais externa do cosmos que move todas as outras na cosmologia aristotélica."
         },
         {
-          "target": "Zodíaco",
+          "target": "movimento",
           "text": "Círculo celeste com as doze constelações associadas ao movimento do Sol."
         },
         {
-          "target": "Saturno, Júpiter, Marte, Vénus, Mercúrio, Diana",
+          "target": "Mercúrio",
           "text": "Planetas representados segundo a cosmologia antiga, associados a divindades."
         },
         {
@@ -2559,23 +2562,23 @@
           "text": "Rio africano cuja nascente era desconhecida na Antiguidade."
         },
         {
-          "target": "Suez / Arsínoe",
+          "target": "Arsínoe",
           "text": "Região estratégica entre o Mediterrâneo e o Mar Vermelho."
         },
         {
-          "target": "Ormuz, Barém, Pérsia",
+          "target": "Pérsia",
           "text": "Regiões do Golfo Pérsico com grande importância comercial e militar."
         },
         {
-          "target": "Maldivas",
+          "target": "conhecido",
           "text": "Arquipélago do Índico conhecido por produtos raros."
         },
         {
-          "target": "Cabo da Boa Esperança",
+          "target": "Cabo",
           "text": "Chamado 'Tormentório', simboliza perigo e conquista marítima."
         },
         {
-          "target": "Ilha dos Amores",
+          "target": "Amores",
           "text": "Alegoria da recompensa da glória, fama e imortalidade pelos feitos heroicos."
         },
         {
@@ -2583,7 +2586,7 @@
           "text": "Personificação da glória que eterniza os heróis."
         },
         {
-          "target": "crítica final",
+          "target": "vassalos",
           "text": "Camões critica a ingratidão da pátria e exorta o rei a valorizar o mérito, a justiça e os seus vassalos."
         }
       ],

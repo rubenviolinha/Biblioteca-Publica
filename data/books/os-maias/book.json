@@ -14,7 +14,29 @@
   "language": "pt",
   "authorId": "eca-de-queiros",
   "chapterOrder": [
-    "capitulo-i",
-    "capitulo-ii"
-  ]
+    "volume-1-capitulo-01",
+    "volume-1-capitulo-02",
+    "volume-1-capitulo-03",
+    "volume-1-capitulo-04",
+    "volume-1-capitulo-05",
+    "volume-1-capitulo-06",
+    "volume-1-capitulo-07",
+    "volume-1-capitulo-08",
+    "volume-1-capitulo-09",
+    "volume-1-capitulo-10",
+    "volume-2-capitulo-01",
+    "volume-2-capitulo-02",
+    "volume-2-capitulo-03",
+    "volume-2-capitulo-04",
+    "volume-2-capitulo-05",
+    "volume-2-capitulo-06",
+    "volume-2-capitulo-07",
+    "volume-2-capitulo-08"
+  ],
+  "source": {
+    "title": "Os Maias: episódios da vida romântica (1888)",
+    "url": "https://www.gutenberg.org/ebooks/40409",
+    "transcription": "Project Gutenberg e Biblioteca Nacional de Portugal",
+    "editorialNote": "Transcrição da edição de 1888; ortografia original preservada. Os dois volumes originais foram reunidos numa sequência de 16 capítulos."
+  }
 }

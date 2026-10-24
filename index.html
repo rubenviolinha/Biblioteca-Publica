@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Publica | Biblioteca Digital Minimalista</title>
-    <script type="text/javascript" nonce="372d391b96254d4f97ba5bd6697"
-        src="//local.adguard.org?ts=1771153779104&amp;type=content-script&amp;dmn=file.notion.so&amp;url=https%3A%2F%2Ffile.notion.so%2Ff%2Ff%2Fade888d6-b468-4bb3-93f4-f6900c67664f%2F3fb95c66-b7f2-4d6b-8400-582316cec908%2Flivros_portugal_1.html%3Ftable%3Dblock%26id%3D3028cff9-921f-8091-af4f-f9aef5cf6e1f%26spaceId%3Dade888d6-b468-4bb3-93f4-f6900c67664f%26expirationTimestamp%3D1771200000000%26signature%3DulfWiYYVFiM2eqHuMA6vozGE9dkbEI9M3BCE4NHdt-c%26download%3Dtrue%26downloadName%3Dlivros_portugal_1.html&amp;app=com.apple.Safari&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script>
-    <script type="text/javascript" nonce="372d391b96254d4f97ba5bd6697"
-        src="//local.adguard.org?ts=1771153779104&amp;name=AdGuard%20Extra&amp;type=user-script"></script>
-
-    <!-- Google AdSense Script (Replace ca-pub-XXXXXXXXXXXXXXXX with your ID) -->
-    <!-- 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-     crossorigin="anonymous"></script> 
-    -->
+    <title>Biblioteca Pública — Livros de Portugal</title>
+    <meta name="description" content="Leia gratuitamente clássicos da literatura portuguesa, com contexto histórico e notas de leitura.">
+    <meta name="theme-color" content="#fcfcf9">
+    <meta property="og:title" content="Biblioteca Pública — Livros de Portugal">
+    <meta property="og:description" content="Clássicos portugueses em acesso livre, com notas e contexto de leitura.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +87,13 @@
         /* Insight Styles */
         .insight-highlight {
             border-bottom: 1px dashed #999;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            padding: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
             cursor: help;
             transition: background-color 0.2s;
         }
@@ -192,27 +195,6 @@
             border-radius: 10px;
         }
 
-        /* AdSense Container Style */
-        .ad-container {
-            width: 100%;
-            max-width: 970px;
-            /* Supports large leaderboards */
-            margin: 3rem auto;
-            text-align: center;
-            min-height: 90px;
-            /* Standard leaderboard height */
-            background-color: var(--bg-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed #e5e5e5;
-            color: #ccc;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            overflow: hidden;
-        }
-
         .book-cover-fallback {
             background:
                 radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 34%, transparent 35%),
@@ -224,9 +206,9 @@
 <body class="antialiased relative">
 
     <!-- Insight Modal (Floating) -->
-    <div id="insight-modal" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 hidden max-w-md w-[90%] md:w-auto">
+    <div id="insight-modal" role="dialog" aria-modal="true" aria-labelledby="insight-term" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 hidden max-w-md w-[90%] md:w-auto">
         <div class="insight-modal bg-black text-white p-6 shadow-2xl rounded-lg relative">
-            <button onclick="closeInsight()" class="absolute top-2 right-3 text-gray-500 hover:text-white">×</button>
+            <button onclick="closeInsight()" aria-label="Fechar nota" class="absolute top-2 right-3 text-gray-500 hover:text-white">×</button>
             <h4 id="insight-term" class="text-xs uppercase tracking-widest text-gray-400 mb-2 font-bold"></h4>
             <p id="insight-text" class="text-sm leading-relaxed font-light"></p>
         </div>
@@ -235,23 +217,24 @@
     <!-- Header -->
     <header class="py-12 px-6 md:px-12 grid grid-cols-[1fr_auto_1fr] items-center gap-4 border-b border-gray-100">
         <div class="cursor-pointer" onclick="showHome()">
-            <h1 class="serif text-2xl font-bold tracking-tight">Biblioteca Publica</h1>
+            <h1 class="serif text-2xl font-bold tracking-tight">Biblioteca Pública</h1>
             <p class="text-xs uppercase tracking-[0.2em] text-gray-400 mt-1">Portugal • Domínio Público</p>
         </div>
-        <div
-            class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-dashed border-gray-200 text-gray-400 justify-self-center">
-            <span>Publicidade</span>
-        </div>
+        <div class="hidden md:block text-[10px] uppercase tracking-[0.4em] text-gray-400 justify-self-center">Leitura livre</div>
         <div class="flex items-center gap-6 justify-self-end">
             <nav class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a onclick="showHome()" id="nav-collection" class="nav-link active">COLECÇÃO</a>
-                <a onclick="showAuthors()" id="nav-authors" class="nav-link">AUTORES</a>
+                <button type="button" onclick="showHome()" id="nav-collection" class="nav-link nav-collection active">COLECÇÃO</button>
+                <button type="button" onclick="showAuthors()" id="nav-authors" class="nav-link nav-authors">AUTORES</button>
             </nav>
-            <button onclick="openAdminPanel()"
+            <button id="admin-entry" onclick="openAdminPanel()"
                 class="text-[10px] uppercase tracking-[0.4em] px-4 py-2 rounded-full border border-gray-200 hover:border-black hover:text-black text-gray-500 transition-all">
                 ADMIN
             </button>
         </div>
+        <nav class="col-span-3 flex md:hidden justify-center gap-8 text-sm font-medium tracking-wide" aria-label="Navegação principal">
+            <button type="button" onclick="showHome()" class="nav-link nav-collection active">COLECÇÃO</button>
+            <button type="button" onclick="showAuthors()" class="nav-link nav-authors">AUTORES</button>
+        </nav>
     </header>
 
     <!-- Main Content Area -->
@@ -286,12 +269,6 @@
                         </div>
                     </div>
                     <p id="catalog-search-summary" class="text-xs uppercase tracking-[0.3em] text-gray-400"></p>
-                </div>
-
-                <!-- AdSense Space - Top of Feed -->
-                <div class="ad-container">
-                    <!-- Paste your Google AdSense code here -->
-                    <span>Publicidade</span>
                 </div>
 
                 <div id="book-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
@@ -377,12 +354,7 @@
                     <article id="reader-content" class="serif reading-mode text-gray-800 pb-16">
                         <!-- Text content -->
                     </article>
-                </div>
-
-                <!-- AdSense Space - Bottom of Reader -->
-                <div class="ad-container" style="max-width: 728px; margin-top: 3rem;">
-                    <!-- Paste your Google AdSense code here -->
-                    <span>Publicidade</span>
+                    <div id="source-container" class="max-w-3xl mx-auto border-t border-gray-100 pt-5 text-xs leading-relaxed text-gray-400"></div>
                 </div>
 
                 <!-- Footer Navigation -->
@@ -397,14 +369,8 @@
     <!-- Hidden Audio Element -->
     <audio id="main-audio"></audio>
 
-    <!-- AdSense Space - Global Footer -->
-    <div class="ad-container">
-        <!-- Paste your Google AdSense code here -->
-        <span>Publicidade</span>
-    </div>
-
     <footer class="py-12 border-t border-gray-100 text-center text-xs text-gray-400 tracking-widest uppercase">
-        Preservando o Património Literário © 2024
+        Preservando o património literário · <span id="current-year">2026</span>
     </footer>
 
     <div id="admin-panel" class="hidden fixed inset-0 z-50 flex items-start justify-center px-4 py-10">
@@ -601,6 +567,24 @@
         let isPlaying = false;
         let audio = document.getElementById('main-audio');
 
+        function escapeHtml(value) {
+            return String(value ?? '').replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function safeExternalUrl(value) {
+            if (!value) return '';
+            try {
+                const url = new URL(value, window.location.href);
+                return ['https:', 'http:'].includes(url.protocol) ? url.href : '';
+            } catch (error) {
+                return '';
+            }
+        }
+
         function updateUrlState({ bookSlug = "", chapterIndex = 0, view = "" } = {}) {
             const url = new URL(window.location.href);
             url.search = '';
@@ -637,8 +621,7 @@
 
         function getBookCoverUrl(book) {
             if (!book) return "";
-            if (book.coverImage) return book.coverImage;
-            return "";
+            return safeExternalUrl(book.coverImage);
         }
 
         function getFilteredBooks() {
@@ -820,6 +803,11 @@
             await loadBooks();
             loadReaderFontSize();
             applyReaderFontSize();
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            const adminEntry = document.getElementById('admin-entry');
+            if (adminEntry && !['localhost', '127.0.0.1'].includes(window.location.hostname)) {
+                adminEntry.classList.add('hidden');
+            }
 
             // Audio events
             audio.addEventListener('timeupdate', updateProgress);
@@ -898,7 +886,7 @@
                 const coverAlt = `Capa de ${book.title || 'livro'}`;
 
                 return `
-                    <div class="book-card group" onclick="openBook(${book.id})">
+                    <div role="button" tabindex="0" class="book-card group w-full text-left" onclick="openBook(${Number(book.id)})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openBook(${Number(book.id)})}" aria-label="Ler ${escapeHtml(book.title)}">
                         <div class="aspect-[3/4] relative overflow-hidden border border-gray-100 bg-white shadow-sm mb-6 transition-all group-hover:shadow-md group-hover:border-gray-200">
                             <div class="absolute inset-0 ${coverUrl ? 'bg-white' : 'book-cover-fallback'}"></div>
                             ${coverUrl ? `
@@ -908,14 +896,14 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>
                             <div class="absolute inset-0 p-8 flex flex-col justify-between">
                                 <div>
-                                    <p class="text-[10px] tracking-[0.3em] text-white/70 uppercase mb-4">${book.year || ''}</p>
-                                    <h3 class="serif text-2xl text-white drop-shadow-sm">${book.title}</h3>
+                                    <p class="text-[10px] tracking-[0.3em] text-white/70 uppercase mb-4">${escapeHtml(book.year || '')}</p>
+                                    <h3 class="serif text-2xl text-white drop-shadow-sm">${escapeHtml(book.title)}</h3>
                                 </div>
-                                <p class="text-xs tracking-widest text-white/80 uppercase drop-shadow-sm">${book.author}</p>
+                                <p class="text-xs tracking-widest text-white/80 uppercase drop-shadow-sm">${escapeHtml(book.author)}</p>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-500 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            ${book.description || ''}
+                        <p class="text-sm text-gray-500 leading-relaxed opacity-100 md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100 transition-opacity duration-500">
+                            ${escapeHtml(book.description || '')}
                         </p>
                     </div>
                 `;
@@ -941,13 +929,13 @@
 
             grid.innerHTML = uniqueAuthors.map(book => `
                 <div class="bg-white p-8 border border-gray-100">
-                    <h3 class="serif text-xl mb-2">${book.author}</h3>
+                    <h3 class="serif text-xl mb-2">${escapeHtml(book.author)}</h3>
                     <div class="w-12 h-1 bg-gray-100 mb-6"></div>
-                    <p class="text-gray-600 text-sm leading-relaxed">${book.authorBio || 'Biografia não disponível.'}</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">${escapeHtml(book.authorBio || 'Biografia não disponível.')}</p>
                     <div class="mt-6 pt-4 border-t border-gray-50 flex gap-2">
                         <span class="text-[10px] uppercase tracking-widest text-gray-400">Obras na colecção:</span>
                         <span class="text-[10px] uppercase tracking-widest text-black font-medium">
-                            ${book.works.join(', ')}
+                            ${book.works.map(escapeHtml).join(', ')}
                         </span>
                     </div>
                 </div>
@@ -993,6 +981,7 @@
 
                 currentBook = await response.json();
                 currentBookSlug = meta.slug || "";
+                renderSourceInfo(currentBook.source);
 
                 // Now render the full content
                 renderChapterNav();
@@ -1014,13 +1003,37 @@
 
         function renderChapterNav() {
             const nav = document.getElementById('chapter-nav');
+            if (currentBook.chapters.length > 12) {
+                nav.innerHTML = `
+                    <label for="chapter-select" class="sr-only">Escolher capítulo</label>
+                    <select id="chapter-select" onchange="showChapter(Number(this.value))"
+                        class="w-full max-w-xl rounded-full border border-gray-200 bg-white px-5 py-3 text-sm focus:border-black focus:outline-none">
+                        ${currentBook.chapters.map((chapter, index) => `<option value="${index}">${escapeHtml(chapter.section ? `${chapter.section} · ` : '')}${escapeHtml(chapter.title)}</option>`).join('')}
+                    </select>`;
+                document.getElementById('chapter-select').value = String(currentChapterIndex);
+                return;
+            }
             nav.innerHTML = currentBook.chapters.map((ch, index) => `
-                <button onclick="showChapter(${index})" 
-                        id="nav-btn-${index}"
-                        class="chapter-btn px-4 py-2 text-xs border border-gray-200 rounded-full hover:border-gray-400 transition-all ${index === currentChapterIndex ? 'active' : ''}">
-                    ${ch.title.toUpperCase()}
+                <button type="button" onclick="showChapter(${index})" id="nav-btn-${index}"
+                    class="chapter-btn px-4 py-2 text-xs border border-gray-200 rounded-full hover:border-gray-400 transition-all ${index === currentChapterIndex ? 'active' : ''}">
+                    ${escapeHtml(ch.title.toUpperCase())}
                 </button>
             `).join('');
+        }
+
+        function renderSourceInfo(source) {
+            const container = document.getElementById('source-container');
+            if (!container) return;
+            if (!source || !source.url) {
+                container.textContent = '';
+                return;
+            }
+            const sourceUrl = safeExternalUrl(source.url);
+            const link = sourceUrl
+                ? `<a class="underline underline-offset-2 hover:text-gray-700" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title || 'Edição de referência')}</a>`
+                : escapeHtml(source.title || 'Edição de referência');
+            const details = [source.transcription, source.editorialNote].filter(Boolean).map(escapeHtml).join(' · ');
+            container.innerHTML = `<p><span class="font-medium text-gray-500">Fonte do texto:</span> ${link}</p>${details ? `<p class="mt-1">${details}</p>` : ''}`;
         }
 
         function showChapter(index, options = {}) {
@@ -1041,11 +1054,13 @@
             document.querySelectorAll('.chapter-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.getElementById(`nav-btn-${safeIndex}`);
             if (activeBtn) activeBtn.classList.add('active');
+            const chapterSelect = document.getElementById('chapter-select');
+            if (chapterSelect) chapterSelect.value = String(safeIndex);
 
             // Handle Audio Player Initial State (Dynamic Button)
             let audioHtml = '';
             if (chapter.audioUrl) {
-                audio.src = chapter.audioUrl;
+                audio.src = safeExternalUrl(chapter.audioUrl);
                 audioHtml = `
                     <div id="audio-wrapper" class="flex justify-center mb-10 transition-all duration-500 ease-in-out">
                         <button onclick="revealAndPlayAudio()" class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-200 rounded-full hover:border-black hover:bg-black hover:text-white transition-all group shadow-sm">
@@ -1061,7 +1076,7 @@
                 contextDiv.innerHTML = `
                     <div class="context-box">
                         <strong class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Contexto do Capítulo</strong>
-                        ${chapter.context}
+                        ${escapeHtml(chapter.context)}
                     </div>
                 `;
             } else {
@@ -1069,20 +1084,28 @@
             }
 
             // Process Text for Highlights
-            let processedContent = chapter.content;
-
-            if (showInsights && chapter.annotations && chapter.annotations.length > 0) {
-                chapter.annotations.forEach(note => {
-                    const regex = new RegExp(`(${note.target})`, 'g');
-                    processedContent = processedContent.replace(regex, `<span class="insight-highlight" onclick="showInsight('${note.target}', '${note.text.replace(/'/g, "\\'")}')">$1</span>`);
-                });
-            }
+            const noteTargets = showInsights && Array.isArray(chapter.annotations) ? chapter.annotations : [];
+            const escapedContent = escapeHtml(chapter.content || '');
+            let processedContent = escapedContent;
+            noteTargets.forEach((note, noteIndex) => {
+                const target = escapeHtml(note.target || '');
+                if (!target) return;
+                const escapedTarget = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const regex = new RegExp(escapedTarget, 'i');
+                processedContent = processedContent.replace(regex, `<button type="button" class="insight-highlight" data-note-index="${noteIndex}">$&</button>`);
+            });
 
             contentDiv.innerHTML = `
-                <h3 class="text-center text-sm tracking-[0.3em] uppercase mb-8 text-gray-300">— ${chapter.title} —</h3>
+                <h3 class="text-center text-sm tracking-[0.3em] uppercase mb-8 text-gray-300">— ${escapeHtml(chapter.title)} —</h3>
                 ${audioHtml}
                 <div id="reader-content-text" class="whitespace-pre-line leading-relaxed" style="font-size: ${readerFontSizeRem}rem;">${processedContent}</div>
             `;
+            contentDiv.querySelectorAll('[data-note-index]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const note = noteTargets[Number(button.dataset.noteIndex)];
+                    if (note) showInsight(note.target, note.text);
+                });
+            });
             applyReaderFontSize();
 
             renderFooterNav();
@@ -1234,8 +1257,8 @@
             document.getElementById('home-view').classList.remove('hidden');
             document.getElementById('authors-view').classList.add('hidden');
             document.getElementById('reader-view').classList.add('hidden');
-            document.getElementById('nav-collection').classList.add('active');
-            document.getElementById('nav-authors').classList.remove('active');
+            document.querySelectorAll('.nav-collection').forEach(link => link.classList.add('active'));
+            document.querySelectorAll('.nav-authors').forEach(link => link.classList.remove('active'));
             closeInsight();
             if (options.updateUrl !== false) {
                 updateUrlState();
@@ -1249,8 +1272,8 @@
             document.getElementById('home-view').classList.add('hidden');
             document.getElementById('reader-view').classList.add('hidden');
             document.getElementById('authors-view').classList.remove('hidden');
-            document.getElementById('nav-collection').classList.remove('active');
-            document.getElementById('nav-authors').classList.add('active');
+            document.querySelectorAll('.nav-collection').forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.nav-authors').forEach(link => link.classList.add('active'));
             if (options.updateUrl !== false) {
                 updateUrlState({ view: 'authors' });
             }
@@ -1614,15 +1637,6 @@
                     </div>
                 </div>
             `).join('');
-        }
-
-        function escapeHtml(value) {
-            if (!value) return '';
-            return value.replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
         }
 
         function updateAdminPreview() {

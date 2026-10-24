@@ -3,21 +3,681 @@
   "slug": "mensagem",
   "title": "Mensagem",
   "author": "Fernando Pessoa",
-  "year": "1934",
+  "coverImage": "./data/books/mensagem/cover.png",
+  "authorId": "fernando-pessoa",
   "authorBio": "Poeta moderno e metafísico.",
   "description": "Única obra publicada em vida por Pessoa.",
+  "year": "1934",
+  "language": "pt",
   "tags": [
     "modernismo"
   ],
-  "language": "pt",
-  "authorId": "fernando-pessoa",
+  "source": {
+    "title": "Mensagem (edição de 1934)",
+    "url": "https://pt.wikisource.org/wiki/Mensagem_(Fernando_Pessoa)",
+    "transcription": "Transcrição colaborativa da Wikisource lusófona (CC BY-SA 4.0)",
+    "editorialNote": "Edição de referência: Lisboa, Parceria Antonio Maria Pereira, 1934. Grafia original preservada; fonte e licença identificadas pela Wikisource."
+  },
   "chapters": [
+    {
+      "slug": "o-dos-castellos",
+      "title": "O dos Castellos",
+      "section": "Brasão — Os Campos",
+      "context": "A abertura de Brasão apresenta Portugal por meio da geografia e dos símbolos do escudo nacional.",
+      "content": "A Europa jaz, posta nos cotovellos:\nDe Oriente a Occidente jaz, fitando,\nE toldam-lhe romanticos cabellos\nOlhos gregos, lembrando.\nO cotovello esquerdo é recuado;\nO direito é em angulo disposto.\nAquelle diz Italia onde é pousado;\nEste diz Inglaterra onde, afastado,\nA mão sustenta, em que se appoia o rosto.\nFita, com olhar sphyngico e fatal.\nO Occidente, futuro do passado.\nO rosto com que fita é Portugal.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "A Europa jaz, posta nos cotovellos:",
+          "text": "A Europa é representada como uma figura reclinada; Portugal ocupa o rosto voltado para o Ocidente, imagem que abre a construção simbólica do livro."
+        }
+      ]
+    },
+    {
+      "slug": "o-das-quinas",
+      "title": "O das Quinas",
+      "section": "Brasão — Os Campos",
+      "context": "A abertura de Brasão apresenta Portugal por meio da geografia e dos símbolos do escudo nacional.",
+      "content": "Vendem os Deuses o que dão.\nA gloria compra-se a desgraça.\nAi dos felizes, porque são\nSó o que passa!\nBaste a quem basta o que lhe basta!\nO bastante de lhe bastar!\nA vida é breve, a alma é vasta:\nTer é tardar.\nFoi com desgraça e com vileza\nQue Deus ao Christo definiu :\nAssim o oppoz à Natureza\nE Filho o ungiu",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Vendem os Deuses o que dão.",
+          "text": "As cinco quinas do escudo português tornam-se uma meditação sobre sacrifício, sofrimento e glória."
+        }
+      ]
+    },
+    {
+      "slug": "ulysses",
+      "title": "Ulysses",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "O mytho é o nada que é tudo.\nO mesmo sol que abre os céus\nÉ um mytho brilhante e mudo\nO corpo morto de Deus,\nVivo e desnudo.\nEste, que aqui aportou,\nFoi por não ser existindo.\nSem existir nos bastou.\nPor não ter vindo foi vindo\nE nos creou.\nAssim a lenda se escorre\nA entrar na realidade,\nE a fecundal-a decorre.\nEm baixo, a vida, metade\nDe nada, morre.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O mytho é o nada que é tudo.",
+          "text": "Ulisses surge como fundador lendário de Lisboa. O poema explora como o mito, mesmo sem prova histórica, pode dar forma à identidade coletiva."
+        }
+      ]
+    },
+    {
+      "slug": "viriato",
+      "title": "Viriato",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "Se a alma que sente e faz conhece\nSó porque lembra o que esqueceu,\nVivemos, raça, porque houvesse\nMemoria em nós do instincto teu.\nNação porque reincarnaste,\nPovo porque resuscitou\nOu tu, ou o de que eras a haste —\nAssim se Portugal formou.\nTeu ser é como aquella fria\nLuz que precede a madrugada,\nE é já o ir a haver o dia\nNa antemanhã, confuso nada.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Se a alma que sente e faz conhece",
+          "text": "Viriato representa a resistência lusitana a Roma e uma memória anterior à fundação do reino português."
+        }
+      ]
+    },
+    {
+      "slug": "o-conde-d-henrique",
+      "title": "O Conde D. Henrique",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "Todo começo é involuntario.\nDeus é o agente.\nO heroe a si assiste, vario\nE inconsciente.\nÀ espada em tuas mãos achada\nTeu olhar desce.\n«Que farei eu com esta espada?»\nErgueste-a, e fez-se.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Todo começo é involuntario.",
+          "text": "Henrique de Borgonha recebe o condado portucalense; o poema apresenta a origem política de Portugal como parte de um desígnio ainda por cumprir."
+        }
+      ]
+    },
+    {
+      "slug": "d-tareja",
+      "title": "D. Tareja",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "As nações todas são mysterios.\nCada uma é todo o mundo a sós.\nÓ mãe de reis e avó de imperios,\nVella por nós!\nTeu seio augusto amamentou\nCom bruta e natural certeza\nO que, imprevisto, Deus fadou.\nPor elle resa!\nDê tua prece outro destino\nA quem fadou o instincto teu!\nO homem que foi o teu menino\nEnvelheceu.\nMas todo vivo é eterno infante\nOnde estás e não ha o dia.\nNo antigo seio, vigilante,\nDe novo o cria!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "As nações todas são mysterios.",
+          "text": "Teresa de Leão, mãe de Afonso Henriques, é retratada no limiar entre a herança leonesa e a formação de um reino próprio."
+        }
+      ]
+    },
+    {
+      "slug": "d-affonso-henriques",
+      "title": "D. Affonso Henriques",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "Pae, foste cavalleiro.\nHoje a vigilia é nossa.\nDá-nos o exemplo inteiro\nE a tua inteira força!\nDá, contra a hora em que, errada,\nNovos infieis vençam,\nA benção como espada,\nA espada como benção!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Pae, foste cavalleiro.",
+          "text": "Afonso Henriques é lembrado como fundador do reino e primeiro rei de Portugal."
+        }
+      ]
+    },
+    {
+      "slug": "d-diniz",
+      "title": "D. Diniz",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "Na noite escreve um seu Cantar de Amigo\nO plantador de naus a haver,\nE ouve um silencio murmuro comsigo:\nÉ o rumor dos pinhaes que, como um trigo\nDe Imperio, ondulam sem se poder ver.\nArroio, esse cantar, jovem e puro,\nBusca o oceano por achar;\nE a falla dos pinhaes, marulho obscuro,\nÉ o som presente d'esse mar futuro,\nÉ a voz da terra anciando pelo mar.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Na noite escreve um seu Cantar de Amigo",
+          "text": "D. Dinis reúne as figuras do rei e do poeta. O pinhal de Leiria liga a cultura à preparação marítima do país."
+        }
+      ]
+    },
+    {
+      "slug": "d-joao-o-primeiro",
+      "title": "D. João O Primeiro",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "O homem e a hora são um só\nQuando Deus faz e a história é feita.\nO mais é carne, cujo pó\nA terra espreita.\nMestre, sem o saber, do Templo\nQue Portugal foi feito ser,\nQue houveste a gloria e deste o exemplo\nDe o defender.\nTeu nome, eleito em sua fama,\nÉ, na ara da nossa alma interna,\nA que repelle, eterna chamma,\nA sombra eterna.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O homem e a hora são um só",
+          "text": "O poema evoca a crise de 1383–1385 e a ascensão de D. João I, associando o seu reinado à consolidação da independência."
+        }
+      ]
+    },
+    {
+      "slug": "d-philippa-de-lencastre",
+      "title": "D. Philippa de Lencastre",
+      "section": "Brasão — Os Castelos",
+      "context": "Esta secção reúne figuras lendárias e históricas associadas às origens e à formação do reino.",
+      "content": "Que enigma havia em teu seio\nQue só genios concebia?\nQue archanjo teus sonhos veio\nVellar, maternos, um dia?\nVolve a nós teu rosto serio,\nPrinceza do Santo Gral,\nHumano ventre do Imperio,\nMadrinha de Portugal!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Que enigma havia em teu seio",
+          "text": "Filipa de Lencastre é apresentada como mãe da geração régia ligada à expansão portuguesa, conhecida como Ínclita Geração."
+        }
+      ]
+    },
+    {
+      "slug": "d-duarte-rei-de-portugal",
+      "title": "D. Duarte Rei de Portugal",
+      "section": "Brasão — As Quinas",
+      "context": "As Quinas evocam membros da família real e os sacrifícios ligados à história portuguesa.",
+      "content": "Meu dever fez-me, como Deus ao mundo.\nA regra de ser Rei almou meu ser,\nEm dia e letra escrupuloso e fundo.\nFirme em minha tristeza, tal vivi.\nCumpri contra o Destino o meu dever.\nInutilmente? Não, porque o cumpri.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Meu dever fez-me, como Deus ao mundo.",
+          "text": "D. Duarte é lembrado pelo sentido de dever e pela reflexão moral que marcou a sua imagem de rei-filósofo."
+        }
+      ]
+    },
+    {
+      "slug": "d-fernando-infante-de-portugal",
+      "title": "D. Fernando Infante de Portugal",
+      "section": "Brasão — As Quinas",
+      "context": "As Quinas evocam membros da família real e os sacrifícios ligados à história portuguesa.",
+      "content": "Deu-me Deus o seu gladio, porque eu faça\nA sua santa guerra.\nSagrou-me seu em honra e em desgraça,\nÀs horas em que um frio vento passa\nPor sobre a fria terra.\nPoz-me as mãos sobre os hombros [1] e doirou-me\nA fronte com o olhar;\nE esta febre de Além, que me consome,\nE este querer grandeza são seu nome\nDentro em mim a vibrar.\nE eu vou, e a luz do gladio erguido dá\nEm minha face calma.\nCheio de Deus, não temo o que virá,\nPois, venha o que vier, nunca será\nMaior do que a minha alma.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Deu-me Deus o seu gladio, porque eu faça",
+          "text": "O Infante D. Fernando, capturado em Tânger e morto em cativeiro, torna-se símbolo de sacrifício e fidelidade à missão régia."
+        }
+      ]
+    },
+    {
+      "slug": "d-pedro-regente-de-portugal",
+      "title": "D. Pedro Regente de Portugal",
+      "section": "Brasão — As Quinas",
+      "context": "As Quinas evocam membros da família real e os sacrifícios ligados à história portuguesa.",
+      "content": "Claro em pensar, e claro no sentir,\nE claro no querer;\nIndifferente ao que ha em conseguir\nQue seja só obter;\nDuplice dono, sem me dividir,\nDe dever e de ser —\nNão me podia a Sorte dar guarida\nPor eu não ser dos seus.\nAssim vivi, assim morri, a vida.\nCalmo sob mudos céus,\nFiel à palavra dada e à idéa tida.\nTudo mais é com Deus!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Claro em pensar, e claro no sentir",
+          "text": "D. Pedro, duque de Coimbra e regente, representa a tensão entre lucidez política e o conflito que terminou na batalha de Alfarrobeira."
+        }
+      ]
+    },
+    {
+      "slug": "d-joao-infante-de-portugal",
+      "title": "D. João, Infante de Portugal",
+      "section": "Brasão — As Quinas",
+      "context": "As Quinas evocam membros da família real e os sacrifícios ligados à história portuguesa.",
+      "content": "Não fui alguem. Minha alma estava estreita\nEntre tam grandes almas minhas pares,\nInutilmente eleita,\nVirgemmente parada;\nPorque é do portuguez, pae de amplos mares,\nQuerer, poder só isto:\nO inteiro mar, ou a orla vã desfeita —\nO todo, ou o seu nada.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Não fui alguem. Minha alma estava estreita",
+          "text": "O poema transforma a figura do Infante D. João numa presença discreta, cuja importância se mede pelo destino que não chegou a realizar."
+        }
+      ]
+    },
+    {
+      "slug": "d-sebastiao-rei-de-portugal",
+      "title": "D. Sebastião, Rei de Portugal",
+      "section": "Brasão — As Quinas",
+      "context": "As Quinas evocam membros da família real e os sacrifícios ligados à história portuguesa.",
+      "content": "Louco, sim, louco, porque quiz grandeza\nQual a Sorte a não dá.\nNão coube em mim minha certeza;:\nPorisso onde o areal está\nFicou meu ser que houve, não o que ha.\nMinha loucura, outros que me a tomem\nCom o que nella ia.\nSem a loucura o que é o homem\nMais que a besta sadia,\nCadaver addiado que procria?",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Louco, sim, louco, porque quiz grandeza",
+          "text": "A voz do rei desaparecido em Alcácer-Quibir assume a loucura como preço de desejar uma grandeza para além do possível."
+        }
+      ]
+    },
+    {
+      "slug": "nunalvares-pereira",
+      "title": "Nunalvares Pereira",
+      "section": "Brasão — A Coroa",
+      "context": "A Coroa destaca Nuno Álvares Pereira como figura militar e espiritual da memória nacional.",
+      "content": "Que aureola te cerca?\nÉ a espada que, volteando,\nFaz que o ar alto perca\nSeu azul negro e brando.\nMas que espada é que, erguida,\nFaz esse halo no céu?\nE' Excalibur, a ungida,\nQue o Rei Arthur te deu.\nSperança consummada,\nS. Portugal em ser,\nErgue a luz da tua espada\nPara a estrada se ver!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Que aureola te cerca?",
+          "text": "Nuno Álvares Pereira, condestável decisivo na crise de 1383–1385, é convertido em figura de santidade e proteção nacional."
+        }
+      ]
+    },
+    {
+      "slug": "o-infante-d-henrique",
+      "title": "O Infante D. Henrique",
+      "section": "Brasão — O Timbre",
+      "context": "O Timbre organiza três figuras da expansão portuguesa segundo as partes do grifo heráldico.",
+      "content": "Em seu throno entre o brilho das espheras,\nCom seu manto de noite e solidão,\nTem aos pés o mar novo e as mortas eras —\nO unico imperador que tem, deveras,\nO globo mundo em sua mão.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Em seu throno entre o brilho das espheras",
+          "text": "O Infante D. Henrique aparece como cabeça do grifo heráldico e impulsionador simbólico da expansão marítima."
+        }
+      ]
+    },
+    {
+      "slug": "d-joao-o-segundo",
+      "title": "D. João o Segundo",
+      "section": "Brasão — O Timbre",
+      "context": "O Timbre organiza três figuras da expansão portuguesa segundo as partes do grifo heráldico.",
+      "content": "Braços cruzados, fita além do mar.\nParece em promontorio uma alta serra —\nO limite da terra a dominar\nO mar que possa haver além da terra.\nSeu formidavel vulto solitario\nEnche de estar presente o mar e o céu,\nE parece temer o mundo vario\nQue elle abra os braços e lhe rasgue o véu.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Braços cruzados, fita além do mar.",
+          "text": "D. João II é associado à visão estratégica que preparou a passagem do reconhecimento costeiro à rota para a Índia."
+        }
+      ]
+    },
+    {
+      "slug": "affonso-de-albuquerque",
+      "title": "Affonso de Albuquerque",
+      "section": "Brasão — O Timbre",
+      "context": "O Timbre organiza três figuras da expansão portuguesa segundo as partes do grifo heráldico.",
+      "content": "De pé, sobre os paizes conquistados\nDesce os olhos cansados\nDe ver o mundo e a injustiça e a sorte.\nNão pensa em vida ou morte,\nTam poderoso que não quer o quanto\nPóde, que o querer tanto\nCalcára mais do que o submisso mundo\nSob o seu passo fundo.\nTrez imperios do chão lhe a Sorte apanha.\nCreou-os como quem desdenha.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "De pé, sobre os paizes conquistados",
+          "text": "Afonso de Albuquerque, governador da Índia portuguesa, completa o grifo como figura da expansão imperial no Oriente."
+        }
+      ]
+    },
     {
       "slug": "o-infante",
       "title": "O Infante",
-      "context": "Infante D. Henrique como instrumento divino.",
-      "content": "Deus quer, o homem sonha, a obra nasce.",
-      "annotations": []
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "Deus quer, o homem sonha, a obra nasce.\nDeus quiz que a terra fosse toda uma,\nQue o mar unisse, já não separasse.\nSagrou-te, e foste desvendando a espuma,\nE a orla branca foi de ilha em continente,\nClareou, correndo, até ao fim do mundo,\nE viu-se a terra inteira, de repente,\nSurgir, redonda, do azul profundo.\nQuem te sagrou creou-te portuguez.\nDo mar e nós em ti nos deu signal.\nCumpriu-se o Mar, e o Imperio se desfez.\nSenhor, falta cumprir-se Portugal!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Deus quer, o homem sonha, a obra nasce.",
+          "text": "O poema condensa a ideia de que a vontade humana, quando encontra um propósito maior, transforma o sonho em ação histórica."
+        }
+      ]
+    },
+    {
+      "slug": "horizonte",
+      "title": "Horizonte",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "O' mar anterior a nós, teus medos\nTinham coral e praias e arvoredos.\nDesvendadas a noite e a cerração,\nAs tormentas passadas e o mysterio,\nAbria em flor o Longe, e o Sul siderio\nSplendia sobre as naus da iniciação.\nLinha severa da longinqua costa —\nQuando a nau se approxima ergue-se a encosta\nEm arvores onde o Longe nada tinha;\nMais perto, abre-se a terra em sons e cores;\nE, no desembarcar, ha aves, flores,\nOnde era só, de longe a abstracta linha.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O' mar anterior a nós, teus medos",
+          "text": "A travessia do mar surge como passagem do medo para o conhecimento, sem apagar o custo humano da expansão."
+        }
+      ]
+    },
+    {
+      "slug": "padrao",
+      "title": "Padrão",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "O exforço é grande e o homem é pequeno.\nEu, Diogo Cão, navegador, deixei\nEste padrão ao pé do areal moreno\nE para deante naveguei.\nA alma é divina e a obra é imperfeita.\nEste padrão signala ao vento e aos céus\nQue, da obra ousada, é minha a parte feita:\nO por-fazer é só com Deus.\nE ao immenso e possivel oceano\nEnsinam estas Quinas, que aqui vês,\nQue o mar com fim será grego ou romano:\nO mar sem fim é portuguez.\nE a Cruz ao alto diz que o que me ha na alma\nE faz a febre em mim de navegar\nSó encontrará de Deus na eterna calma\nO porto sempre por achar.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O exforço é grande e o homem é pequeno.",
+          "text": "O padrão de pedra deixado pelos navegadores marca a presença portuguesa e a distância entre a fragilidade humana e a ambição histórica."
+        }
+      ]
+    },
+    {
+      "slug": "o-mostrengo",
+      "title": "O Mostrengo",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "O mostrengo que está no fim do mar\nNa noite de breu ergueu-se a voar;\nÀ roda da nau voou trez vezes,\nVoou trez vezes a chiar,\nE disse, «Quem é que ousou entrar\nNas minhas cavernas que não desvendo,\nMeus tectos negros do fim do mundo?»\nE o homem do leme disse, tremendo,\n«El-Rei D. João Segundo!»\n«De quem são as velas onde me roço?\nDe quem as quilhas que vejo e ouço?»\nDisse o mostrengo, e rodou trez vezes,\nTrez vezes rodou immundo e grosso,\n«Quem vem poder o que só eu posso,\nQue moro onde nunca ninguem me visse\nE escorro os medos do mar sem fundo?»\nE o homem do leme tremeu, e disse,\n«El-Rei D. João Segundo!»\nTrez vezes do leme as mãos ergueu [1]\nTrez vezes ao leme as reprendeu,\nE disse no fim de temer trez vezes,\n«Aqui ao leme sou mais do que eu:\nSou um Povo que quer o mar que é teu;\nE mais que o mostrengo, que me a alma teme\nE roda nas trevas do fim do mundo,\nManda a vontade, que me ata ao leme,\nDe El-Rei D. João Segundo!»",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O mostrengo que está no fim do mar",
+          "text": "O Mostrengo dramatiza o medo do desconhecido no Cabo das Tormentas, enfrentado por um marinheiro que fala em nome do rei."
+        }
+      ]
+    },
+    {
+      "slug": "epitaphio-de-bartholomeu-dias",
+      "title": "Epitaphio de Bartholomeu Dias",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "Jaz aqui, na pequena praia extrema,\nO Capitão do Fim. Dobrado o Assombro,\nO mar é o mesmo: já ninguem o tema!\nAtlas, mostra alto o mundo no seu hombro.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Jaz aqui, na pequena praia extrema",
+          "text": "Bartolomeu Dias dobrou o Cabo da Boa Esperança em 1488; o epitáfio liga a descoberta à morte no mar."
+        }
+      ]
+    },
+    {
+      "slug": "os-colombos",
+      "title": "Os Colombos",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "Outros haverão de ter\nO que houvermos de perder.\nOutros poderão achar\nO que, no nosso encontrar,\nFoi achado, ou não achado,\nSegundo o destino dado.\nMas o que a elles não toca\nÉ a Magia que evoca\nO Longe e faz d'elle historia.\nE porisso a sua gloria\nÉ uma justa aureola dada\nPor uma luz emprestada.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Outros haverão de ter",
+          "text": "O título plural amplia a figura de Colombo para falar dos que sonham e descobrem, mas não chegam a possuir plenamente a própria descoberta."
+        }
+      ]
+    },
+    {
+      "slug": "occidente",
+      "title": "Occidente",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "Com duas mãos — o Acto e o Destino —\nDesvendámos. No mesmo gesto, ao céu\nUma ergue o facho tremulo e divino\nE a outra afasta o véu.\nFosse a hora que haver ou a que havia\nA mão que ao Occidente o véu rasgou,\nFoi alma a Sciencia e corpo a Ousadia\nDa mão que desvendou.\nFosse Acaso, ou Vontade, ou Temporal\nA mão que ergueu o facho que luziu,\nFoi Deus a alma e o corpo Portugal\nDa mão que o conduziu.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Com duas mãos — o Acto e o Destino",
+          "text": "O poema associa o Ocidente a Portugal por meio de uma imagem de criação em que ação humana e destino se cruzam."
+        }
+      ]
+    },
+    {
+      "slug": "fernao-de-magalhaes",
+      "title": "Fernão de Magalhães",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "No valle clareia uma fogueira.\nUma dança sacode a terra inteira.\nE sombras disformes e descompostas\nEm clarões negros do valle vão\nSubitamente pelas encostas,\nIndo perder-se na escuridão.\nDe quem é a dança que a noite aterra?\nSão os Titans, os filhos da Terra,\nQue dançam da morte do marinheiro\nQue quiz cingir o materno vulto —\nCingil-o, dos homens, o primeiro —,\nNa praia ao longe por fim sepulto.\nDançam, nem sabem que a alma ousada\nDo morto ainda commanda a armada,\nPulso sem corpo ao leme a guiar\nAs naus no resto do fim do espaço:\nQue até ausente soube cercar\nA terra inteira com seu abraço.\nViolou a Terra. Mas elles não\nO sabem, e dançam na solidão;\nE sombras disformes e descompostas,\nIndo perder-se nos horizontes,\nGalgam do valle pelas encostas\nDos mudos montes.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "No valle clareia uma fogueira.",
+          "text": "Magalhães, navegador português ao serviço de Castela, comandou a expedição que iniciou a primeira circum-navegação do globo."
+        }
+      ]
+    },
+    {
+      "slug": "ascensao-de-vasco-da-gama",
+      "title": "Ascensão de Vasco da Gama",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "Os Deuses da tormenta e os gigantes da terra\nSuspendem de repente o odio da sua guerra\nE pasmam. Pelo valle onde se ascende aos céus\nSurge um silencio, e vae, da nevoa ondeando os véus.\nPrimeiro um movimento e depois um assombro.\nLadeiam-o, ao durar, os medos, hombro a hombro,\nE ao longe o rastro ruge em nuvens e clarões\nEm baixo, onde a terra é, o pastor gela, e a flauta\nCahe-lhe, e em extase vê, à luz de mil trovões,\nO céu abrir o abysmo à alma do Argonauta.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Os Deuses da tormenta e os gigantes da terra",
+          "text": "Vasco da Gama é elevado a figura mítica; a viagem marítima converte-se numa ascensão de alcance espiritual."
+        }
+      ]
+    },
+    {
+      "slug": "mar-portuguez",
+      "title": "Mar Portuguez",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "O' mar salgado, quanto do teu sal\nSão lagrimas de Portugal!\nPor te cruzarmos, quantas mães choraram,\nQuantos filhos em vão resaram!\nQuantas noivas ficaram por casar\nPara que fosses nosso, ó mar!\nValeu a pena? Tudo vale a pena\nSe a alma não é pequena.\nQuem quer passar além do Bojador\nTem que passar além da dor.\nDeus ao mar o perigo e o abysmo deu,\nMas nelle é que espelhou o céu.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O' mar salgado, quanto do teu sal",
+          "text": "A expansão marítima é apresentada pelo seu custo humano: lágrimas, perdas e sofrimento acompanham cada descoberta."
+        }
+      ]
+    },
+    {
+      "slug": "a-ultima-nau",
+      "title": "A Ultima Nau",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "Levando a bordo El-Rei D. Sebastião,\nE erguendo, como um nome, alto o pendão\nDo Imperio,\nFoi-se a ultima nau, ao sol aziago\nErma, e entre choros de ancia e de presago\nMysterio.\nNão voltou mais. A que ilha indescoberta\nAportou? Voltará da sorte incerta\nQue teve?\nDeus guarda o corpo e a fórma do futuro,\nMas Sua luz projecta-o, sonho escuro\nE breve.\nAh, quanto mais ao povo a alma falta,\nMais a minha alma atlantica se exalta\nE entorna,\nE em mim, num mar que não tem tempo ou spaço,\nVejo entre a cerração teu vulto baço\nQue torna.\nNão sei a hora, mas sei que ha a hora.\nDemore-a Deus, chame-lhe a alma embora\nMysterio.\nSurges ao sol em mim, e a nevoa finda:\nA mesma, e trazes o pendão ainda\nDo Imperio.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Levando a bordo El-Rei D. Sebastião",
+          "text": "A nau de D. Sebastião parte para Alcácer-Quibir e regressa como lenda; o poema aproxima a derrota do mito do Encoberto."
+        }
+      ]
+    },
+    {
+      "slug": "prece-fernando-pessoa",
+      "title": "Prece (Fernando Pessoa)",
+      "section": "Mar Portuguez",
+      "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+      "content": "Senhor, a noite veio e a alma é vil.\nTanta foi a tormenta e a vontade!\nRestam-nos hoje, no silencio hostil,\nO mar universal e a saudade.\nMas a chamma, que a vida em nós creou,\nSe — ainda ha vida ainda não é finda.\nO frio morto em cinzas a occultou:\nA mão do vento póde erguel-a ainda.\nDá o sopro, a aragem — ou desgraça ou ancia—,\nCom que a chamma do exforço se remoça,\nE outra vez conquistemos a Distancia—\nDo mar ou outra, mas que seja nossa!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Senhor, a noite veio e a alma é vil.",
+          "text": "A oração pede um novo impulso coletivo depois do declínio, retomando a imagem da espera por uma manhã portuguesa."
+        }
+      ]
+    },
+    {
+      "slug": "d-sebastiao",
+      "title": "D. Sebastião",
+      "section": "O Encoberto — Os Símbolos",
+      "context": "Os Símbolos retomam o sebastianismo e a ideia de uma missão colectiva ainda por realizar.",
+      "content": "Sperae! Cahi no areal e na hora adversa\nQue Deus concede aos seus\nPara o intervallo em que esteja a alma immersa\nEm sonhos que são Deus.\nQue importa o areal e a morte e a desventura\nSe com Deus me guardei?\nÉ o que eu me sonhei que eterno dura,\nÉ Esse que regressarei.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Sperae! Cahi no areal e na hora adversa",
+          "text": "A figura de D. Sebastião passa da derrota histórica à esperança messiânica do seu regresso."
+        }
+      ]
+    },
+    {
+      "slug": "o-quinto-imperio",
+      "title": "O Quinto Império",
+      "section": "O Encoberto — Os Símbolos",
+      "context": "Os Símbolos retomam o sebastianismo e a ideia de uma missão colectiva ainda por realizar.",
+      "content": "Triste de quem vive em casa,\nContente com o seu lar,\nSem que um sonho, no erguer de asa,\nFaça até mais rubra a brasa\nDa lareira a abandonar!\nTriste de quem é feliz!\nVive porque a vida dura.\nNada na alma lhe diz\nMais que a lição da raiz —\nTer por vida a sepultura.\nEras sobre eras se somem\nNo tempo que em eras vem.\nSer descontente é ser homem.\nQue as forças cegas se domem\nPela visão que a alma tem!\nE assim, passados os quatro\nTempos do ser que sonhou,\nA terra será theatro\nDo dia claro, que no atro\nDa erma noite começou.\nGrecia, Roma, Christandade,\nEuropa — os quatro se vão\nPara onde vae toda edade.\nQuem vem viver a verdade\nQue morreu D. Sebastião?",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Triste de quem vive em casa",
+          "text": "O Quinto Império é apresentado como renovação espiritual e cultural, não apenas como domínio territorial."
+        }
+      ]
+    },
+    {
+      "slug": "o-desejado-fernando-pessoa",
+      "title": "O Desejado (Fernando Pessoa)",
+      "section": "O Encoberto — Os Símbolos",
+      "context": "Os Símbolos retomam o sebastianismo e a ideia de uma missão colectiva ainda por realizar.",
+      "content": "Onde quer que, entre sombras e dizeres,\nJazas, remoto, sente-te sonhado,\nE ergue-te do fundo de não-seres\nPara teu novo fado!\nVem, Galaaz com patria, erguer de novo,\nMas ja no auge da suprema prova,\nA alma penitente do teu povo\nÀ Eucharistia Nova.\nMestre da Paz, ergue teu gladio ungido,\nExcalibur do Fim, em geito tal\nQue sua Luz ao mundo dividido\nRevele o Santo Gral!",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Onde quer que, entre sombras e dizeres",
+          "text": "O Desejado representa a esperança projetada numa figura ainda ausente, ligada à expectativa sebastianista."
+        }
+      ]
+    },
+    {
+      "slug": "as-ilhas-afortunadas",
+      "title": "As Ilhas Afortunadas",
+      "section": "O Encoberto — Os Símbolos",
+      "context": "Os Símbolos retomam o sebastianismo e a ideia de uma missão colectiva ainda por realizar.",
+      "content": "Que voz vem no som das ondas\nQue não é a voz do mar?\nÉ a voz de alguem que nos falla,\nMas que, se escutamos, cala,\nPor ter havido escutar.\nE só se, meio dormindo,\nSem saber de ouvir ouvimos,\nQue ella nos diz a esperança\nA que, como uma criança\nDormente, a dormir sorrimos.\nSão ilhas afortunadas,\nSão terras sem ter logar,\nOnde o Rei mora esperando.\nMas, se vamos dispertando,\nCala a voz, e ha só o mar.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Que voz vem no som das ondas",
+          "text": "As ilhas afortunadas pertencem à geografia mítica do Ocidente e simbolizam um lugar de espera e revelação."
+        }
+      ]
+    },
+    {
+      "slug": "o-encoberto",
+      "title": "O Encoberto",
+      "section": "O Encoberto — Os Símbolos",
+      "context": "Os Símbolos retomam o sebastianismo e a ideia de uma missão colectiva ainda por realizar.",
+      "content": "Que symbolo fecundo\nVem na aurora anciosa?\nNa Cruz morta do Mundo\nA Vida, que é a Rosa.\nQue symbolo divino\nTraz o dia já visto?\nNa Cruz, que é o Destino,\nA Rosa, que é o Christo.\nQue symbolo final\nMostra o sol já disperto?\nNa Cruz morta e fatal\nA Rosa do Encoberto.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Que symbolo fecundo",
+          "text": "O rei oculto torna-se símbolo de uma promessa nacional por cumprir e de uma identidade ainda em transformação."
+        }
+      ]
+    },
+    {
+      "slug": "o-bandarra",
+      "title": "O Bandarra",
+      "section": "O Encoberto — Os Avisos",
+      "context": "Os Avisos reúnem vozes proféticas e a reflexão do poeta sobre a escrita e o destino de Portugal.",
+      "content": "Sonhava, anonymo e disperso,\nO Imperio por Deus mesmo visto,\nConfuso como o Universo\nE plebeu como Jesus Christo\nNão foi nem santo nem heroe,\nMas Deus sagrou com Seu signal\nEste, cujo coração foi\nNão portuguez mas Portugal.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Sonhava, anonymo e disperso",
+          "text": "Gonçalo Anes Bandarra, sapateiro e autor de trovas proféticas, tornou-se uma das fontes do sebastianismo."
+        }
+      ]
+    },
+    {
+      "slug": "antonio-vieira-mensagem",
+      "title": "António Vieira (Mensagem)",
+      "section": "O Encoberto — Os Avisos",
+      "context": "Os Avisos reúnem vozes proféticas e a reflexão do poeta sobre a escrita e o destino de Portugal.",
+      "content": "O céu strella o azul e tem grandeza.\nEste, que teve a fama e à gloria tem,\nImperador da lingua portugueza,\nFoi-nos um céu tambem.\nNo immenso espaço seu de meditar,\nConstellado de fórma e de visão,\nSurge, prenuncio claro do luar,\nEl-Rei D. Sebastião.\nMas não, não é luar: é luz do ethereo.\nE' um dia; e, no céu amplo de desejo,\nA madrugada irreal do Quinto Imperio\nDoira as margens do Tejo.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O céu strella o azul e tem grandeza.",
+          "text": "O padre António Vieira é lembrado pela força da palavra e pela expectativa profética do Quinto Império."
+        }
+      ]
+    },
+    {
+      "slug": "screvo-meu-livro-a-beira-magoa",
+      "title": "Screvo meu livro à beira-magoa",
+      "section": "O Encoberto — Os Avisos",
+      "context": "Os Avisos reúnem vozes proféticas e a reflexão do poeta sobre a escrita e o destino de Portugal.",
+      "content": "Screvo meu livro à beira-magua.\nMeu coração não tem que ter.\nTenho meus olhos quentes de agua.\nSó tu, Senhor, me dás viver.\nSó te sentir e te pensar\nMeus dias vacuos enche e doura.\nMas quando quererás voltar?\nQuando é o Rei? Quando é a Hora?\nQuando virás a ser o Christo\nDe a quem morreu o falso Deus,\nE a dispertar do mal que existo\nA Nova Terra e os Novos Céus?\nQuando virás, ó Encoberto,\nSonho das eras portuguez,\nTornar-me mais que o sopro incerto\nDe um grande anceio que Deus fez?\nAh, quando quererás, voltando,\nFazer minha esperança amor?\nDa nevoa e da saudade quando?\nQuando, meu Sonho e meu Senhor?",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Screvo meu livro à beira-magua.",
+          "text": "A voz do poema transforma a escrita numa forma de espera, entre a perda do passado e a possibilidade de um futuro."
+        }
+      ]
+    },
+    {
+      "slug": "noite",
+      "title": "Noite",
+      "section": "O Encoberto — Os Tempos",
+      "context": "Os Tempos descreve uma passagem alegórica da noite e da tormenta para a expectativa de uma nova manhã.",
+      "content": "A nau de um d'elles tinha se perdido\nNo mar indefinido.\nO segundo pediu licença ao Rei\nDe, na fé e na lei\nDa descoberta ir em procura\nDo irmão no mar sem fim e a nevoa escura.\nTempo foi. Nem primeiro nem segundo\nVolveu do fim profundo\nDo mar ignoto à patria por quem dera\nO enigma que fizera.\nEntão o terceiro a El-Rei rogou\nLicença de os buscar, e El-Rei negou.\nComo a um captivo, o ouvem a passar\nOs servos do solar.\nE, quando o vêem, vêem a figura\nDa febre e da amargura,\nCom fixos olhos rasos de ancia\nFitando a prohibida azul distancia.\nSenhor, os dois irmãos do nosso Nome—\nO Poder e o Renome —\nAmbos se foram pelo mar da edade\nÀ tua eternidade;\nE com elles de nós se foi\nO que faz a alma poder ser de heroe,\nQueremos ir buscal-os, d'esta vil\nNossa prisão servil:\nÉ a busca de quem somos, na distancia\nDe nós; e, em febre de ancia,\nA Deus as mãos alçamos.\nMas Deus não dá licença que partamos.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "A nau de um d'elles tinha se perdido",
+          "text": "A noite representa o período de suspensão anterior a uma mudança, mantendo viva a expectativa de uma hora decisiva."
+        }
+      ]
+    },
+    {
+      "slug": "tormenta",
+      "title": "Tormenta",
+      "section": "O Encoberto — Os Tempos",
+      "context": "Os Tempos descreve uma passagem alegórica da noite e da tormenta para a expectativa de uma nova manhã.",
+      "content": "Que jaz no abysmo sob o mar que se ergue?\nNós, Portugal, o poder ser.\nQue inquietação do fundo nos soergue?\nO desejar poder querer.\nIsto, e o mysterio de que a noite é o fausto...\nMas subito, onde o vento ruge,\nO relampago, pharol de Deus, um hausto\nBrilha, e o mar scuro struge.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Que jaz no abysmo sob o mar que se ergue?",
+          "text": "A tormenta é uma crise coletiva que pode preceder a mudança; o poema pergunta que força profunda ainda move Portugal."
+        }
+      ]
+    },
+    {
+      "slug": "calma",
+      "title": "Calma",
+      "section": "O Encoberto — Os Tempos",
+      "context": "Os Tempos descreve uma passagem alegórica da noite e da tormenta para a expectativa de uma nova manhã.",
+      "content": "Que costa é que as ondas contam\nE se não póde encontrar\nPor mais naus que haja no mar?\nO que é que as ondas encontram\nE nunca se vê surgindo?\nEste som de o mar praiar\nOnde é que está existindo?\nIlha próxima e remota,\nQue nos ouvidos persiste,\nPara a vista não existe.\nQue nau, que armada, que frota\nPóde encontrar o caminho\nÀ praia onde o mar insiste,\nSe á vista o mar é sósinho?\nHaverá rasgões no espaço\nQue dêem para outro lado,\nE que, um d'elles encontrado,\nAqui, onde ha só sargaço,\nSurja uma ilha velada,\nO paiz afortunado\nQue guarda o Rei desterrado\nEm sua vida encantada?",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Que costa é que as ondas contam",
+          "text": "A calma depois da tormenta é uma pausa de escuta e preparação, não a resolução definitiva da espera."
+        }
+      ]
+    },
+    {
+      "slug": "antemanha",
+      "title": "Antemanhã",
+      "section": "O Encoberto — Os Tempos",
+      "context": "Os Tempos descreve uma passagem alegórica da noite e da tormenta para a expectativa de uma nova manhã.",
+      "content": "O mostrengo que está no rim do mar\nVeio das trevas a procurar\nA madrugada do novo dia,\nDo novo dia sem acabar;\nE disse, «Quem é que dorme a lembrar\nQue desvendou o Segundo Mundo,\nNem o Terceiro quer desvendar?»\nE o som na treva de elle rodar\nFaz mau o somno, triste o sonhar.\nRodou e foi-se o mostrengo servo\nQue seu senhor veio aqui buscar.\nQue veio aqui seu senhor chamar —\nChamar Aquelle que está dormindo\nE foi outrora Senhor do Mar.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "O mostrengo que está no rim do mar",
+          "text": "A antemanhã é o instante incerto antes do amanhecer, imagem de um futuro que ainda não se revelou."
+        }
+      ]
+    },
+    {
+      "slug": "nevoeiro",
+      "title": "Nevoeiro",
+      "section": "O Encoberto — Os Tempos",
+      "context": "Os Tempos descreve uma passagem alegórica da noite e da tormenta para a expectativa de uma nova manhã.",
+      "content": "Nem rei nem lei, nem paz nem guerra,\nDefine com perfil e ser\nEste fulgor baço da terra\nQue é Portugal a entristecer —\nBrilho sem luz e sem arder,\nComo o que o fogo-fatuo encerra.\nNinguém sabe que coisa quer.\nNinguém conhece que alma tem,\nNem o que é mal nem o que é bem.\n(Que ancia distante perto chora?)\nTudo é incerto e derradeiro.\nTudo é disperso, nada é inteiro.\nÓ Portugal, hoje és nevoeiro...\nÉ a Hora!\nValete, Fratres.",
+      "audioUrl": "",
+      "audioDuration": "",
+      "annotations": [
+        {
+          "target": "Nem rei nem lei, nem paz nem guerra",
+          "text": "O nevoeiro traduz a indefinição de Portugal e culmina no apelo 'É a Hora!', fecho aberto à possibilidade de renovação."
+        }
+      ]
     }
   ]
 }

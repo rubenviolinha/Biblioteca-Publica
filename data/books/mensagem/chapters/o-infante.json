@@ -1,7 +1,15 @@
 {
   "slug": "o-infante",
   "title": "O Infante",
-  "context": "Infante D. Henrique como instrumento divino.",
-  "content": "Deus quer, o homem sonha, a obra nasce.",
-  "annotations": []
+  "section": "Mar Portuguez",
+  "context": "Mar Portuguez desloca o foco dos símbolos e governantes para as viagens, os navegadores e o custo humano da expansão marítima.",
+  "content": "Deus quer, o homem sonha, a obra nasce.\nDeus quiz que a terra fosse toda uma,\nQue o mar unisse, já não separasse.\nSagrou-te, e foste desvendando a espuma,\nE a orla branca foi de ilha em continente,\nClareou, correndo, até ao fim do mundo,\nE viu-se a terra inteira, de repente,\nSurgir, redonda, do azul profundo.\nQuem te sagrou creou-te portuguez.\nDo mar e nós em ti nos deu signal.\nCumpriu-se o Mar, e o Imperio se desfez.\nSenhor, falta cumprir-se Portugal!",
+  "audioUrl": "",
+  "audioDuration": "",
+  "annotations": [
+    {
+      "target": "Deus quer, o homem sonha, a obra nasce.",
+      "text": "O poema condensa a ideia de que a vontade humana, quando encontra um propósito maior, transforma o sonho em ação histórica."
+    }
+  ]
 }

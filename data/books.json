@@ -4,6 +4,7 @@
     "slug": "os-lusiadas",
     "title": "Os Lusíadas",
     "author": "Luís de Camões",
+    "coverImage": "./data/books/os-lusiadas/cover.png",
     "authorId": "luis-de-camoes",
     "authorBio": "Considerado o maior poeta de língua portuguesa.",
     "description": "Epopeia sobre os Descobrimentos portugueses.",
@@ -19,14 +20,15 @@
     "slug": "mensagem",
     "title": "Mensagem",
     "author": "Fernando Pessoa",
-    "year": "1934",
+    "coverImage": "./data/books/mensagem/cover.png",
+    "authorId": "fernando-pessoa",
     "authorBio": "Poeta moderno e metafísico.",
     "description": "Única obra publicada em vida por Pessoa.",
+    "year": "1934",
+    "language": "pt",
     "tags": [
       "modernismo"
-    ],
-    "language": "pt",
-    "authorId": "fernando-pessoa"
+    ]
   },
   {
     "id": 3,
