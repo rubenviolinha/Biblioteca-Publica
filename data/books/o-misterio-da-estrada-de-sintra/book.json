@@ -1,0 +1,34 @@
+{
+  "id": 11,
+  "slug": "o-misterio-da-estrada-de-sintra",
+  "title": "O Mistério da Estrada de Sintra",
+  "author": "Eça de Queirós e Ramalho Ortigão",
+  "authorId": "eca-de-queiros-ramalho-ortigao",
+  "authorBio": "Eça de Queirós (1845–1900) e Ramalho Ortigão (1836–1915), escritores e críticos portugueses.",
+  "description": "Um mistério contado por cartas, testemunhos e versões contraditórias, originalmente publicado em folhetins no Diário de Notícias.",
+  "year": "1870",
+  "language": "pt",
+  "coverImage": "./data/books/o-misterio-da-estrada-de-sintra/cover.svg",
+  "tags": [
+    "romance epistolar",
+    "mistério",
+    "Sintra",
+    "Lisboa"
+  ],
+  "source": {
+    "title": "O Mysterio da Estrada de Cintra (terceira edição, 1894)",
+    "url": "https://www.gutenberg.org/ebooks/20574",
+    "transcription": "Project Gutenberg; transcrição baseada em imagens da Biblioteca Nacional de Portugal.",
+    "editorialNote": "Romance publicado originalmente em folhetins em 1870; esta transcrição segue a terceira edição de 1894 e mantém a grafia de época. O prefácio e o índice da edição são excluídos do texto de leitura. O Project Gutenberg declara o estatuto nos Estados Unidos; Eça de Queirós morreu em 1900 e Ramalho Ortigão em 1915, e a obra está no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "secao-01",
+    "secao-02",
+    "secao-03",
+    "secao-04",
+    "secao-05",
+    "secao-06",
+    "secao-07",
+    "secao-08"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": 14,
+  "slug": "o-livro-de-cesario-verde",
+  "title": "O Livro de Cesário Verde",
+  "author": "Cesário Verde",
+  "authorId": "cesario-verde",
+  "authorBio": "Poeta português (1855–1886), cuja obra transformou a observação da cidade, do campo e da vida quotidiana.",
+  "description": "Poemas de Cesário Verde reunidos por Silva Pinto numa edição póstuma que atravessa a cidade, o campo e a experiência moderna.",
+  "year": "1887",
+  "language": "pt",
+  "coverImage": "./data/books/o-livro-de-cesario-verde/cover.svg",
+  "tags": [
+    "poesia",
+    "Lisboa",
+    "modernidade",
+    "quotidiano"
+  ],
+  "source": {
+    "title": "O Livro de Cesario Verde: 1873–1886 (1887)",
+    "url": "https://www.gutenberg.org/ebooks/8698",
+    "transcription": "Project Gutenberg; transcrição produzida a partir de imagens da Biblioteca Nacional de Portugal.",
+    "editorialNote": "Incluem-se os poemas e excluem-se o prefácio, as notas biográficas e o índice escritos ou organizados pelo compilador Silva Pinto. A nota editorial sobre a incompletude de Provincianas é registada aqui, sem ser incorporada no poema. Cesário Verde morreu em 1886 e Silva Pinto em 1911; os direitos patrimoniais das respectivas contribuições estão no domínio público em Portugal."
+  },
+  "chapterOrder": [
+    "poema-01",
+    "poema-02",
+    "poema-03",
+    "poema-04",
+    "poema-05",
+    "poema-06",
+    "poema-07",
+    "poema-08",
+    "poema-09",
+    "poema-10",
+    "poema-11",
+    "poema-12",
+    "poema-13",
+    "poema-14",
+    "poema-15",
+    "poema-16",
+    "poema-17",
+    "poema-18",
+    "poema-19",
+    "poema-20",
+    "poema-21",
+    "poema-22"
+  ]
+}

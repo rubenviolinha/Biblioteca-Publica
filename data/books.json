@@ -4,6 +4,7 @@
     "slug": "os-lusiadas",
     "title": "Os Lusíadas",
     "author": "Luís de Camões",
+    "coverImage": "./data/books/os-lusiadas/cover.png",
     "authorId": "luis-de-camoes",
     "authorBio": "Considerado o maior poeta de língua portuguesa.",
     "description": "Epopeia sobre os Descobrimentos portugueses.",
@@ -19,14 +20,15 @@
     "slug": "mensagem",
     "title": "Mensagem",
     "author": "Fernando Pessoa",
-    "year": "1934",
+    "coverImage": "./data/books/mensagem/cover.png",
+    "authorId": "fernando-pessoa",
     "authorBio": "Poeta moderno e metafísico.",
     "description": "Única obra publicada em vida por Pessoa.",
+    "year": "1934",
+    "language": "pt",
     "tags": [
       "modernismo"
-    ],
-    "language": "pt",
-    "authorId": "fernando-pessoa"
+    ]
   },
   {
     "id": 3,
@@ -42,6 +44,204 @@
       "realismo",
       "Lisboa",
       "sociedade"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "viagens-na-minha-terra",
+    "title": "Viagens na Minha Terra",
+    "author": "Almeida Garrett",
+    "coverImage": "./data/books/viagens-na-minha-terra/cover.svg",
+    "authorId": "almeida-garrett",
+    "authorBio": "Escritor, dramaturgo e político português (1799–1854), figura central do Romantismo e do liberalismo português.",
+    "description": "Viagem pelo Tejo e pelo Ribatejo que entrelaça observação, memória, crítica política e a história de Joaninha.",
+    "year": "1846",
+    "language": "pt",
+    "tags": [
+      "romantismo",
+      "viagem",
+      "Santarém",
+      "guerra civil"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "amor-de-perdicao",
+    "title": "Amor de Perdição",
+    "author": "Camilo Castelo Branco",
+    "coverImage": "./data/books/amor-de-perdicao/cover.svg",
+    "authorId": "camilo-castelo-branco",
+    "authorBio": "Romancista português (1825–1890), um dos nomes centrais da ficção romântica portuguesa.",
+    "description": "A paixão de Simão e Teresa enfrenta a rivalidade das famílias, a clausura e o degredo; Mariana acompanha o destino dos amantes.",
+    "year": "1862",
+    "language": "pt",
+    "tags": [
+      "romantismo",
+      "amor",
+      "tragédia",
+      "Coimbra"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "o-primo-bazilio",
+    "title": "O Primo Basílio",
+    "author": "Eça de Queirós",
+    "coverImage": "./data/books/o-primo-bazilio/cover.svg",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+    "description": "Um romance de adultério, chantagem e convenções sociais na Lisboa burguesa do século XIX.",
+    "year": "1878",
+    "language": "pt",
+    "tags": [
+      "realismo",
+      "Lisboa",
+      "romance",
+      "sociedade"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "a-cidade-e-as-serras",
+    "title": "A Cidade e as Serras",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+    "description": "Jacinto troca o conforto tecnológico de Paris pela vida em Tormes, numa reflexão irónica sobre progresso, felicidade e pertença.",
+    "year": "1901",
+    "language": "pt",
+    "coverImage": "./data/books/a-cidade-e-as-serras/cover.svg",
+    "tags": [
+      "realismo",
+      "Paris",
+      "Douro",
+      "modernidade"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "frei-luis-de-sousa",
+    "title": "Frei Luís de Sousa",
+    "author": "Almeida Garrett",
+    "authorId": "almeida-garrett",
+    "authorBio": "Escritor e dramaturgo português (1799–1854), figura decisiva do Romantismo e do teatro nacional.",
+    "description": "Uma família vive entre o amor, a honra e a esperança de que um desaparecido na batalha de Alcácer-Quibir possa regressar.",
+    "year": "1843",
+    "language": "pt",
+    "coverImage": "./data/books/frei-luis-de-sousa/cover.svg",
+    "tags": [
+      "teatro",
+      "Romantismo",
+      "sebastianismo",
+      "tragédia"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "a-correspondencia-de-fradique-mendes",
+    "title": "A Correspondência de Fradique Mendes",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+    "description": "Memórias e cartas compõem o retrato de Fradique Mendes, poeta fictício cosmopolita criado por Eça de Queirós.",
+    "year": "1900",
+    "language": "pt",
+    "coverImage": "./data/books/a-correspondencia-de-fradique-mendes/cover.svg",
+    "tags": [
+      "epistolar",
+      "memórias",
+      "Lisboa",
+      "Paris"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "o-mandarim",
+    "title": "O Mandarim",
+    "author": "Eça de Queirós",
+    "authorId": "eca-de-queiros",
+    "authorBio": "Romancista português (1845–1900), figura central do Realismo e da crítica social oitocentista.",
+    "description": "Uma escolha tentadora leva um modesto funcionário a herdar uma fortuna distante e a enfrentar o preço moral da riqueza.",
+    "year": "1880",
+    "language": "pt",
+    "coverImage": "./data/books/o-mandarim/cover.svg",
+    "tags": [
+      "novela",
+      "fantástico",
+      "Lisboa",
+      "China"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "o-misterio-da-estrada-de-sintra",
+    "title": "O Mistério da Estrada de Sintra",
+    "author": "Eça de Queirós e Ramalho Ortigão",
+    "authorId": "eca-de-queiros-ramalho-ortigao",
+    "authorBio": "Eça de Queirós (1845–1900) e Ramalho Ortigão (1836–1915), escritores e críticos portugueses.",
+    "description": "Um mistério contado por cartas, testemunhos e versões contraditórias, originalmente publicado em folhetins no Diário de Notícias.",
+    "year": "1870",
+    "language": "pt",
+    "coverImage": "./data/books/o-misterio-da-estrada-de-sintra/cover.svg",
+    "tags": [
+      "romance epistolar",
+      "mistério",
+      "Sintra",
+      "Lisboa"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "a-harpa-do-crente",
+    "title": "A Harpa do Crente",
+    "author": "Alexandre Herculano",
+    "authorId": "alexandre-herculano",
+    "authorBio": "Escritor, poeta e historiador português (1810–1877), figura central do Romantismo e da historiografia nacional.",
+    "description": "Poemas de fé, liberdade, paisagem e memória reunidos nas três séries de uma obra central do Romantismo português.",
+    "year": "1838",
+    "language": "pt",
+    "coverImage": "./data/books/a-harpa-do-crente/cover.svg",
+    "tags": [
+      "poesia",
+      "Romantismo",
+      "religião",
+      "liberdade"
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "a-velhice-do-padre-eterno",
+    "title": "A Velhice do Padre Eterno",
+    "author": "Guerra Junqueiro",
+    "authorId": "guerra-junqueiro",
+    "authorBio": "Poeta e político português (1850–1923), conhecido pela sátira social e religiosa e pela poesia de intervenção.",
+    "description": "Uma colectânea satírica que cruza poesia narrativa, crítica religiosa e intervenção na vida pública portuguesa.",
+    "year": "1885",
+    "language": "pt",
+    "coverImage": "./data/books/a-velhice-do-padre-eterno/cover.svg",
+    "tags": [
+      "poesia",
+      "sátira",
+      "sociedade",
+      "religião"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "o-livro-de-cesario-verde",
+    "title": "O Livro de Cesário Verde",
+    "author": "Cesário Verde",
+    "authorId": "cesario-verde",
+    "authorBio": "Poeta português (1855–1886), cuja obra transformou a observação da cidade, do campo e da vida quotidiana.",
+    "description": "Poemas de Cesário Verde reunidos por Silva Pinto numa edição póstuma que atravessa a cidade, o campo e a experiência moderna.",
+    "year": "1887",
+    "language": "pt",
+    "coverImage": "./data/books/o-livro-de-cesario-verde/cover.svg",
+    "tags": [
+      "poesia",
+      "Lisboa",
+      "modernidade",
+      "quotidiano"
     ]
   }
 ]

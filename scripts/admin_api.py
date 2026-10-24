@@ -2,6 +2,7 @@
 """Local admin API for writing book files and running compilation."""
 
 import json
+import re
 import subprocess
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -14,6 +15,9 @@ DATA_DIR = ROOT / "data"
 BOOKS_INDEX = DATA_DIR / "books.json"
 BOOKS_DIR = DATA_DIR / "books"
 BUILD_SCRIPT = ROOT / "scripts" / "build_books.py"
+BOOK_SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+ALLOWED_ORIGINS = {"http://127.0.0.1:8000", "http://localhost:8000"}
+MAX_REQUEST_BYTES = 20 * 1024 * 1024
 
 
 def read_json(path: Path):
@@ -38,7 +42,19 @@ def next_book_id(existing_books):
 
 
 def normalize_book_metadata(book, existing_books):
-    fields = ["id", "slug", "title", "author", "authorId", "authorBio", "description", "year", "language", "tags"]
+    fields = [
+        "id",
+        "slug",
+        "title",
+        "author",
+        "coverImage",
+        "authorId",
+        "authorBio",
+        "description",
+        "year",
+        "language",
+        "tags",
+    ]
     meta = {k: book.get(k) for k in fields if book.get(k) not in (None, "")}
     if "slug" not in meta:
         raise ValueError("book.slug is required")
@@ -62,10 +78,17 @@ def save_book_payload(payload):
     if not isinstance(slug, str) or not slug.strip():
         raise ValueError("book.slug is required")
     slug = slug.strip()
+    if not BOOK_SLUG_RE.fullmatch(slug):
+        raise ValueError("book.slug must use lowercase letters, numbers, and hyphens only")
 
     chapter_order = book.get("chapterOrder") or list(chapters_map.keys())
     if not isinstance(chapter_order, list) or not chapter_order:
         raise ValueError("book.chapterOrder must be a non-empty list")
+    if len(chapter_order) > 1000 or not all(
+        isinstance(chapter_slug, str) and BOOK_SLUG_RE.fullmatch(chapter_slug)
+        for chapter_slug in chapter_order
+    ):
+        raise ValueError("chapterOrder must contain valid chapter slugs")
     if len(set(chapter_order)) != len(chapter_order):
         raise ValueError("book.chapterOrder contains duplicates")
 
@@ -134,13 +157,23 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type")
-        self.send_header("Access-Control-Allow-Methods", "GET,POST,OPTIONS")
+        origin = self.headers.get("Origin")
+        if origin in ALLOWED_ORIGINS:
+            self.send_header("Access-Control-Allow-Origin", origin)
+            self.send_header("Vary", "Origin")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.send_header("Access-Control-Allow-Methods", "GET,POST,OPTIONS")
         self.end_headers()
         self.wfile.write(body)
 
+    def _origin_allowed(self):
+        origin = self.headers.get("Origin")
+        return not origin or origin in ALLOWED_ORIGINS
+
     def do_OPTIONS(self):
+        if not self._origin_allowed():
+            self._send_json(403, {"ok": False, "error": "Origin not allowed"})
+            return
         self._send_json(200, {"ok": True})
 
     def do_GET(self):
@@ -156,7 +189,13 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         path = urlparse(self.path).path
         try:
+            if not self._origin_allowed():
+                self._send_json(403, {"ok": False, "error": "Origin not allowed"})
+                return
             length = int(self.headers.get("Content-Length", "0"))
+            if length < 0 or length > MAX_REQUEST_BYTES:
+                self._send_json(413, {"ok": False, "error": "Request too large"})
+                return
             raw = self.rfile.read(length) if length else b"{}"
             payload = json.loads(raw.decode("utf-8"))
 
@@ -167,6 +206,8 @@ class Handler(BaseHTTPRequestHandler):
 
             if path == "/api/compile":
                 book_slug = payload.get("bookSlug")
+                if book_slug and not BOOK_SLUG_RE.fullmatch(book_slug):
+                    raise ValueError("bookSlug must use lowercase letters, numbers, and hyphens only")
                 compile_result = run_compile(book_slug=book_slug)
                 self._send_json(200, {"ok": True, **compile_result})
                 return
