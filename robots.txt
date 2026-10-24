@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rubenviolinha.github.io/Biblioteca-Publica/sitemap.xml

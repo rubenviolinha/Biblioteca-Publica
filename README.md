@@ -1,6 +1,8 @@
 # Biblioteca Pública — Livros de Portugal
 
-Uma biblioteca digital gratuita para ler clássicos da literatura portuguesa. O leitor funciona como um site estático, sem conta, servidor ou base de dados. Os livros são guardados em JSON simples, com contexto, notas de leitura e edições de referência.
+[Visitar a Biblioteca Pública](https://rubenviolinha.github.io/Biblioteca-Publica/)
+
+Uma biblioteca digital gratuita para ler clássicos da literatura lusófona em domínio público. O leitor funciona como um site estático, sem conta, servidor ou base de dados. Os livros são guardados em JSON simples, com contexto, notas de leitura e edições de referência.
 
 ## Conteúdo
 
@@ -95,11 +97,30 @@ python3 scripts/admin_api.py
 
 O painel de edição local pode ser aberto pela consola do navegador com `openAdminPanel()` e envia as alterações à API em `http://127.0.0.1:8765`. Esta API destina-se apenas à gestão local; não é necessária para publicar ou ler o site.
 
-## Publicar com GitHub Pages
+## Publicação e pesquisa
 
-O workflow em `.github/workflows/pages.yml` compila os estilos, prepara os livros e publica automaticamente o site depois de activar **GitHub Actions** e **GitHub Pages → Build and deployment → GitHub Actions** nas definições do repositório. Também pode iniciar a publicação manualmente no separador **Actions**. O leitor não precisa de um processo de build JavaScript.
+O site é publicado em [rubenviolinha.github.io/Biblioteca-Publica](https://rubenviolinha.github.io/Biblioteca-Publica/). O workflow `.github/workflows/pages.yml` compila os estilos, os textos, os PDFs e as páginas pesquisáveis a cada alteração em `main`, valida o resultado e publica apenas o conteúdo da pasta `dist/` no GitHub Pages.
 
-O leitor suporta pesquisa no catálogo, ligações directas para livros e capítulos, PDFs, tamanho de letra ajustável e anotações activáveis. Os estilos são compilados para um ficheiro local; as fontes tipográficas usam Google Fonts com alternativas do sistema.
+`site.json` define o endereço canónico, o nome e a descrição da biblioteca. Depois de alterar o catálogo ou os textos, actualize as páginas HTML, as imagens de partilha e o mapa do site:
+
+```bash
+python3 scripts/build_books.py
+python3 scripts/build_seo.py
+npm run build:css
+```
+
+Para reproduzir e verificar o pacote de publicação:
+
+```bash
+python3 scripts/build_seo.py --output-dir dist
+SITE_OUTPUT_DIR=dist python3 -m unittest discover -s tests -v
+```
+
+Cada obra tem uma página em `livros/<slug>/`, com título e descrição próprios, endereço canónico, metadados Open Graph e Twitter, dados estruturados `Book`, capa, fonte editorial, texto completo e notas disponíveis sem JavaScript. `autores/` contém um catálogo HTML dos autores. A página inicial também inclui as ligações das obras no HTML original. O leitor interactivo continua disponível; as variantes com parâmetros são vistas auxiliares com `noindex, follow`, para evitar a multiplicação de entradas por capítulo.
+
+O mapa do site está em [sitemap.xml](https://rubenviolinha.github.io/Biblioteca-Publica/sitemap.xml). Pode ser submetido no Google Search Console após verificar a propriedade do endereço. Em sites de projecto do GitHub Pages, o `robots.txt` na pasta do projecto não controla o domínio inteiro: os motores consultam `robots.txt` na raiz do host. As páginas públicas têm metadados de indexação permissivos e ligações directas; o ficheiro é incluído também para uma eventual publicação na raiz de um domínio próprio.
+
+O leitor suporta pesquisa no catálogo, ligações directas para livros e capítulos, PDFs, tamanho de letra ajustável e notas activadas por defeito. Os estilos são compilados para um ficheiro local; as fontes tipográficas usam Google Fonts com alternativas do sistema.
 
 ## Estrutura
 
@@ -114,6 +135,11 @@ data/books/<slug>/chapters/     Conteúdo-fonte, notas e contexto
 data/books/<slug>/compiled.json Dados carregados pelo leitor
 data/books/<slug>/compiled.pdf  Edição PDF para descarregar
 scripts/build_books.py          Compilador do catálogo de leitura
+scripts/build_seo.py            Gerador de páginas HTML, metadados e sitemap
+site.json                       Endereço e descrição do site
+livros/<slug>/index.html        Edição HTML completa e pesquisável
+autores/index.html              Catálogo de autores sem JavaScript
+sitemap.xml                     Endereços canónicos para indexação
 scripts/build_pdfs.py           Gerador de PDFs
 scripts/import_public_domain.py Importador de edições de referência
 scripts/import_more_classics.py Importador de sete novas edições de referência

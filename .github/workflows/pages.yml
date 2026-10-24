@@ -37,12 +37,18 @@ jobs:
         run: python scripts/build_books.py
       - name: Generate PDF downloads
         run: python scripts/build_pdfs.py
+      - name: Build searchable editions and site metadata
+        run: python scripts/build_seo.py --output-dir dist
+      - name: Validate book imports and searchable pages
+        run: python -m unittest discover -s tests -v
+        env:
+          SITE_OUTPUT_DIR: dist
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload the site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
   deploy:
     environment:
       name: github-pages
