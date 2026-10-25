@@ -42,6 +42,14 @@ def author_names(book):
     return [book['author']]
 
 
+def creator_schema(site):
+    creator = site['creator']
+    return {
+        '@type': 'Person', 'name': creator['name'], 'url': creator['url'],
+        'sameAs': creator.get('sameAs', []),
+    }
+
+
 def book_schema(site, book):
     url = book_url(site, book['slug'])
     return {
@@ -51,6 +59,8 @@ def book_schema(site, book):
         'inLanguage': site['language'], 'datePublished': str(book['year']),
         'genre': book.get('tags', []), 'isAccessibleForFree': True,
         'bookFormat': 'https://schema.org/EBook',
+        'publisher': {'@type': 'Organization', 'name': site['name'], 'url': site['url']},
+        'creator': creator_schema(site),
         'image': urljoin(site['url'], book['coverImage'].removeprefix('./')),
         'encoding': {'@type': 'MediaObject', 'encodingFormat': 'application/pdf',
                      'contentUrl': urljoin(site['url'], f'data/books/{book["slug"]}/compiled.pdf')},
@@ -60,7 +70,9 @@ def book_schema(site, book):
 
 def head(site, title, description, canonical, image, schema, *, kind='website', image_size=None):
     attrs = [
-        ('name', 'description', description), ('name', 'robots', 'index, follow, max-image-preview:large'),
+        ('name', 'description', description), ('name', 'author', site['creator']['name']),
+        ('name', 'creator', site['creator']['name']),
+        ('name', 'robots', 'index, follow, max-image-preview:large'),
         ('name', 'theme-color', '#fcfcf9'),
         ('property', 'og:site_name', site['name']), ('property', 'og:title', title),
         ('property', 'og:description', description), ('property', 'og:type', kind),
@@ -108,7 +120,7 @@ def page_shell(site, metadata, body, root_prefix):
 </head><body><a class="skip" href="#conteudo">Saltar para o conteúdo</a>
 <header class="site-header"><a class="brand" href="{root_prefix}">Biblioteca Pública</a><nav aria-label="Navegação principal"><a href="{root_prefix}">Colecção</a><a href="{root_prefix}autores/">Autores</a></nav></header>
 <main id="conteudo">{body}</main>
-<footer>Literatura lusófona, para todos. · <a href="{root_prefix}sitemap.xml">Mapa do site</a></footer>
+<footer>Literatura lusófona, para todos. · Criado por <a href="{escape(site['creator']['url'], quote=True)}" rel="author me">{escape(site['creator']['name'])}</a> · <a href="{root_prefix}sitemap.xml">Mapa do site</a></footer>
 <script>function openChapter(){{if(!location.hash)return;const el=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(el&&el.tagName==='DETAILS')el.open=true;}}openChapter();addEventListener('hashchange',openChapter);</script>
 </body></html>'''
 
@@ -161,7 +173,8 @@ def authors_page(site, books, home_image, home_size):
     title = 'Autores e obras de literatura lusófona | Biblioteca Pública'
     description = 'Conheça os autores da Biblioteca Pública e encontre os seus clássicos em domínio público, com leitura gratuita, notas e edições PDF.'
     schema = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'url': url, 'name': title,
-              'inLanguage': site['language'], 'mainEntity': {'@type': 'ItemList', 'itemListElement': [
+              'inLanguage': site['language'], 'creator': creator_schema(site),
+              'mainEntity': {'@type': 'ItemList', 'itemListElement': [
                   {'@type': 'ListItem', 'position': i, 'url': book_url(site, b['slug']), 'name': b['title']} for i, b in enumerate(books, 1)]}}
     metadata = head(site, title, description, url, home_image, schema, image_size=home_size)
     groups = OrderedDict()
@@ -199,16 +212,20 @@ def build(output):
         with Image.open(ROOT / book['coverImage'].removeprefix('./')) as image:
             image = image.convert('RGB')
             image.thumbnail((800, 1067))
-            image.save(share / f'{book["slug"]}.jpg', 'JPEG', quality=85, optimize=True)
+            # Keep the Pages build bounded on the macOS/Python image stack;
+            # the source covers are already small and the quality setting is
+            # sufficient for social previews.
+            image.save(share / f'{book["slug"]}.jpg', 'JPEG', quality=85)
             sizes[book['slug']] = image.size
     shutil.copy2(ROOT / 'design/cover-sketch-preview.png', share / 'coleccao.png')
     with Image.open(share / 'coleccao.png') as image:
         home_size = image.size
     home_image = urljoin(site['url'], 'assets/share/coleccao.png')
     schema = {'@context': 'https://schema.org', '@graph': [
-        {'@type': 'WebSite', '@id': site['url'] + '#website', 'url': site['url'], 'name': site['name'], 'inLanguage': site['language']},
+        {'@type': 'WebSite', '@id': site['url'] + '#website', 'url': site['url'], 'name': site['name'], 'inLanguage': site['language'],
+         'creator': creator_schema(site), 'publisher': creator_schema(site)},
         {'@type': 'CollectionPage', '@id': site['url'] + '#coleccao', 'url': site['url'], 'name': site['title'],
-         'description': site['description'], 'inLanguage': site['language'],
+         'description': site['description'], 'inLanguage': site['language'], 'creator': creator_schema(site),
          'mainEntity': {'@type': 'ItemList', 'numberOfItems': len(books), 'itemListElement': [
              {'@type': 'ListItem', 'position': i, 'url': book_url(site, b['slug']), 'name': b['title']} for i, b in enumerate(books, 1)]}}]}
     metadata = head(site, site['title'], site['description'], site['url'], home_image, schema, image_size=home_size)

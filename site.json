@@ -3,7 +3,12 @@
   "url": "https://rubenviolinha.github.io/Biblioteca-Publica/",
   "title": "Biblioteca Pública — Literatura lusófona em domínio público",
   "description": "Biblioteca digital gratuita de literatura lusófona em domínio público. Leia clássicos online com notas, contexto e edições PDF para descarregar.",
-  "repositoryDescription": "Biblioteca digital gratuita de literatura lusófona em domínio público, com leitura online, notas e PDFs.",
+  "repositoryDescription": "Biblioteca digital gratuita de literatura lusófona em domínio público, criada por Ruben Violinha, com leitura online, notas e PDFs.",
+  "creator": {
+    "name": "Ruben Violinha",
+    "url": "https://github.com/rubenviolinha",
+    "sameAs": ["https://github.com/rubenviolinha"]
+  },
   "language": "pt-PT",
   "locale": "pt_PT"
 }

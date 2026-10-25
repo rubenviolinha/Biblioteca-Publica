@@ -35,6 +35,10 @@ except ImportError as exc:  # pragma: no cover - handled at runtime
 
 ROOT = Path(__file__).resolve().parents[1]
 BOOKS_DIR = ROOT / "data" / "books"
+PLATFORM_NAME = "Biblioteca Pública"
+PROJECT_URL = "https://rubenviolinha.github.io/Biblioteca-Publica/"
+CREATOR_NAME = "Ruben Violinha"
+GITHUB_URL = "https://github.com/rubenviolinha/Biblioteca-Publica"
 
 
 class BuildError(Exception):
@@ -199,6 +203,11 @@ def build_story(book):
         story.append(Paragraph(xml_escape(tag_text), styles["CoverNote"]))
 
     story.append(Spacer(1, 18 * mm))
+    story.append(Paragraph(xml_escape(PLATFORM_NAME), styles["BookMeta"]))
+    story.append(Paragraph(xml_escape(f"Edição digital criada e mantida por {CREATOR_NAME}"), styles["CoverNote"]))
+    story.append(Paragraph(xml_escape(GITHUB_URL), styles["CoverNote"]))
+    story.append(Paragraph(xml_escape(PROJECT_URL), styles["CoverNote"]))
+    story.append(Spacer(1, 8 * mm))
     story.append(Paragraph("Edição compilada para leitura e arquivo.", styles["CoverNote"]))
     story.append(PageBreak())
 
@@ -271,8 +280,8 @@ def generate_pdf(book_dir: Path):
         bottomMargin=18 * mm,
         title=title,
         author=author,
-        subject=book.get("description") or "",
-        creator="Livros de Portugal PDF Builder",
+        subject=(book.get("description") or "") + f" | {PLATFORM_NAME} | {CREATOR_NAME} | {PROJECT_URL}",
+        creator=f"{PLATFORM_NAME} — {CREATOR_NAME}",
         producer="ReportLab",
     )
 

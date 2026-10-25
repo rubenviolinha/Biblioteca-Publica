@@ -4,6 +4,10 @@
 
 Uma biblioteca digital gratuita para ler clássicos da literatura lusófona em domínio público. O leitor funciona como um site estático, sem conta, servidor ou base de dados. Os livros são guardados em JSON simples, com contexto, notas de leitura e edições de referência.
 
+## Sobre o projecto
+
+Este projecto é criado e mantido por **Ruben Violinha**: [github.com/rubenviolinha](https://github.com/rubenviolinha). A Biblioteca Pública reúne literatura portuguesa e lusófona em domínio público para leitura online, com contexto editorial, notas e edições PDF.
+
 ## Conteúdo
 
 - **Os Lusíadas**, Luís de Camões — os dez cantos, com introduções e notas.
